@@ -29,7 +29,7 @@ title: 技术博客
     {% endif %}
     <div class="blog-tags">
       {% for tag in post.tags %}
-      <a href="/blog/tags/#{{ tag | slugify }}" class="badge-tag" data-tag="{{ tag }}">{{ tag }}</a>
+      <a href="/blog/tags/#{{ tag | uri_escape }}" class="badge-tag" data-tag="{{ tag }}">{{ tag }}</a>
       {% endfor %}
     </div>
   </li>
