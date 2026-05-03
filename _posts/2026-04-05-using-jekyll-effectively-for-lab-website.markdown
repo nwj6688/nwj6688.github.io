@@ -114,6 +114,7 @@ collections:
 
 避免在循环中进行复杂的 Liquid 运算：
 
+{% raw %}
 ```liquid
 {# 不推荐：在循环中多次调用过滤器 #}
 {% for item in items %}
@@ -126,6 +127,7 @@ collections:
   ...
 {% endfor %}
 ```
+{% endraw %}
 
 ### 2. 启用增量构建
 
