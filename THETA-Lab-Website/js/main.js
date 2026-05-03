@@ -1,0 +1,76 @@
+---
+---
+// 平滑滚动
+document.addEventListener('DOMContentLoaded', function() {
+  // 处理导航栏滚动效果
+  var navbar = document.querySelector('.site-header');
+  if (navbar) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  }
+
+  // 年份过滤器 - 新闻页面
+  var yearFilter = document.querySelector('.year-filter');
+  if (yearFilter) {
+    yearFilter.addEventListener('change', function() {
+      var year = this.value;
+      var items = document.querySelectorAll('.news-item');
+      items.forEach(function(item) {
+        if (year === 'all' || item.dataset.year === year) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  }
+
+  // 标签筛选
+  var tagLinks = document.querySelectorAll('.tag-filter a');
+  tagLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var tag = this.dataset.tag;
+      var posts = document.querySelectorAll('.blog-post-item');
+      posts.forEach(function(post) {
+        if (tag === 'all' || post.dataset.tags.indexOf(tag) !== -1) {
+          post.style.display = 'block';
+        } else {
+          post.style.display = 'none';
+        }
+      });
+      tagLinks.forEach(function(l) { l.classList.remove('active'); });
+      link.classList.add('active');
+    });
+  });
+
+  // 移动端菜单切换
+  var menuToggle = document.querySelector('.menu-toggle');
+  var navMenu = document.querySelector('.nav-menu');
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+  }
+
+  // 回到顶部按钮
+  var backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});

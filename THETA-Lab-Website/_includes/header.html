@@ -1,0 +1,22 @@
+<div id="header">
+  <nav class="navbar navbar-expand-md navbar-light bg-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img class="logo navbar-brand d-inline-block align-top ml-0 mr-1" src="/images/android-chrome-512x512.png" alt="THETA Lab" style="height:36px;width:36px;border-radius:50%;object-fit:cover;">
+        <span style="font-size:18px;font-weight:300;color:#ffffff;">THETA@BJTU</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav nav-pills ml-auto">
+          {% for item in site.data.navigation %}
+          <li class="nav-link">
+            <a class="mx-1" href="{{ item.url }}">{{ item.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

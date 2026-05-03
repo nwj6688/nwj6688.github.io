@@ -1,0 +1,54 @@
+---
+layout: page
+title: 新闻动态
+---
+
+<div class="toolbar">
+  <label>筛选年份：</label>
+  <a href="#all" class="btn-year active" data-year="all">全部</a>
+  <a href="#2026" class="btn-year" data-year="2026">2026</a>
+  <a href="#2025" class="btn-year" data-year="2025">2025</a>
+  <a href="#2024" class="btn-year" data-year="2024">2024</a>
+  <a href="#2023" class="btn-year" data-year="2023">2023</a>
+  <a href="#2022" class="btn-year" data-year="2022">2022</a>
+  <a href="#2021" class="btn-year" data-year="2021">2021</a>
+  <a href="#2020" class="btn-year" data-year="2020">2020</a>
+</div>
+
+<ul class="news-list">
+  {% assign all_news = site.data.news_items | sort: "date" | reverse %}
+  {% for item in all_news %}
+  <li class="news-item" data-year="{{ item.date | slice: 0, 4 }}">
+    <span class="news-date">{{ item.date | slice: 0, 7 }}</span>
+    <div class="news-content">
+      {% if item.sticky %}<span class="news-badge sticky">置顶</span>{% endif %}
+      {% assign title_lower = item.title | downcase %}
+      {% if title_lower contains "喜报" or title_lower contains "祝贺" or title_lower contains "交流" %}
+        <span class="news-highlight">{{ item.title }}</span>
+      {% else %}
+        {{ item.title }}
+      {% endif %}
+      {% if item.external_url %}
+      <a href="{{ item.external_url }}" target="_blank" class="card-link">[链接]</a>
+      {% endif %}
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+
+<script>
+$(function() {
+  $('.btn-year').click(function(e) {
+    e.preventDefault();
+    var year = $(this).data('year');
+    $('.btn-year').removeClass('active');
+    $(this).addClass('active');
+    if (year === 'all') {
+      $('.news-item').show();
+    } else {
+      $('.news-item').hide();
+      $('.news-item[data-year="' + year + '"]').show();
+    }
+  });
+});
+</script>
