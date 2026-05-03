@@ -3,62 +3,42 @@ layout: default
 title: 首页
 ---
 
-<div class="hero-section">
-  <div class="container">
-    <h1>北京交通大学人工智能安全实验室</h1>
-    <p>THETA Lab, Thorough Evaluation on Threats of AI<br>
-    网络空间安全学院 · 北京交通大学</p>
-  </div>
-</div>
-
-<div class="feature-section">
-  <div class="feature-grid">
-    <div class="feature-card">
-      <div class="feature-icon">🎯</div>
-      <div class="feature-title">研究方向</div>
-      <div class="feature-desc">
-        强化学习应用与安全、自动驾驶与车联网安全、大模型应用与安全、人工智能应用与安全、知识图谱应用与安全、智能交通系统安全、图表示学习与威胁评估
-      </div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">👥</div>
-      <div class="feature-title">团队规模</div>
-      <div class="feature-desc">
-        指导教师6人，博士后1人，在读研究生20余人，已毕业学生50余人
-      </div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🔬</div>
-      <div class="feature-title">实验设备</div>
-      <div class="feature-desc">
-        百度无人驾驶汽车、机械臂、高性能GPU服务器、人体工学座椅、23.8/27寸高清显示器、多功能可旋转机械支架等
-      </div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🎓</div>
-      <div class="feature-title">毕业去向</div>
-      <div class="feature-desc">
-        北京住建委、国家互联网应急中心、国铁信息中心、铁科院、中科院、阿里、字节、百度、京东、美团、IBM、微软、蚂蚁金服等
-      </div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🏆</div>
-      <div class="feature-title">竞赛成果</div>
-      <div class="feature-desc">
-        DEF CON自动驾驶CTF全球挑战赛亚军、"六出祁山"战队、创安杯智能汽车信息安全公开赛创安奖、国家重大网络安全试验感谢信
-      </div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📰</div>
-      <div class="feature-title">依托平台</div>
-      <div class="feature-desc">
-        智能交通数据安全与隐私保护技术北京市重点实验室、人工智能安全研究中心
-      </div>
+<!-- ========== HERO SECTION ========== -->
+<div class="hero-section" style="background-image: url('/images/background.png'); background-size: cover; background-position: center;">
+  <div class="hero-overlay">
+    <div class="container">
+      <h1>北京交通大学人工智能安全实验室</h1>
+      <p>THETA Lab, Thorough Evaluation on Threats of AI<br>
+      网络空间安全学院 · 北京交通大学</p>
     </div>
   </div>
 </div>
 
-<div class="section-title">新闻动态</div>
+<!-- Badges -->
+<p align="center">
+  <img src="https://img.shields.io/badge/北京交通大学-人工智能安全实验室-blue?style=flat-square" />
+  <img src="https://img.shields.io/badge/BJTU-THETA-blue?style=flat-square" />
+  <img src="https://img.shields.io/github/followers/BJTU-THETA-Lab?style=flat-square" />
+</p>
+
+<!-- ========== 实验室简介 ========== -->
+<h2 class="section-title">🏢 实验室简介</h2>
+
+<div class="lab-intro">
+  <p>北京交通大学人工智能安全实验室（THETA Lab, Thorough Evaluation on Threats of AI）隶属于北京交通大学网络空间安全学院，依托人工智能安全研究中心，长期从事人工智能安全、智能汽车安全相关研究。目前，实验室主要的研究方向有：强化学习应用与安全、自动驾驶与车联网安全、大模型应用与安全、人工智能应用与安全、知识图谱应用与安全等。目前实验室有指导教师6人，博士后1人，在读研究生20余人，已毕业学生50余人。近年来，实验室毕业生均能在政府部门、科研院所及头部高科技互联网公司就职，如：北京住建委、国家互联网应急中心、国铁信息中心、铁科院、中科院、阿里、字节、百度、京东、美团、IBM、微软、蚂蚁金服、中国联通、中国移动、中国民生银行、中国农业银行等。实验室提供百度无人驾驶汽车、机械臂和高性能GPU服务器等实验设备。实验室为每位科研学生配备了人体工学座椅、23.8/27寸高清显示器、多功能可旋转的机械支架等。实验室还配备了饮水机、冰箱、零食架、吧台、咖啡机、打印机等，为实验室成员提供了舒适的科研和生活环境。</p>
+  <p class="text-muted" style="font-size:13px;">信息更新时间：2026-03-28</p>
+</div>
+
+<div class="env-gallery">
+  <img src="/images/env1.png" alt="环境1">
+  <img src="/images/env2.png" alt="环境2">
+  <img src="/images/env4.png" alt="环境4">
+  <img src="/images/env5.png" alt="环境5">
+  <img src="/images/env6.png" alt="环境6">
+</div>
+
+<!-- ========== 新闻动态 ========== -->
+<h2 class="section-title">🔥 新闻动态</h2>
 
 <div class="toolbar">
   <label>筛选年份：</label>
@@ -73,44 +53,261 @@ title: 首页
 </div>
 
 <ul class="news-list">
-  {% assign site_news = site.news | sort: "date" | reverse %}
-
-  {% if site_news.size > 0 %}
-    {% for item in site_news limit: 15 %}
-    <li class="news-item" data-year="{{ item.date | date: '%Y' }}">
-      <span class="news-date">{{ item.date | date: "%Y/%m" }}</span>
-      <div class="news-content">
-        {% if item.sticky %}<span class="news-badge sticky">置顶</span>{% endif %}
+  {% assign all_news = site.data.news_items | sort: "date" | reverse %}
+  {% for item in all_news %}
+  <li class="news-item" data-year="{{ item.date | slice: 0, 4 }}">
+    <span class="news-date">{{ item.date | slice: 0, 7 }}</span>
+    <div class="news-content">
+      {% if item.sticky %}<span class="news-badge sticky">置顶</span>{% endif %}
+      {% assign title_lower = item.title | downcase %}
+      {% if title_lower contains "喜报" or title_lower contains "祝贺" or title_lower contains "交流" %}
+        <span class="news-highlight">{{ item.title }}</span>
+      {% elsif item.url %}
         <a href="{{ item.url }}">{{ item.title }}</a>
-        {% if item.external_url %}
-        <a href="{{ item.external_url }}" target="_blank" class="card-link">[链接]</a>
-        {% endif %}
-      </div>
-    </li>
-    {% endfor %}
-  {% else %}
-    {% assign all_news = site.data.news_items | sort: "date" | reverse %}
-    {% for item in all_news limit: 15 %}
-    <li class="news-item" data-year="{{ item.date | slice: 0, 4 }}">
-      <span class="news-date">{{ item.date | slice: 0, 7 }}</span>
-      <div class="news-content">
-        {% if item.sticky %}<span class="news-badge sticky">置顶</span>{% endif %}
-        {% if item.url %}
-          <a href="{{ item.url }}">{{ item.title }}</a>
-        {% else %}
-          {{ item.title }}
-        {% endif %}
-        {% if item.external_url %}
-        <a href="{{ item.external_url }}" target="_blank" class="card-link">[链接]</a>
-        {% endif %}
-      </div>
-    </li>
-    {% endfor %}
-  {% endif %}
+      {% else %}
+        {{ item.title }}
+      {% endif %}
+      {% if item.external_url %}
+      <a href="{{ item.external_url }}" target="_blank" class="card-link">[链接]</a>
+      {% endif %}
+    </div>
+  </li>
+  {% endfor %}
 </ul>
 
 <div class="text-center mt-3">
   <a href="/news/" class="card-link">查看全部新闻 →</a>
+</div>
+
+<!-- ========== 科研成果 ========== -->
+<h2 class="section-title">📝 科研成果</h2>
+<p><strong>近5年代表性论文如下（共23篇）：</strong></p>
+
+<ul class="papers-list">
+  <li class="papers-item">
+    <span class="paper-badge">IJCAI-23</span>
+    <span class="paper-title">Robust Reinforcement Learning via Progressive Task Sequence</span><br>
+    <span class="paper-authors">Yike Li, Yunzhe Tian, Endong Tong, Wenjia Niu, and Jiqiang Liu</span><br>
+    <span class="paper-venue">International Joint Conference on Artificial Intelligence (IJCAI-23) <span class="paper-tags">[CCF-A会议]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">计算机研究与发展-25</span>
+    <span class="paper-title">面向信号调制识别的对抗攻击与防御综述</span><br>
+    <span class="paper-authors">徐冬月;田蕴哲;陈康;李轶珂;吴亚伦;童恩栋;牛温佳;刘吉强;史忠植</span><br>
+    <span class="paper-venue">计算机研究与发展, 2025 <span class="paper-tags">[CCF-A中文期刊]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">计算机学报-21</span>
+    <span class="paper-title">强化学习离线策略评估研究综述</span><br>
+    <span class="paper-authors">王硕汝, 牛温佳, 童恩栋, 陈彤, 李赫, 田蕴哲, 刘吉强, 韩臻, 李浥东</span><br>
+    <span class="paper-venue">计算机学报, 2021 <span class="paper-tags">[CCF-A中文期刊]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">软件学报-21</span>
+    <span class="paper-title">面向降频污染攻击的智能交通拥堵态势量化分析</span><br>
+    <span class="paper-authors">相迎宵, 李轶珂, 刘吉强, 王潇瑾, 陈彤, 童恩栋, 牛温佳, 韩臻</span><br>
+    <span class="paper-venue">软件学报, 2021 <span class="paper-tags">[CCF-A中文期刊]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">TSC-21</span>
+    <span class="paper-title">A missing QoS prediction approach via time-aware collaborative filtering</span><br>
+    <span class="paper-authors">Endong Tong, Wenjia Niu, Jiqiang Liu</span><br>
+    <span class="paper-venue">IEEE Transactions on Services Computing, 2021 <span class="paper-tags">[CCF-A期刊, 中科院1区, IEEE Trans, 影响因子:11]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">TRE-24</span>
+    <span class="paper-title">Toward Learning Model-Agnostic Explanations for Deep Learning-Based Signal Modulation Classifiers</span><br>
+    <span class="paper-authors">Yunzhe Tian, Dongyue Xu, Endong Tong, Rui Sun, Kang Chen, Yike Li, Thar Baker, Wenjia Niu, and Jiqiang Liu</span><br>
+    <span class="paper-venue">IEEE Transactions on Reliability (2024) <span class="paper-tags">[SCI中科院2区, IEEE Trans]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">TGCN-21</span>
+    <span class="paper-title">A Hierarchical Energy-Efficient Service Selection Approach With QoS Constraints for Internet of Things</span><br>
+    <span class="paper-authors">Endong Tong, Wenjia Niu, Yunzhe Tian, Jiqiang Liu, Thar Baker, Sandeep Verma, Zheli Liu</span><br>
+    <span class="paper-venue">IEEE TGCN, 2021, 5(2): 645-657 <span class="paper-tags">[SCI中科院2区, IEEE汇刊]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">TGCN-22</span>
+    <span class="paper-title">Multi-Agent Reinforcement Learning-based Signal Planning for Resisting Congestion Attack in Green Transportation</span><br>
+    <span class="paper-authors">Yike Li, Wenjia Niu, Yunzhe Tian, Tong Chen, Zhiqiang Xie, Yalun Wu, Yingxiao Xiang, Endong Tong, Thar Baker, Jiqiang Liu</span><br>
+    <span class="paper-venue">IEEE TGCN, 2022 <span class="paper-tags">[SCI中科院2区, IEEE汇刊]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">TETC-25</span>
+    <span class="paper-title">Towards Label-Efficient Deep Learning-based Aging-related Bug Prediction with Spiking Convolutional Neural Networks</span><br>
+    <span class="paper-authors">Yunzhe Tian, Yike Li, Kang Chen, Zhenguo Zhang, Endong Tong, Jiqiang Liu, Fangyun Qin, Zheng Zheng, Wenjia Niu</span><br>
+    <span class="paper-venue">IEEE TETC (2025) <span class="paper-tags">[SCI中科院2区, IEEE Trans]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">TST-23</span>
+    <span class="paper-title">Curricular Robust Reinforcement Learning via GAN-based Perturbation through Continuously Scheduled Task</span><br>
+    <span class="paper-authors">Yike Li, Yunzhe Tian, Endong Tong, Wenjia Niu, Yingxiao Xiang, Tong Chen, Yalun Wu, Jiqiang Liu</span><br>
+    <span class="paper-venue">Tsinghua Science and Technology, 2022, 28(1): 27-38 <span class="paper-tags">[SCI中科院1区]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">Network-24</span>
+    <span class="paper-title">Improving the Robustness of Pedestrian Detection in Autonomous Driving with Generative Data Augmentation</span><br>
+    <span class="paper-authors">Yalun Wu, Yingxiao Xiang, Endong Tong, Yuqi Ye, Zhibo Cui, Yunzhe Tian, Lejun Zhang, Jiqiang Liu, Zhen Han, Wenjia Niu</span><br>
+    <span class="paper-venue">IEEE Network, 2024 <span class="paper-tags">[SCI中科院1区, 影响因子: 9.3]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">IoTJ-25</span>
+    <span class="paper-title">FlipBAT: Towards Stealthy Endogenous Backdoor Attacks on Traffic Sign Recognition via Self-Flipping</span><br>
+    <span class="paper-authors">Yalun Wu, Xiaoshu Cui, Yingxiao Xiang, Yingying Yao, Yuanwan Chen, Zhen Han, Jiqiang Liu, Wenjia Niu</span><br>
+    <span class="paper-venue">IEEE Internet of Things Journal, 2025 <span class="paper-tags">[SCI中科院2区, 影响因子: 8.9]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">IJIS-24</span>
+    <span class="paper-title">Collaborative Attack Sequence Generation Model Based on Multi-Agent Reinforcement Learning for Intelligent Traffic Signal System</span><br>
+    <span class="paper-authors">Yalun Wu†, Yingxiao Xiang†, Thar Baker, Endong Tong, Ye Zhu, Xiaoshu Cui, Zhenguo Zhang, Zhen Han, Jiqiang Liu, Wenjia Niu*</span><br>
+    <span class="paper-venue">Int. Journal of Intelligent Systems, 2024 <span class="paper-tags">[SCI中科院2区]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">TICPS-24</span>
+    <span class="paper-title">Reinforcement Learning-based Security Enhancement for Controlled Optimization of Phases in Intelligent Traffic Signal System</span><br>
+    <span class="paper-authors">Ziyan Qiao, Yingxiao Xiang, Thar Baker, Gang Li, Yalun Wu, Endong Tong, Shuanghe Peng, Ye Zhu, Dongwei Xu, Wenjia Niu</span><br>
+    <span class="paper-venue">IEEE TICPS (2024) <span class="paper-tags">[IEEE Trans]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">ADMA-24a</span>
+    <span class="paper-title">ECG Signal Classification with a Multi-stage Model Integrating CNN, SNN, and ResNet</span><br>
+    <span class="paper-authors">Xiangyu Shi, Dianjing Cheng, Xingyu Wu, Ping Ye, Jingqi Jia, Jiqiang Liu, Wenjia Niu</span><br>
+    <span class="paper-venue">ADMA 2024, pp. 361-372 <span class="paper-tags">[CCF-C会议]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">ADMA-24b</span>
+    <span class="paper-title">Nightfall Deception: A Novel Backdoor Attack on Traffic Sign Recognition via Low-Light Data Manipulation</span><br>
+    <span class="paper-authors">Yalun Wu, Qiong Li, Yingxiao Xiang, Jinkai Zheng, Xingyu Wu, Zhen Han, Jiqiang Liu, Wenjia Niu</span><br>
+    <span class="paper-venue">ADMA 2024, pp. 433-445 <span class="paper-tags">[CCF-C会议]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">Symmetry-24</span>
+    <span class="paper-title">Reflective Adversarial Attacks against Pedestrian Detection Systems for Vehicles at Night</span><br>
+    <span class="paper-authors">Yuanwan Chen, Yalun Wu, Xiaoshu Cui, Qiong Li, Jiqiang Liu, Wenjia Niu</span><br>
+    <span class="paper-venue">Symmetry 16, no. 10 (2024): 1262 <span class="paper-tags">[SCI中科院3区]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">KSEM-24a</span>
+    <span class="paper-title">Lurking in the shadows: Imperceptible shadow black-box attacks against lane detection models</span><br>
+    <span class="paper-authors">Xiaoshu Cui, Yalun Wu, Yanfeng Gu, Qiong Li, Endong Tong, Jiqiang Liu, Wenjia Niu</span><br>
+    <span class="paper-venue">KSEM 2024, pp. 220-232 <span class="paper-tags">[CCF-C会议]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">KSEM-24b</span>
+    <span class="paper-title">Knowledge-Driven Backdoor Removal in Deep Neural Networks via Reinforcement Learning</span><br>
+    <span class="paper-authors">Jiayin Song, Yike Li, Yunzhe Tian, Xingyu Wu, Qiong Li, Endong Tong, Wenjia Niu, Zhenguo Zhang, Jiqiang Liu</span><br>
+    <span class="paper-venue">KSEM 2024, pp. 336-348 <span class="paper-tags">[CCF-C会议]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">TAI-22</span>
+    <span class="paper-title">A Mutual Information-based Assessment of Reverse Engineering on Rewards of Reinforcement Learning</span><br>
+    <span class="paper-authors">Tong Chen, Jiqiang Liu, Baker Thar, Yalun Wu, Yingxiao Xiang, Yike Li, Wenjia Niu, Endong Tong</span><br>
+    <span class="paper-venue">IEEE Trans. on Artificial Intelligence, 2022 <span class="paper-tags">[IEEE Trans]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">HPCC-21</span>
+    <span class="paper-title">Blockchain-based decentralized federated learning: A secure and privacy-preserving system</span><br>
+    <span class="paper-authors">Shuang Zhao, Yalun Wu, Rui Sun, Xiaoai Qian, Dong Zi, Zhiqiang Xie, Endong Tong, Wenjia Niu, Jiqiang Liu, Zhen Han</span><br>
+    <span class="paper-venue">HPCC/DSS/SmartCity/DependSys, IEEE, 2021: 941-948 <span class="paper-tags">[CCF-C会议]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">ICA3PP-21</span>
+    <span class="paper-title">Security Analysis of Poisoning Attacks Against Multi-agent Reinforcement Learning</span><br>
+    <span class="paper-authors">Zhiqiang Xie, Yingxiao Xiang, Yike Li, Shuang Zhao, Endong Tong, Wenjia Niu, Jiqiang Liu, Jian Wang</span><br>
+    <span class="paper-venue">ICA3PP, Springer, 2021: 660-675 <span class="paper-tags">[CCF-C会议]</span></span>
+  </li>
+  <li class="papers-item">
+    <span class="paper-badge">ICICS-21</span>
+    <span class="paper-title">Improving Convolutional Neural Network-Based Webshell Detection Through Reinforcement Learning</span><br>
+    <span class="paper-authors">Yalun Wu, Minglu Song, Yike Li, Yunzhe Tian, Endong Tong, Wenjia Niu, Bowei Jia, Haixiang Huang, Qiong Li, Jiqiang Liu</span><br>
+    <span class="paper-venue">ICICS (1) 2021: 368-383 <span class="paper-tags">[CCF-C会议]</span></span>
+  </li>
+</ul>
+
+<div class="text-center mt-3">
+  <a href="/papers/" class="card-link">查看全部论文 →</a>
+</div>
+
+<!-- ========== 团队成员 ========== -->
+<h2 class="section-title">🧑‍🏫 团队成员</h2>
+
+<h3 class="subsection-title">指导教师</h3>
+<div class="team-list">
+  <div class="team-list-item">
+    <img src="/images/hanzhen.jpg" alt="韩臻" class="team-photo">
+    <div class="team-list-info">
+      <div class="team-list-name">韩臻 <span class="team-list-role">教授, 博导</span></div>
+      <div class="team-list-detail">招生专业: 083900网络空间安全 085405软件工程 085412网络与信息安全</div>
+      <a href="https://faculty.bjtu.edu.cn/5608/" target="_blank" class="card-link">>> 点击查看个人主页</a>
+    </div>
+  </div>
+  <div class="team-list-item">
+    <img src="/images/liujiqiang.jpg" alt="刘吉强" class="team-photo">
+    <div class="team-list-info">
+      <div class="team-list-name">刘吉强 <span class="team-list-role">教授, 博导</span></div>
+      <div class="team-list-detail">招生专业: 083900网络空间安全 085405软件工程 085410人工智能 085412网络与信息安全</div>
+      <a href="https://faculty.bjtu.edu.cn/6279/" target="_blank" class="card-link">>> 点击查看个人主页</a>
+    </div>
+  </div>
+  <div class="team-list-item">
+    <img src="/images/niuwenjia.jpg" alt="牛温佳" class="team-photo">
+    <div class="team-list-info">
+      <div class="team-list-name">牛温佳 <span class="team-list-role">教授, 博导</span></div>
+      <div class="team-list-detail">招生专业: 083900网络空间安全 085405软件工程 085410人工智能 085412网络与信息安全</div>
+      <a href="http://faculty.bjtu.edu.cn/9120/" target="_blank" class="card-link">>> 点击查看个人主页</a>
+    </div>
+  </div>
+  <div class="team-list-item">
+    <img src="/images/liqiang.png" alt="李强" class="team-photo">
+    <div class="team-list-info">
+      <div class="team-list-name">李强 <span class="team-list-role">副教授, 博导</span></div>
+      <div class="team-list-detail">招生专业: 083900网络空间安全 085405软件工程 085410人工智能 085412网络与信息安全</div>
+      <a href="https://faculty.bjtu.edu.cn/8906/" target="_blank" class="card-link">>> 点击查看个人主页</a>
+    </div>
+  </div>
+  <div class="team-list-item">
+    <img src="/images/wangnan.jpg" alt="王楠" class="team-photo">
+    <div class="team-list-info">
+      <div class="team-list-name">王楠 <span class="team-list-role">副教授, 博导</span></div>
+      <div class="team-list-detail">招生专业: 083900网络空间安全 085405软件工程 085410人工智能 085412网络与信息安全</div>
+      <a href="https://faculty.bjtu.edu.cn/9778/" target="_blank" class="card-link">>> 点击查看个人主页</a>
+    </div>
+  </div>
+  <div class="team-list-item">
+    <img src="/images/liyike.jpg" alt="李轶珂" class="team-photo">
+    <div class="team-list-info">
+      <div class="team-list-name">李轶珂 <span class="team-list-role">博士后</span></div>
+      <div class="team-list-detail">实验室博士后研究员</div>
+      <a href="https://li-yike.github.io" target="_blank" class="card-link">>> 点击查看个人主页</a>
+    </div>
+  </div>
+</div>
+
+<h3 class="subsection-title">在读博士生</h3>
+<ul class="team-bullet-list">
+  <li><strong>2025级：</strong>赵鑫怡（詹天佑学院3+5本博一体化培养）、程殿景</li>
+  <li><strong>2024级：</strong>齐胜（与国铁信息中心联合培养）、史翔宇</li>
+  <li><strong>2023级：</strong>武兴宇、陈渊婉（与国铁集团联合培养）、李琼</li>
+  <li><strong>2022级：</strong>田蕴哲、姚洪磊（与铁科院联合培养）、吴亚伦</li>
+</ul>
+
+<h3 class="subsection-title">在读硕士生</h3>
+<ul class="team-bullet-list">
+  <li><strong>2026级：</strong>陈周涵</li>
+  <li><strong>2025级：</strong>孙佳露、李林哲、马博昌、郭企伦、滕文静、付乐宇</li>
+  <li><strong>2023级：</strong>古砚锋、崔晓澍、贾敬淇、叶平、宋佳茵</li>
+</ul>
+
+<div class="text-center mt-3">
+  <a href="/team/" class="card-link">查看完整团队成员列表 →</a>
+</div>
+
+<!-- ========== 联系我们 ========== -->
+<h2 class="section-title">📮 联系我们</h2>
+
+<div class="contact-section">
+  <p><strong>地址：</strong>北京市海淀区上园村3号北京交通大学机械工程楼</p>
+  <p><strong>联系方式：</strong>请准备<strong>个人简历</strong>[pdf格式]+<strong>自荐信</strong>[若有其他获奖材料可附件]，发送至实验室负责人邮箱：<a href="mailto:niuwj@bjtu.edu.cn" class="contact-email">niuwj@bjtu.edu.cn</a> [牛老师]，实验室会尽快组织安排面试。实验室期待你的加入！</p>
 </div>
 
 <script>
