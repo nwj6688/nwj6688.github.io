@@ -19,7 +19,7 @@
               {% if page.tags %}
               <span class="post-tags">
                 {% for tag in page.tags %}
-                <a href="/blog/tags/#{{ tag | slugify }}" class="badge badge-tag">{{ tag }}</a>
+                <a href="/blog/tags/#{{ tag | uri_escape }}" class="badge badge-tag">{{ tag }}</a>
                 {% endfor %}
               </span>
               {% endif %}
