@@ -182,10 +182,10 @@ p { margin: 0 0 var(--spacing-md) 0; }
 }
 
 .navbar-nav .nav-link a {
-  color: #cccccc;
+  color: #e0e0e0;
   font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.5px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   padding: 4px 12px;
   border-radius: var(--radius-sm);
