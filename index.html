@@ -1,0 +1,131 @@
+---
+layout: default
+title: 首页
+---
+
+<div class="hero-section">
+  <div class="container">
+    <h1>北京交通大学人工智能安全实验室</h1>
+    <p>THETA Lab, Thorough Evaluation on Threats of AI<br>
+    网络空间安全学院 · 北京交通大学</p>
+  </div>
+</div>
+
+<div class="feature-section">
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🎯</div>
+      <div class="feature-title">研究方向</div>
+      <div class="feature-desc">
+        强化学习应用与安全、自动驾驶与车联网安全、大模型应用与安全、人工智能应用与安全、知识图谱应用与安全、智能交通系统安全、图表示学习与威胁评估
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">👥</div>
+      <div class="feature-title">团队规模</div>
+      <div class="feature-desc">
+        指导教师6人，博士后1人，在读研究生20余人，已毕业学生50余人
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔬</div>
+      <div class="feature-title">实验设备</div>
+      <div class="feature-desc">
+        百度无人驾驶汽车、机械臂、高性能GPU服务器、人体工学座椅、23.8/27寸高清显示器、多功能可旋转机械支架等
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎓</div>
+      <div class="feature-title">毕业去向</div>
+      <div class="feature-desc">
+        北京住建委、国家互联网应急中心、国铁信息中心、铁科院、中科院、阿里、字节、百度、京东、美团、IBM、微软、蚂蚁金服等
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🏆</div>
+      <div class="feature-title">竞赛成果</div>
+      <div class="feature-desc">
+        DEF CON自动驾驶CTF全球挑战赛亚军、"六出祁山"战队、创安杯智能汽车信息安全公开赛创安奖、国家重大网络安全试验感谢信
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📰</div>
+      <div class="feature-title">依托平台</div>
+      <div class="feature-desc">
+        智能交通数据安全与隐私保护技术北京市重点实验室、人工智能安全研究中心
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-title">新闻动态</div>
+
+<div class="toolbar">
+  <label>筛选年份：</label>
+  <a href="#all" class="btn-year active" data-year="all">全部</a>
+  <a href="#2026" class="btn-year" data-year="2026">2026</a>
+  <a href="#2025" class="btn-year" data-year="2025">2025</a>
+  <a href="#2024" class="btn-year" data-year="2024">2024</a>
+  <a href="#2023" class="btn-year" data-year="2023">2023</a>
+  <a href="#2022" class="btn-year" data-year="2022">2022</a>
+  <a href="#2021" class="btn-year" data-year="2021">2021</a>
+  <a href="#2020" class="btn-year" data-year="2020">2020</a>
+</div>
+
+<ul class="news-list">
+  {% assign site_news = site.news | sort: "date" | reverse %}
+
+  {% if site_news.size > 0 %}
+    {% for item in site_news limit: 15 %}
+    <li class="news-item" data-year="{{ item.date | date: '%Y' }}">
+      <span class="news-date">{{ item.date | date: "%Y/%m" }}</span>
+      <div class="news-content">
+        {% if item.sticky %}<span class="news-badge sticky">置顶</span>{% endif %}
+        <a href="{{ item.url }}">{{ item.title }}</a>
+        {% if item.external_url %}
+        <a href="{{ item.external_url }}" target="_blank" class="card-link">[链接]</a>
+        {% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  {% else %}
+    {% assign all_news = site.data.news_items | sort: "date" | reverse %}
+    {% for item in all_news limit: 15 %}
+    <li class="news-item" data-year="{{ item.date | slice: 0, 4 }}">
+      <span class="news-date">{{ item.date | slice: 0, 7 }}</span>
+      <div class="news-content">
+        {% if item.sticky %}<span class="news-badge sticky">置顶</span>{% endif %}
+        {% if item.url %}
+          <a href="{{ item.url }}">{{ item.title }}</a>
+        {% else %}
+          {{ item.title }}
+        {% endif %}
+        {% if item.external_url %}
+        <a href="{{ item.external_url }}" target="_blank" class="card-link">[链接]</a>
+        {% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  {% endif %}
+</ul>
+
+<div class="text-center mt-3">
+  <a href="/news/" class="card-link">查看全部新闻 →</a>
+</div>
+
+<script>
+$(function() {
+  $('.btn-year').click(function(e) {
+    e.preventDefault();
+    var year = $(this).data('year');
+    $('.btn-year').removeClass('active');
+    $(this).addClass('active');
+    if (year === 'all') {
+      $('.news-item').show();
+    } else {
+      $('.news-item').hide();
+      $('.news-item[data-year="' + year + '"]').show();
+    }
+  });
+});
+</script>

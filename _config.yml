@@ -1,0 +1,68 @@
+# 站点设置
+title: 北京交通大学人工智能安全实验室
+email: niuwj@bjtu.edu.cn
+description: >-
+  THETA Lab - Thorough Evaluation on Threats of AI
+  北京交通大学网络空间安全学院 · 人工智能安全实验室
+baseurl: ""
+url: "https://nwj6688.github.io"
+twitter_username: ""
+github_username: "nwj6688"
+encoding: utf-8
+lang: zh-CN
+
+# 构建设置
+markdown: kramdown
+highlighter: rouge
+theme: null
+
+# 插件
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# 排除文件
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .gitignore
+
+# 集合
+collections:
+  news:
+    output: true
+    permalink: /news/:year/:month/:day/:title/
+
+# 默认设置
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "THETA Lab"
+  - scope:
+      path: ""
+      type: "news"
+    values:
+      layout: "news_item"
+
+# kramdown 配置
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  hard_wrap: false
+
+# 分页
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# Giscus 评论配置（占位符）
+giscus:
+  repo: "username/repo"
+  repo_id: ""
+  category: "Announcements"
+  category_id: ""
