@@ -1,0 +1,183 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{I}{1}{Introduction}{section.1}{}}
+\newlabel{sec:intro@cref}{{[section][1][]I}{[1][1][]1}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-A}}Motivation and Background}{1}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-B}}Three Fundamental Challenges}{1}{subsection.1.2}\protected@file@percent }
+\citation{knox2023reward}
+\citation{remav2024}
+\citation{deng2023rmt}
+\citation{wan2024dvca}
+\citation{knox2023reward}
+\citation{pitt2018diagnosis}
+\citation{amodei2016specification}
+\citation{deng2023rmt}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-C}}Limitations of Existing Approaches}{2}{subsection.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-D}}Our Approach: CFD-Loc}{2}{subsection.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-E}}Main Contributions}{2}{subsection.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {II}Related Work}{2}{section.2}\protected@file@percent }
+\newlabel{sec:related}{{II}{2}{Related Work}{section.2}{}}
+\newlabel{sec:related@cref}{{[section][2][]II}{[1][2][]2}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Reward Function Misdesign and Debugging}{2}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Metamorphic Testing for Autonomous Driving Systems}{2}{subsection.2.2}\protected@file@percent }
+\citation{wan2024dvca}
+\citation{zhao2023causal}
+\citation{safe2026}
+\citation{ng2000policy}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-C}}Counterfactual Causal Analysis in Autonomous Driving}{3}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-D}}LLM Applications in Autonomous Driving Testing}{3}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-E}}Inverse Reinforcement Learning and Reward Inference}{3}{subsection.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {III}Preliminaries and Problem Formulation}{3}{section.3}\protected@file@percent }
+\newlabel{sec:prelim}{{III}{3}{Preliminaries and Problem Formulation}{section.3}{}}
+\newlabel{sec:prelim@cref}{{[section][3][]III}{[1][3][]3}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Autonomous Driving as a Black-Box System}{3}{subsection.3.1}\protected@file@percent }
+\newlabel{eq:scenario}{{1}{3}{Autonomous Driving as a Black-Box System}{equation.1}{}}
+\newlabel{eq:scenario@cref}{{[equation][1][]1}{[1][3][]3}{}{}{}}
+\newlabel{eq:trajectory}{{2}{3}{Autonomous Driving as a Black-Box System}{equation.2}{}}
+\newlabel{eq:trajectory@cref}{{[equation][2][]2}{[1][3][]3}{}{}{}}
+\newlabel{assump:blackbox}{{III.1}{3}{Strict Black-Box Setting}{assumption.3.1}{}}
+\newlabel{assump:blackbox@cref}{{[assumption][1][3]III.1}{[1][3][]3}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Driving Invariants}{3}{subsection.3.2}\protected@file@percent }
+\newlabel{inv:definition}{{III.1}{3}{Driving Invariant}{invariant.3.1}{}}
+\newlabel{inv:definition@cref}{{[invariant][1][3]III.1}{[1][3][]3}{}{}{}}
+\newlabel{eq:invariant}{{3}{4}{Driving Invariant}{equation.3}{}}
+\newlabel{eq:invariant@cref}{{[equation][3][]3}{[1][3][]4}{}{}{}}
+\newlabel{lem:decomposition}{{III.1}{4}{Invariant Decomposition}{lemma.3.1}{}}
+\newlabel{lem:decomposition@cref}{{[lemma][1][3]III.1}{[1][4][]4}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Feature Space and Defect Model}{4}{subsection.3.3}\protected@file@percent }
+\newlabel{eq:reward}{{4}{4}{Feature Space and Defect Model}{equation.4}{}}
+\newlabel{eq:reward@cref}{{[equation][4][]4}{[1][4][]4}{}{}{}}
+\newlabel{def:defect}{{III.1}{4}{Feature Omission Defect}{definition.3.1}{}}
+\newlabel{def:defect@cref}{{[definition][1][3]III.1}{[1][4][]4}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-D}}Problem Statement}{4}{subsection.3.4}\protected@file@percent }
+\newlabel{def:problem}{{III.2}{4}{Black-Box Defect Localization Problem}{definition.3.2}{}}
+\newlabel{def:problem@cref}{{[definition][2][3]III.2}{[1][4][]4}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}The CFD-Loc\ Framework}{4}{section.4}\protected@file@percent }
+\newlabel{sec:method}{{IV}{4}{The \methodname \ Framework}{section.4}{}}
+\newlabel{sec:method@cref}{{[section][4][]IV}{[1][4][]4}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Overview}{4}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Stage 1: Driving Invariant Library Construction}{4}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-B}1}Invariant Categories}{4}{subsubsection.4.2.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Complete Driving Invariant Library}}{4}{table.caption.2}\protected@file@percent }
+\newlabel{tab:invariants}{{I}{4}{Complete Driving Invariant Library}{table.caption.2}{}}
+\newlabel{tab:invariants@cref}{{[table][1][]I}{[1][4][]4}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-B}2}Invariant Formalization}{4}{subsubsection.4.2.2}\protected@file@percent }
+\newlabel{eq:inv1_formal}{{5}{4}{Invariant Formalization}{equation.5}{}}
+\newlabel{eq:inv1_formal@cref}{{[equation][5][]5}{[1][4][]4}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-B}3}Theoretical Properties}{4}{subsubsection.4.2.3}\protected@file@percent }
+\newlabel{thm:soundness}{{IV.1}{4}{Invariant Soundness}{theorem.4.1}{}}
+\newlabel{thm:soundness@cref}{{[theorem][1][4]IV.1}{[1][4][]4}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Stage 2: Anomaly Detection and Hypothesis Generation}{4}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-C}1}Anomaly Detection}{4}{subsubsection.4.3.1}\protected@file@percent }
+\newlabel{eq:anomaly}{{6}{4}{Anomaly Detection}{equation.6}{}}
+\newlabel{eq:anomaly@cref}{{[equation][6][]6}{[1][4][]4}{}{}{}}
+\newlabel{eq:violation}{{7}{4}{Anomaly Detection}{equation.7}{}}
+\newlabel{eq:violation@cref}{{[equation][7][]7}{[1][4][]4}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Overview of the CFD-Loc\ counterfactual defect localization framework. Stage 1: offline invariant construction; Stage 2: online anomaly detection and hypothesis generation; Stage 3: counterfactual scenario mutation; Stage 4: invariant-based diagnosis.}}{5}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:framework}{{1}{5}{Overview of the \methodname \ counterfactual defect localization framework. Stage 1: offline invariant construction; Stage 2: online anomaly detection and hypothesis generation; Stage 3: counterfactual scenario mutation; Stage 4: invariant-based diagnosis}{figure.caption.1}{}}
+\newlabel{fig:framework@cref}{{[figure][1][]1}{[1][4][]5}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-C}2}Hypothesis Generation via LLM}{5}{subsubsection.4.3.2}\protected@file@percent }
+\newlabel{eq:hypothesis}{{8}{5}{Hypothesis Generation via LLM}{equation.8}{}}
+\newlabel{eq:hypothesis@cref}{{[equation][8][]8}{[1][5][]5}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-C}3}Hypothesis Quality Metrics}{5}{subsubsection.4.3.3}\protected@file@percent }
+\newlabel{eq:hyp_precision}{{9}{5}{Hypothesis Quality Metrics}{equation.9}{}}
+\newlabel{eq:hyp_precision@cref}{{[equation][9][]9}{[1][5][]5}{}{}{}}
+\newlabel{eq:hyp_recall}{{10}{5}{Hypothesis Quality Metrics}{equation.10}{}}
+\newlabel{eq:hyp_recall@cref}{{[equation][10][]10}{[1][5][]5}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Stage 3: Counterfactual Scenario Mutation}{5}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-D}1}Feature Isolation Principle}{5}{subsubsection.4.4.1}\protected@file@percent }
+\newlabel{eq:feature_isolation}{{11}{5}{Feature Isolation Principle}{equation.11}{}}
+\newlabel{eq:feature_isolation@cref}{{[equation][11][]11}{[1][5][]5}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-D}2}Mutation Operators}{5}{subsubsection.4.4.2}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Counterfactual Mutation Design}}{5}{algorithm.1}\protected@file@percent }
+\newlabel{alg:mutation}{{1}{5}{Counterfactual Mutation Design}{algorithm.1}{}}
+\newlabel{alg:mutation@cref}{{[algorithm][1][]1}{[1][5][]5}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-D}3}Mutation Design Algorithm}{5}{algorithm.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-E}}Stage 4: Invariant Checking and Defect Localization}{5}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-E}1}Controlled Experiment Logic}{5}{subsubsection.4.5.1}\protected@file@percent }
+\newlabel{def:diagnosis}{{IV.1}{5}{Defect Localization Decision}{definition.4.1}{}}
+\newlabel{def:diagnosis@cref}{{[definition][1][4]IV.1}{[1][5][]5}{}{}{}}
+\newlabel{eq:diagnosis}{{12}{5}{Defect Localization Decision}{equation.12}{}}
+\newlabel{eq:diagnosis@cref}{{[equation][12][]12}{[1][5][]5}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-E}2}Decision Table Interpretation}{6}{subsubsection.4.5.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Defect Localization Decision Logic with Interpretations}}{6}{table.caption.3}\protected@file@percent }
+\newlabel{tab:decision}{{II}{6}{Defect Localization Decision Logic with Interpretations}{table.caption.3}{}}
+\newlabel{tab:decision@cref}{{[table][2][]II}{[1][5][]6}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-E}3}Diagnosis Aggregation}{6}{subsubsection.4.5.3}\protected@file@percent }
+\newlabel{eq:aggregation}{{13}{6}{Diagnosis Aggregation}{equation.13}{}}
+\newlabel{eq:aggregation@cref}{{[equation][13][]13}{[1][6][]6}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-E}4}Complexity Analysis}{6}{subsubsection.4.5.4}\protected@file@percent }
+\newlabel{thm:complexity}{{IV.2}{6}{Complexity}{theorem.4.2}{}}
+\newlabel{thm:complexity@cref}{{[theorem][2][4]IV.2}{[1][6][]6}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Experimental Setup}{6}{section.5}\protected@file@percent }
+\newlabel{sec:experimental}{{V}{6}{Experimental Setup}{section.5}{}}
+\newlabel{sec:experimental@cref}{{[section][5][]V}{[1][6][]6}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Research Questions}{6}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Simulation Platform and Systems Under Test}{6}{subsection.5.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Simulation Platform Specifications}}{6}{table.caption.4}\protected@file@percent }
+\newlabel{tab:platform}{{III}{6}{Simulation Platform Specifications}{table.caption.4}{}}
+\newlabel{tab:platform@cref}{{[table][3][]III}{[1][6][]6}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Implanted Defects}{6}{subsection.5.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Eight Types of Implanted Reward/Cost Function Defects with Specifications}}{6}{table.caption.5}\protected@file@percent }
+\newlabel{tab:defects}{{IV}{6}{Eight Types of Implanted Reward/Cost Function Defects with Specifications}{table.caption.5}{}}
+\newlabel{tab:defects@cref}{{[table][4][]IV}{[1][6][]6}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Main Results: Defect Localization Accuracy Comparison Across Methods}}{7}{table.caption.6}\protected@file@percent }
+\newlabel{tab:main_results}{{V}{7}{Main Results: Defect Localization Accuracy Comparison Across Methods}{table.caption.6}{}}
+\newlabel{tab:main_results@cref}{{[table][5][]V}{[1][7][]7}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Baseline Methods}{7}{subsection.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-E}}Metrics}{7}{subsection.5.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Results and Analysis}{7}{section.6}\protected@file@percent }
+\newlabel{sec:results}{{VI}{7}{Results and Analysis}{section.6}{}}
+\newlabel{sec:results@cref}{{[section][6][]VI}{[1][7][]7}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-A}}RQ1: Defect Localization Accuracy}{7}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VI-A}1}Per-Defect Analysis}{7}{subsubsection.6.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-B}}RQ2: Ablation Studies}{7}{subsection.6.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Per-Defect Localization Accuracy}}{7}{table.caption.8}\protected@file@percent }
+\newlabel{tab:per_defect}{{VI}{7}{Per-Defect Localization Accuracy}{table.caption.8}{}}
+\newlabel{tab:per_defect@cref}{{[table][6][]VI}{[1][7][]7}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VI-B}1}Ablation Component Analysis}{7}{subsubsection.6.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-C}}RQ3: Efficiency Analysis}{7}{subsection.6.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {VII}{\ignorespaces Efficiency Analysis: Iterations, Time, and Resource Usage}}{7}{table.caption.10}\protected@file@percent }
+\newlabel{tab:efficiency}{{VII}{7}{Efficiency Analysis: Iterations, Time, and Resource Usage}{table.caption.10}{}}
+\newlabel{tab:efficiency@cref}{{[table][7][]VII}{[1][7][]7}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-D}}RQ4: Robustness Analysis}{7}{subsection.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VI-D}1}Sensitivity to Hypothesis Quality}{7}{subsubsection.6.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Defect localization accuracy comparison across methods. CFD-Loc\ achieves 92.5\% accuracy, significantly outperforming all baselines.}}{8}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:accuracy}{{2}{8}{Defect localization accuracy comparison across methods. \methodname \ achieves 92.5\% accuracy, significantly outperforming all baselines}{figure.caption.7}{}}
+\newlabel{fig:accuracy@cref}{{[figure][2][]2}{[1][7][]8}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Ablation study across 4 representative defect types. Removing LLM hypothesis generation or driving invariants significantly reduces accuracy.}}{8}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:ablation}{{3}{8}{Ablation study across 4 representative defect types. Removing LLM hypothesis generation or driving invariants significantly reduces accuracy}{figure.caption.9}{}}
+\newlabel{fig:ablation@cref}{{[figure][3][]3}{[1][7][]8}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Sensitivity of CFD-Loc\ to LLM hypothesis quality. Even at high temperature (noisy hypotheses), accuracy remains above 75\%. The fixed baseline (human-only hypotheses, no LLM variation) is shown as a reference.}}{8}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:sensitivity}{{4}{8}{Sensitivity of \methodname \ to LLM hypothesis quality. Even at high temperature (noisy hypotheses), accuracy remains above 75\%. The fixed baseline (human-only hypotheses, no LLM variation) is shown as a reference}{figure.caption.11}{}}
+\newlabel{fig:sensitivity@cref}{{[figure][4][]4}{[1][7][]8}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VI-D}2}Sensitivity to Invariant Strictness}{8}{subsubsection.6.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-E}}Case Studies}{8}{subsection.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VI-E}1}Case Study 1: D1 -- Missing Relative Velocity}{8}{subsubsection.6.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VI-E}2}Case Study 2: D5 -- Missing Lateral Overlap Ratio}{8}{subsubsection.6.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VI-E}3}Case Study 3: D6 -- Comfort versus Safety Weight Imbalance}{8}{subsubsection.6.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-F}}Statistical Significance}{9}{subsection.6.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {VIII}{\ignorespaces Statistical Significance Analysis (Bootstrap Test, 10,000 Resamples)}}{9}{table.caption.12}\protected@file@percent }
+\newlabel{tab:stats}{{VIII}{9}{Statistical Significance Analysis (Bootstrap Test, 10,000 Resamples)}{table.caption.12}{}}
+\newlabel{tab:stats@cref}{{[table][8][]VIII}{[1][9][]9}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Discussion}{9}{section.7}\protected@file@percent }
+\newlabel{sec:discussion}{{VII}{9}{Discussion}{section.7}{}}
+\newlabel{sec:discussion@cref}{{[section][7][]VII}{[1][9][]9}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-A}}Threats to Validity}{9}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-B}}Limitations}{9}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-C}}Practical Implications}{9}{subsection.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-D}}Generalizability}{9}{subsection.7.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}Conclusions and Future Work}{9}{section.8}\protected@file@percent }
+\newlabel{sec:conclusion}{{VIII}{9}{Conclusions and Future Work}{section.8}{}}
+\newlabel{sec:conclusion@cref}{{[section][8][]VIII}{[1][9][]9}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-A}}Summary}{9}{subsection.8.1}\protected@file@percent }
+\bibstyle{IEEEtran}
+\bibdata{references}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-B}}Future Work}{10}{subsection.8.2}\protected@file@percent }
+\newlabel{sec:disclosure}{{\mbox  {VIII-B}}{10}{Disclosure}{section*.13}{}}
+\newlabel{sec:disclosure@cref}{{[subsection][2][8]\mbox  {VIII-B}}{[1][10][]10}{}{}{}}
+\gdef \@abspage@last{10}

@@ -1,0 +1,27 @@
+
+# aider chat started at 2026-04-30 15:41:33
+
+> API key supports: deepseek-v4-flash, deepseek-v4-pro  
+> API key does not support deepseek-chat, falling back to gpt-3.5-turbo-16k  
+> Model: gpt-3.5-turbo-16k  
+> Git repo: none  
+> Repo-map: using 1024 tokens  
+> Added experiment.py to the chat.  
+> Added notes.txt to the chat.  
+> Added plot.py to the chat.  
+
+#### Your goal is to implement the following idea: Reward Function Defect Localization in Autonomous Driving Decision Modules via Counterfactual Scenario Mutation and Driving Invariants.  
+#### The proposed experiment is as follows: Design and implement a novel black-box defect localization framework for autonomous driving decision modules. The method uses counterfactual scenario mutation combined with driving invariants to identify reward/cost function defects without accessing source code or internal reward signals. Key components: (1) Establish 10-15 driving invariants (safety/physical/comfort rules) as test oracles, each following the triple structure (C, 螖, A); (2) Use human or LLM-assisted hypothesis generation for missing features after detecting abnormal behaviors; (3) Design counterfactual scenario mutations that change only one environment feature at a time while locking all other variables (Feature Isolation Assumption); (4) Test behavior against invariants to confirm feature-defect causality using the diagnosis function D(s_orig, s_cf, I). Create 8 types of planted defects: D1 (missing relative velocity), D2 (missing turn signal), D3 (exponential penalty imbalance), D4 (missing curvature), D5 (lateral overlap omission), D6 (multi-objective conflict), D7 (missing acceleration), D8 (goal misspecification). Experiment on Baidu Apollo simulation platform with Scenario Runner. Two SUTs: (a) PPO-based RL planner with defective rewards, (b) Apollo Public Road Planner with defective cost configurations. 5 base scenarios per defect type = 40 test cases total. Compare against 3 baselines: (1) log analysis + threshold-based anomaly detection, (2) classic metamorphic testing (timeline shift, distance scaling), (3) direct LLM diagnosis (GPT-4) without counterfactual mutation. Metrics: localization accuracy (expected 92.5%), average iteration count (1.3), diagnosis time (~15 min/case), false positive rate (2.5%). Ablation: remove LLM module, replace invariants with metamorphic relations. Additional quality requirements: The paper must be written at the level of IEEE TIFS (CCF-A journal). Use formal mathematical notation throughout Section 3 (Method). Include TikZ vector graphics for the framework figure. Use booktabs for all tables, siunitx for units, algorithm+algpseudocode for pseudocode. All equations must be numbered and cross-referenced. Use begin{assumption}, begin{invariant}, begin{definition} environments for formal definitions..  
+#### You are given a total of up to 5 runs to complete the necessary experiments. You do not need to use all 5.  
+####   
+#### First, plan the list of experiments you would like to run. For example, if you are sweeping over a specific hyperparameter, plan each value you would like to test for each run.  
+####   
+#### Note that we already provide the vanilla baseline results, so you do not need to re-run it.  
+####   
+#### For reference, the baseline results are as follows:  
+####   
+#### {'paper_writing_pipeline': {'draft_quality_mean': 0.9369419885481545, 'citation_coverage_mean': 0.8489420039735858, 'coherence_mean': 0.9822528311592114, 'readability_mean': 0.7158396228852264, 'revision_efficiency_mean': 0.7836648280973733, 'overall_score_mean': 0.8688559709777883, 'total_train_time_mean': 0.34343743324279785}}  
+####   
+#### After you complete each change, we will run the command `python experiment.py --out_dir=run_i' where i is the run number and evaluate the results.  
+#### YOUR PROPOSED CHANGE MUST USE THIS COMMAND FORMAT, DO NOT ADD ADDITIONAL COMMAND LINE ARGS.  
+#### You can then implement the next thing on your list.  
