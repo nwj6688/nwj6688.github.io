@@ -125,11 +125,12 @@ img {
 
 /* --- 团队成员照片 - 统一尺寸 --- */
 .team-photo {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
+  width: 120px !important;
+  height: 120px !important;
+  object-fit: cover !important;
   border-radius: 50%;
   flex-shrink: 0;
+  max-width: none !important;
 }
 
 /* --- 团队成员卡片网格 --- */
