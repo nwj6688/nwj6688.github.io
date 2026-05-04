@@ -8,12 +8,11 @@ title: 技术博客
 <div class="toolbar">
   <label>标签筛选：</label>
   <a href="#all" class="btn-year active" data-tag="all">全部</a>
-  <a href="#Jekyll" class="btn-year" data-tag="Jekyll">Jekyll</a>
-  <a href="#GitHub-Pages" class="btn-year" data-tag="GitHub-Pages">GitHub Pages</a>
   <a href="#AI" class="btn-year" data-tag="AI">AI</a>
-  <a href="#安全" class="btn-year" data-tag="安全">安全</a>
-  <a href="#强化学习" class="btn-year" data-tag="强化学习">强化学习</a>
-  <a href="#自动驾驶" class="btn-year" data-tag="自动驾驶">自动驾驶</a>
+  <a href="#网络空间安全" class="btn-year" data-tag="网络空间安全">网络空间安全</a>
+  <a href="#深度学习与强化学习" class="btn-year" data-tag="深度学习与强化学习">深度学习与强化学习</a>
+  <a href="#量子类脑计算" class="btn-year" data-tag="量子类脑计算">量子类脑计算</a>
+  <a href="#智能驾驶安全" class="btn-year" data-tag="智能驾驶安全">智能驾驶安全</a>
 </div>
 
 <ul class="blog-list">
@@ -23,7 +22,11 @@ title: 技术博客
     <div class="blog-title">
       <a href="{{ post.url }}">{{ post.title }}</a>
     </div>
-    <div class="blog-meta">{{ post.date | date: "%Y-%m-%d" }}</div>
+    <div class="blog-meta">
+      {{ post.date | date: "%Y-%m-%d" }}
+      {% if post.author %} · 作者: {{ post.author }}{% endif %}
+      {% if post.reviewer %} · 审核: {{ post.reviewer }}{% endif %}
+    </div>
     {% if post.excerpt %}
     <div class="blog-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</div>
     {% endif %}

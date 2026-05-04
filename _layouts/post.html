@@ -16,6 +16,12 @@
               <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
                 {{ page.date | date: "%Y-%m-%d" }}
               </time>
+              {% if page.author %}
+              <span class="post-author"> · 作者: {{ page.author }}</span>
+              {% endif %}
+              {% if page.reviewer %}
+              <span class="post-reviewer"> · 审核: {{ page.reviewer }}</span>
+              {% endif %}
               {% if page.tags %}
               <span class="post-tags">
                 {% for tag in page.tags %}
