@@ -4,7 +4,7 @@ title: 新闻动态
 ---
 
 <div class="toolbar">
-  <label>筛选年份：</label>
+  <label>📅 筛选：</label>
   <a href="#all" class="btn-year active" data-year="all">全部</a>
   <a href="#2026" class="btn-year" data-year="2026">2026</a>
   <a href="#2025" class="btn-year" data-year="2025">2025</a>
@@ -15,23 +15,34 @@ title: 新闻动态
   <a href="#2020" class="btn-year" data-year="2020">2020</a>
 </div>
 
-<ul class="news-list">
+<div class="news-timeline">
   {% assign all_news = site.data.news_items | sort: "date" | reverse %}
   {% for item in all_news %}
-  <li class="news-item" data-year="{{ item.date | date: '%Y' }}">
-    <span class="news-date">{{ item.date | date: "%Y/%m" }}</span>
-    <div class="news-content">
-      {% if item.sticky %}<span class="news-badge sticky">置顶</span>{% endif %}
+  <div class="news-card" data-year="{{ item.date | slice: 0, 4 }}">
+    <div class="news-dot"></div>
+    <div class="news-body">
+      <span class="news-tag">[{{ item.date | slice: 0, 7 }}]</span>
+      {% assign title_lower = item.title | downcase %}
+      {% if title_lower contains "喜报" %}
+        <span class="news-tag">🎉 喜报</span>
+      {% elsif title_lower contains "祝贺" %}
+        <span class="news-tag">🏆 祝贺</span>
+      {% elsif title_lower contains "交流" %}
+        <span class="news-tag">🤝 交流</span>
+      {% endif %}
+      {% if item.sticky %}
+        <span class="news-tag">📌 置顶</span>
+      {% endif %}
+      <span class="news-title">{{ item.title }}</span>
       {% if item.external_url %}
-        {{ item.title }}
-        <a href="{{ item.external_url }}" target="_blank" class="card-link">[链接]</a>
-      {% else %}
-        {{ item.title }}
+      <a href="{{ item.external_url }}" target="_blank" class="news-link-icon" title="查看详情">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
       {% endif %}
     </div>
-  </li>
+  </div>
   {% endfor %}
-</ul>
+</div>
 
 <script>
 $(function() {
@@ -41,10 +52,10 @@ $(function() {
     $('.btn-year').removeClass('active');
     $(this).addClass('active');
     if (year === 'all') {
-      $('.news-item').show();
+      $('.news-card').show();
     } else {
-      $('.news-item').hide();
-      $('.news-item[data-year="' + year + '"]').show();
+      $('.news-card').hide();
+      $('.news-card[data-year="' + year + '"]').show();
     }
   });
 });
