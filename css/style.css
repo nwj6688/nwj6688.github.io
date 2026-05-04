@@ -419,19 +419,6 @@ p { margin: 0 0 var(--spacing-md) 0; }
   z-index: 1;
 }
 
-.news-date-badge {
-  flex-shrink: 0;
-  min-width: 72px;
-  padding: 4px 10px;
-  background: var(--bg-navbar);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 600;
-  border-radius: 20px;
-  text-align: center;
-  letter-spacing: 0.5px;
-  margin-top: 1px;
-}
 
 .news-body {
   flex: 1;
@@ -461,10 +448,10 @@ p { margin: 0 0 var(--spacing-md) 0; }
   white-space: nowrap;
 }
 
-.tag-success, .tag-primary, .tag-info, .tag-sticky {
-  background: linear-gradient(135deg, #e74c3c, #c0392b);
+.tag-success, .tag-primary, .tag-info, .tag-sticky, .tag-date {
+  background: #ff0000;
   color: #fff;
-  box-shadow: 0 2px 6px rgba(231, 76, 60, 0.3);
+  box-shadow: 0 2px 6px rgba(255, 0, 0, 0.3);
 }
 
 /* 链接图标 */

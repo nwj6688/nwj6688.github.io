@@ -69,18 +69,18 @@ title: 首页
   {% for item in all_news %}
   <div class="news-card" data-year="{{ item.date | slice: 0, 4 }}">
     <div class="news-dot"></div>
-    <div class="news-date-badge">{{ item.date | slice: 0, 7 }}</div>
     <div class="news-body">
+      <span class="news-tag tag-date">[{{ item.date | slice: 0, 7 }}]</span>
       {% assign title_lower = item.title | downcase %}
       {% if title_lower contains "喜报" %}
-        <span class="news-tag tag-success">🎉 喜报</span>
+        <span class="news-tag">🎉 喜报</span>
       {% elsif title_lower contains "祝贺" %}
-        <span class="news-tag tag-primary">🏆 祝贺</span>
+        <span class="news-tag">🏆 祝贺</span>
       {% elsif title_lower contains "交流" %}
-        <span class="news-tag tag-info">🤝 交流</span>
+        <span class="news-tag">🤝 交流</span>
       {% endif %}
       {% if item.sticky %}
-        <span class="news-tag tag-sticky">📌 置顶</span>
+        <span class="news-tag">📌 置顶</span>
       {% endif %}
       <span class="news-title">{{ item.title }}</span>
       {% if item.external_url %}
