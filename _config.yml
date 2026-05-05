@@ -11,6 +11,9 @@ github_username: "nwj6688"
 encoding: utf-8
 lang: zh-CN
 
+# 允许显示未来日期的文章（用于发布时间精确到小时的情况）
+future: true
+
 # 构建设置
 markdown: kramdown
 highlighter: rouge
