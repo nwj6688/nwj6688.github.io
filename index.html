@@ -52,18 +52,18 @@ title: 首页
 <!-- ========== 团建风采 ========== -->
 <h2 class="section-title">🎯 团建风采</h2>
 
-<div class="row gallery-grid">
-  {% for item in site.data.gallery %}
-  <div class="col-md-4 col-sm-6 col-6 mb-3">
+<div class="gallery-wrap">
+  <button class="gallery-btn gallery-prev">‹</button>
+  <div class="gallery-scroll" id="galleryScroll">
+    {% for item in site.data.gallery %}
     <a href="{{ item.image }}" class="gallery-item" title="{{ item.caption }}">
-      <img src="{{ item.image }}" alt="{{ item.caption }}" class="gallery-img">
+      <img src="{{ item.image }}" alt="" class="gallery-img">
     </a>
-    {% if item.caption %}
-    <p class="gallery-caption">{{ item.caption }}</p>
-    {% endif %}
+    {% endfor %}
   </div>
-  {% endfor %}
+  <button class="gallery-btn gallery-next">›</button>
 </div>
+<div class="gallery-counter" id="galleryCounter">1 / {{ site.data.gallery | size }}</div>
 
 <!-- ========== 新闻动态 ========== -->
 <h2 class="section-title">🔥 新闻动态</h2>
@@ -326,7 +326,64 @@ title: 首页
 <script>
 $(function() {
   // baguetteBox 灯箱
-  baguetteBox.run('.gallery-grid', { captions: true });
+  baguetteBox.run('.gallery-scroll', { captions: true });
+
+  // 团建照片 - 滚动播放
+  var $scroll = $('#galleryScroll');
+  var $counter = $('#galleryCounter');
+  var scrollTimer;
+  var autoScroll = true;
+
+  function updateCounter() {
+    var total = $scroll.children().length;
+    var w = $scroll.width();
+    var scrollLeft = $scroll.scrollLeft();
+    var idx = Math.round(scrollLeft / (220 + 8)) + 1;
+    if (idx < 1) idx = 1;
+    if (idx > total) idx = total;
+    $counter.text(idx + ' / ' + total);
+  }
+
+  function doAutoScroll() {
+    if (!autoScroll) return;
+    var maxScroll = $scroll[0].scrollWidth - $scroll.width();
+    var cur = $scroll.scrollLeft();
+    var step = 232; // 220px + 8px gap + 4px
+    var next = cur + step;
+    if (next >= maxScroll - 10) next = 0;
+    $scroll.animate({ scrollLeft: next }, 600, 'swing', updateCounter);
+  }
+
+  // 每 3 秒自动滚动
+  scrollTimer = setInterval(doAutoScroll, 3000);
+
+  // 悬停暂停
+  $scroll.on('mouseenter', function() { autoScroll = false; clearInterval(scrollTimer); });
+  $scroll.on('mouseleave', function() {
+    autoScroll = true;
+    clearInterval(scrollTimer);
+    scrollTimer = setInterval(doAutoScroll, 3000);
+  });
+
+  // 左右按钮
+  $('.gallery-prev').click(function() {
+    autoScroll = false;
+    var cur = $scroll.scrollLeft();
+    var step = 232;
+    var next = Math.max(0, cur - step);
+    $scroll.animate({ scrollLeft: next }, 400, updateCounter);
+  });
+  $('.gallery-next').click(function() {
+    autoScroll = false;
+    var cur = $scroll.scrollLeft();
+    var step = 232;
+    var maxScroll = $scroll[0].scrollWidth - $scroll.width();
+    var next = Math.min(maxScroll, cur + step);
+    $scroll.animate({ scrollLeft: next }, 400, updateCounter);
+  });
+
+  // 手动滚动时更新计数
+  $scroll.on('scroll', updateCounter);
 
   // 默认只显示 2026 年新闻
   $('.news-card').hide();
