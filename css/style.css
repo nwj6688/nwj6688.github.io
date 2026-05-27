@@ -403,7 +403,6 @@ p { margin: 0 0 var(--spacing-md) 0; }
   display: flex;
   gap: 4px;
   overflow: hidden;
-  max-height: 180px;
 }
 
 .news-image-wrap {
@@ -412,15 +411,12 @@ p { margin: 0 0 var(--spacing-md) 0; }
   overflow: hidden;
 }
 
-.news-image-wrap:only-child {
-  max-height: 220px;
-}
-
 .news-thumb {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
   display: block;
+  max-height: 320px;
+  object-fit: contain;
+  object-position: top;
   transition: transform 0.3s ease;
 }
 
