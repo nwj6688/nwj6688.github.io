@@ -5,8 +5,8 @@ title: 新闻动态
 
 <div class="toolbar">
   <label>📅 筛选：</label>
-  <a href="#all" class="btn-year active" data-year="all">全部</a>
-  <a href="#2026" class="btn-year" data-year="2026">2026</a>
+  <a href="#all" class="btn-year" data-year="all">全部</a>
+  <a href="#2026" class="btn-year active" data-year="2026">2026</a>
   <a href="#2025" class="btn-year" data-year="2025">2025</a>
   <a href="#2024" class="btn-year" data-year="2024">2024</a>
   <a href="#2023" class="btn-year" data-year="2023">2023</a>
@@ -55,6 +55,10 @@ title: 新闻动态
 
 <script>
 $(function() {
+  // 默认只显示 2026 年新闻
+  $('.news-card').hide();
+  $('.news-card[data-year="2026"]').show();
+
   $('.btn-year').click(function(e) {
     e.preventDefault();
     var year = $(this).data('year');
