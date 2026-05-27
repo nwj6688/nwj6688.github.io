@@ -338,7 +338,7 @@ $(function() {
     var total = $scroll.children().length;
     var w = $scroll.width();
     var scrollLeft = $scroll.scrollLeft();
-    var idx = Math.round(scrollLeft / (220 + 8)) + 1;
+    var idx = Math.round(scrollLeft / 228) + 1;
     if (idx < 1) idx = 1;
     if (idx > total) idx = total;
     $counter.text(idx + ' / ' + total);
@@ -348,7 +348,7 @@ $(function() {
     if (!autoScroll) return;
     var maxScroll = $scroll[0].scrollWidth - $scroll.width();
     var cur = $scroll.scrollLeft();
-    var step = 232; // 220px + 8px gap + 4px
+    var step = 228; // 220px + 8px margin
     var next = cur + step;
     if (next >= maxScroll - 10) next = 0;
     $scroll.animate({ scrollLeft: next }, 600, 'swing', updateCounter);
