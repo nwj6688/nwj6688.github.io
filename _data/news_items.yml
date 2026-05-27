@@ -37,6 +37,13 @@
 
 - date: 2026-03-02
   title: 交流！实验室负责人牛温佳教授受邀在山东大学软件学院"智能・软件・未来"论坛第26期作《量子类脑计算在智能驾驶安全中的探索》主题报告。
+  images:
+    - /images/news/sdu-forum-01.jpg
+    - /images/news/sdu-forum-02.jpg
+    - /images/news/sdu-forum-03.jpg
+    - /images/news/sdu-forum-04.jpg
+  summary: >-
+    牛温佳教授受邀在山东大学软件学院"智能·软件·未来"论坛第26期作主题报告，分享了量子-经典混合架构与类脑神经网络在智能驾驶安全鲁棒感知领域的研究成果，并结合PennyLane等开源工具，鼓励同学们动手实践、大胆探索。
   external_url: https://www.sc.sdu.edu.cn/info/1033/5836.htm
 
 - date: 2025-11-01
