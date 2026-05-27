@@ -402,21 +402,19 @@ p { margin: 0 0 var(--spacing-md) 0; }
 .news-images {
   display: flex;
   gap: 4px;
-  overflow: hidden;
 }
 
 .news-image-wrap {
   flex: 1;
   min-width: 0;
-  overflow: hidden;
 }
 
 .news-thumb {
   width: 100%;
-  display: block;
-  max-height: 320px;
+  height: 300px;
   object-fit: contain;
-  object-position: top;
+  object-position: top center;
+  display: block;
   transition: transform 0.3s ease;
 }
 
