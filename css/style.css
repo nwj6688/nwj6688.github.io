@@ -364,6 +364,11 @@ p { margin: 0 0 var(--spacing-md) 0; }
   background: transparent;
 }
 
+#footer .visitor-count {
+  color: #666;
+  font-size: 12px;
+}
+
 /* --- 英雄区域（首页） --- */
 .hero-section {
   background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--bg-navbar) 100%);
