@@ -49,6 +49,22 @@ title: 首页
   </div>
 </div>
 
+<!-- ========== 团建风采 ========== -->
+<h2 class="section-title">🎯 团建风采</h2>
+
+<div class="row gallery-grid">
+  {% for item in site.data.gallery %}
+  <div class="col-md-4 col-sm-6 col-6 mb-3">
+    <a href="{{ item.image }}" class="gallery-item" title="{{ item.caption }}">
+      <img src="{{ item.image }}" alt="{{ item.caption }}" class="gallery-img">
+    </a>
+    {% if item.caption %}
+    <p class="gallery-caption">{{ item.caption }}</p>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+
 <!-- ========== 新闻动态 ========== -->
 <h2 class="section-title">🔥 新闻动态</h2>
 
@@ -306,8 +322,12 @@ title: 首页
   <p><strong>联系方式：</strong>请准备<strong>个人简历</strong>[pdf格式]+<strong>自荐信</strong>[若有其他获奖材料可附件]，发送至实验室负责人邮箱：<a href="mailto:niuwj@bjtu.edu.cn" class="contact-email">niuwj@bjtu.edu.cn</a> [牛老师]，实验室会尽快组织安排面试。实验室期待你的加入！</p>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.js"></script>
 <script>
 $(function() {
+  // baguetteBox 灯箱
+  baguetteBox.run('.gallery-grid', { captions: true });
+
   // 默认只显示 2026 年新闻
   $('.news-card').hide();
   $('.news-card[data-year="2026"]').show();

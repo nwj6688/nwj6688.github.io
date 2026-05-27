@@ -1,0 +1,5 @@
+# 团建风采照片数据
+# 格式:
+# - image: /images/gallery/filename.jpg
+#   caption: 照片说明（可选）
+#   date: YYYY-MM-DD
