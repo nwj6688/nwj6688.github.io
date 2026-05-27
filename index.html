@@ -64,11 +64,19 @@ title: 首页
   <a href="#2020" class="btn-year" data-year="2020">2020</a>
 </div>
 
-<div class="news-timeline">
+<div class="news-grid">
   {% assign all_news = site.data.news_items | sort: "date" | reverse %}
   {% for item in all_news %}
   <div class="news-card" data-year="{{ item.date | slice: 0, 4 }}">
-    <div class="news-dot"></div>
+    {% if item.images %}
+    <div class="news-images">
+      {% for img in item.images limit:4 %}
+      <div class="news-image-wrap">
+        <img src="{{ img }}" alt="" class="news-thumb" loading="lazy">
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
     <div class="news-body">
       <span class="news-tag tag-date">[{{ item.date | slice: 0, 7 }}]</span>
       {% assign title_lower = item.title | downcase %}
@@ -83,10 +91,11 @@ title: 首页
         <span class="news-tag">📌 置顶</span>
       {% endif %}
       <span class="news-title">{{ item.title }}</span>
+      {% if item.summary %}
+      <p class="news-summary">{{ item.summary }}</p>
+      {% endif %}
       {% if item.external_url %}
-      <a href="{{ item.external_url }}" target="_blank" class="news-link-icon" title="查看详情">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-      </a>
+      <a href="{{ item.external_url }}" target="_blank" class="news-readmore">阅读全文 →</a>
       {% endif %}
     </div>
   </div>
