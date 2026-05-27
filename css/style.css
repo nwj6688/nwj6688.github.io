@@ -132,9 +132,9 @@ img {
   gap: 8px;
 }
 .gallery-scroll {
-  display: flex;
-  gap: 8px;
   overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
   scroll-behavior: smooth;
   padding: 4px 0;
   flex: 1;
@@ -151,13 +151,19 @@ img {
   background: transparent;
 }
 .gallery-item {
-  flex: 0 0 220px;
+  display: inline-block;
+  width: 220px;
   height: 180px;
+  margin-right: 8px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
+  vertical-align: top;
+}
+.gallery-item:last-child {
+  margin-right: 0;
 }
 .gallery-item:hover {
   transform: scale(1.03);
@@ -184,6 +190,7 @@ img {
   justify-content: center;
   transition: all 0.2s ease;
   z-index: 2;
+  padding: 0;
 }
 .gallery-btn:hover {
   background: var(--primary-light);
