@@ -501,6 +501,11 @@ p { margin: 0 0 var(--spacing-md) 0; }
 .news-image-wrap:only-child {
   grid-column: 1 / -1;
 }
+/* 2 张图时纵向堆叠（避免比例不同的图并排裁剪不均） */
+.news-image-wrap:first-child:nth-last-child(2),
+.news-image-wrap:first-child:nth-last-child(2) ~ .news-image-wrap {
+  grid-column: 1 / -1;
+}
 
 .news-thumb {
   width: 100%;
