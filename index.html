@@ -83,15 +83,19 @@ title: 首页
 <div class="news-grid">
   {% assign all_news = site.data.news_items | sort: "date" | reverse %}
   {% for item in all_news %}
-  <div class="news-card" data-year="{{ item.date | slice: 0, 4 }}">
+  <div class="news-card{% unless item.images %} no-image{% endunless %}" data-year="{{ item.date | slice: 0, 4 }}">
     {% if item.images %}
     <div class="news-images">
       {% for img in item.images limit:4 %}
       <div class="news-image-wrap">
-        <img src="{{ img }}" alt="" class="news-thumb" loading="lazy">
+        <a href="{{ img }}" class="news-lightbox">
+          <img src="{{ img }}" alt="" class="news-thumb" loading="lazy">
+        </a>
       </div>
       {% endfor %}
     </div>
+    {% else %}
+    <div class="news-image-placeholder"></div>
     {% endif %}
     <div class="news-body">
       <span class="news-tag tag-date">[{{ item.date | slice: 0, 7 }}]</span>
@@ -334,6 +338,7 @@ title: 首页
 $(function() {
   // baguetteBox 灯箱
   baguetteBox.run('.gallery-scroll', { captions: true });
+  baguetteBox.run('.news-images', { captions: false });
 
   // 团建照片 - 滚动播放
   var $scroll = $('#galleryScroll');

@@ -498,6 +498,11 @@ p { margin: 0 0 var(--spacing-md) 0; }
   min-width: 0;
   display: flex;
 }
+.news-image-wrap a {
+  display: block;
+  width: 100%;
+  cursor: zoom-in;
+}
 .news-image-wrap:only-child {
   grid-column: 1 / -1;
 }
