@@ -487,28 +487,62 @@ p { margin: 0 0 var(--spacing-md) 0; }
   color: var(--accent);
 }
 
-/* 图片区域 */
+/* 图片区域 — 自动适配：1张全宽，多张2列网格 */
 .news-images {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 4px;
 }
 
 .news-image-wrap {
-  flex: 1;
   min-width: 0;
+  display: flex;
+}
+.news-image-wrap:only-child {
+  grid-column: 1 / -1;
 }
 
 .news-thumb {
   width: 100%;
-  height: 300px;
-  object-fit: contain;
+  height: 140px;
+  object-fit: cover;
   object-position: top center;
   display: block;
   transition: transform 0.3s ease;
 }
+.news-image-wrap:only-child .news-thumb {
+  height: 200px;
+}
 
 .news-card:hover .news-thumb {
   transform: scale(1.03);
+}
+
+/* 无图卡片 - 学术风格占位装饰 */
+.news-card.no-image .news-image-placeholder {
+  height: 120px;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: rgba(255,255,255,0.2);
+  position: relative;
+  overflow: hidden;
+}
+.news-card.no-image .news-image-placeholder::before {
+  content: "📄";
+  font-size: 48px;
+  opacity: 0.6;
+}
+.news-card.no-image .news-image-placeholder::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.05) 0%, transparent 60%);
 }
 
 /* 卡片内容体 */
