@@ -373,10 +373,16 @@ p { margin: 0 0 var(--spacing-md) 0; }
 .hero-section {
   background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--bg-navbar) 100%);
   color: var(--text-light);
-  padding: var(--spacing-xl) 0;
+  padding: 0;
   margin-bottom: var(--spacing-xl);
   border-radius: var(--radius-lg);
   text-align: center;
+}
+
+.hero-overlay {
+  background: linear-gradient(135deg, rgba(0, 30, 80, 0.65) 0%, rgba(0, 60, 120, 0.50) 100%);
+  padding: var(--spacing-xl) 0;
+  border-radius: var(--radius-lg);
 }
 
 .hero-section h1 {
