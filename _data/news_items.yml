@@ -125,10 +125,15 @@
 - date: 2024-02-02
   title: 祝贺！实验室3名学生获得北京交通大学计算机科学与信息技术学院企业专项奖学金！
 
-- date: 2023-07-01
-  title: 祝贺！实验室2名学生荣获中国网络空间安全人才教育联盟 A级安全众测专业人员认证！
+- date: 2023-08-14
+  title: 交流！实验室牛温佳教授及研究生刘彦出席CCF中国智能汽车学术年会（CIVS 2023）并做特邀报告
+  images:
+    - /images/news/2023-08-14-civs2023.jpg
+  summary: >-
+    首届CCF中国智能汽车学术年会（CIVS 2023）在CCF业务总部&学术交流中心开幕。牛温佳教授及研究生刘彦出席会议并做特邀报告，与国内外智能汽车安全领域专家学者进行深入交流。
+  external_url: https://mp.weixin.qq.com/s/7nFiR8Y6cRHNILCFGTpa7Q
 
-- date: 2023-06-29
+- date: 2023-07-01
   title: 交流！实验室牛温佳教授、博士生肖扬、硕士生许子阳参加2023年开源安全国际教育论坛
   images:
     - /images/news/2023-06-29-opensource-security-forum.jpg
