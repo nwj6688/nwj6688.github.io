@@ -220,7 +220,11 @@
 
 - date: 2021-08-01
   title: 祝贺！实验室"六出祁山"战队在第29届DEF CON自动驾驶CTF全球挑战赛中荣获亚军（满分）！
-  external_url: https://cs.bjtu.edu.cn/jdxw/202301241.htm
+  images:
+    - /images/news/2021-08-01-defcon29.jpg
+  summary: >-
+    人工智能安全实验室（THETA Lab）"六出祁山"战队在第29届DEF CON自动驾驶CTF全球挑战赛中荣获亚军（满分成绩）。
+  external_url: https://mp.weixin.qq.com/s/pUHR9EnsiY9u_HVz-OKW3g
 
 - date: 2021-07-02
   title: 喜报！实验室1篇论文被国际学术会议 ICICS 2021(CCF-C)录用！
