@@ -128,6 +128,14 @@
 - date: 2023-07-01
   title: 祝贺！实验室2名学生荣获中国网络空间安全人才教育联盟 A级安全众测专业人员认证！
 
+- date: 2023-06-29
+  title: 交流！实验室牛温佳教授、博士生肖扬、硕士生许子阳参加2023年开源安全国际教育论坛
+  images:
+    - /images/news/2023-06-29-opensource-security-forum.jpg
+  summary: >-
+    2023年开源安全国际教育论坛在湖南省长沙市召开，实验室牛温佳教授、博士生肖扬、硕士生许子阳参加，与国内外开源安全领域专家学者进行交流。
+  external_url: https://mp.weixin.qq.com/s/tvQbWaHDO4ykWG0MlRRl8g
+
 - date: 2023-06-11
   title: 交流！THETA Lab 举行2023年环保骑行踏青活动
   images:
