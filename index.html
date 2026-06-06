@@ -208,6 +208,28 @@ title: 首页
 </div>
 {% endif %}
 
+<!-- 视频 Lightbox 模态框 -->
+<div class="modal fade video-modal" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModalTitle">播放视频</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <video id="videoPlayer" controls preload="metadata" playsinline>
+          您的浏览器不支持视频播放。
+        </video>
+      </div>
+      <div class="modal-footer">
+        <span id="videoModalDesc"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ========== 团队成员 ========== -->
 <h2 class="section-title">🧑‍🏫 团队成员</h2>
 
