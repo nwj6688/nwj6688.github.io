@@ -74,21 +74,26 @@ document.addEventListener('DOMContentLoaded', function() {
       if (videoError) videoError.style.display = 'none';
       videoPlayer.poster = '';
       videoPlayer.removeAttribute('poster');
-      videoPlayer.src = '';
+      // 注意：不在此处清空 src，清空 src 会触发异步 error 事件
+      // 导致正在加载新视频时错误提示被错误显示。src 清理移到 hideModal 中
       clearTimeout(loadTimer);
     }
 
     videoPlayer.addEventListener('loadedmetadata', function() {
       if (videoLoading) videoLoading.style.display = 'none';
+      if (videoError) videoError.style.display = 'none';
       clearTimeout(loadTimer);
     });
 
     videoPlayer.addEventListener('canplay', function() {
       if (videoLoading) videoLoading.style.display = 'none';
+      if (videoError) videoError.style.display = 'none';
       clearTimeout(loadTimer);
     });
 
     videoPlayer.addEventListener('error', function() {
+      // 过滤空 src 触发的假错误（src 清空后浏览器会异步抛 error）
+      if (videoPlayer.src === '' || !videoPlayer.src) return;
       if (videoLoading) videoLoading.style.display = 'none';
       if (videoError) videoError.style.display = 'block';
       clearTimeout(loadTimer);
@@ -105,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function hideModal() {
       videoPlayer.pause();
       videoPlayer.currentTime = 0;
+      videoPlayer.src = '';  // 仅在关闭 modal 时清理 src
       resetVideoState();
       // 移除 Bootstrap modal 相关类
       videoModal.classList.remove('show');
