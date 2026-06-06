@@ -47,6 +47,7 @@ defaults:
     values:
       layout: "post"
       author: "THETA Lab"
+      approver: "牛温佳"
   - scope:
       path: ""
       type: "news"
