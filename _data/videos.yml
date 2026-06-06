@@ -1,3 +1,11 @@
+- title: "牛温佳教授在浙江电视台的新闻"
+  description: "牛温佳教授接受浙江电视台采访，介绍人工智能安全领域的研究成果与应用前景。"
+  file: "/assets/videos/niuwj-zj-tv-news.mp4"
+  thumbnail: "/images/video-thumbnails/niuwj-zj-tv-news.jpg"
+  duration: "01:12"
+  date: 2026-06-06
+  featured: true
+
 - title: "关于智能驾驶安全的实验点滴"
   description: "智能驾驶安全实验的过程记录，包含实验室日常研究、自动驾驶系统测试等精彩瞬间。"
   file: "/assets/videos/autonomous-driving-lab-experiments.mp4"
