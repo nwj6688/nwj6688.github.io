@@ -164,6 +164,50 @@ title: 首页
   <a href="/papers/" class="card-link">查看全部论文 →</a>
 </div>
 
+<!-- ========== 视频展示 ========== -->
+<h2 class="section-title">🎬 视频展示</h2>
+
+{% assign all_videos = site.data.videos | sort: "date" | reverse %}
+{% assign featured_videos = all_videos | where: "featured", true %}
+{% if featured_videos.size > 0 %}
+  {% assign display_videos = featured_videos %}
+{% else %}
+  {% assign display_videos = all_videos %}
+{% endif %}
+
+{% if display_videos.size > 0 %}
+<div class="video-grid">
+  {% for video in display_videos limit: 3 %}
+  <div class="video-card"
+       data-video-src="{{ video.file }}"
+       data-video-title="{{ video.title }}"
+       data-video-desc="{{ video.description | default: '' }}">
+    <div class="video-card-thumb">
+      {% if video.thumbnail %}
+      <img src="{{ video.thumbnail }}" alt="{{ video.title }}" loading="lazy">
+      {% else %}
+      <div class="video-card-thumb-placeholder">🎬</div>
+      {% endif %}
+      <div class="video-card-play-icon">&#9654;</div>
+      {% if video.duration %}
+      <span class="video-card-duration">{{ video.duration }}</span>
+      {% endif %}
+    </div>
+    <div class="video-card-body">
+      <div class="video-card-title">{{ video.title }}</div>
+      {% if video.description %}
+      <div class="video-card-desc">{{ video.description }}</div>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="text-center mt-3">
+  <a href="/videos/" class="card-link">📺 查看全部视频 →</a>
+</div>
+{% endif %}
+
 <!-- ========== 团队成员 ========== -->
 <h2 class="section-title">🧑‍🏫 团队成员</h2>
 
