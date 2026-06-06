@@ -21,18 +21,3 @@
   duration: "02:24"
   date: 2026-06-06
   featured: true
-
-- title: "自动驾驶安全演示 - DEF CON CTF"
-  description: "实验室'六出祁山'战队在DEF CON 30自动驾驶CTF全球挑战赛中的参赛录像，展示自动驾驶安全攻防全过程。"
-  file: "/assets/videos/defcon-30-demo.mp4"
-  thumbnail: "/images/video-thumbnails/defcon-30-demo.jpg"
-  duration: "12:30"
-  date: 2026-05-01
-
-- title: "实验室环境全景展示"
-  description: "北京交通大学人工智能安全实验室(THETA Lab)工作环境全景展示，包含办公区、实验区和设备展示。"
-  file: "/assets/videos/lab-tour.mp4"
-  thumbnail: "/images/video-thumbnails/lab-tour.jpg"
-  duration: "03:15"
-  date: 2026-04-15
-  featured: false

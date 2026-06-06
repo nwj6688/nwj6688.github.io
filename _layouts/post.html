@@ -22,6 +22,9 @@
               {% if page.reviewer %}
               <span class="post-reviewer"> · 审核: {{ page.reviewer }}</span>
               {% endif %}
+              {% if page.approver %}
+              <span class="post-approver"> · 批准: {{ page.approver }}</span>
+              {% endif %}
               {% if page.tags %}
               <span class="post-tags">
                 {% for tag in page.tags %}
@@ -38,27 +41,7 @@
       </div>
     </div>
 
-    <!-- Giscus 评论系统 -->
-    <div class="row">
-      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12">
-        <div class="giscus mt-5"></div>
-        <script src="https://giscus.app/client.js"
-          data-repo="nwj6688/THETA-Lab-Website"
-          data-repo-id=""
-          data-category=""
-          data-category-id=""
-          data-mapping="pathname"
-          data-strict="0"
-          data-reactions-enabled="1"
-          data-emit-metadata="0"
-          data-input-position="bottom"
-          data-theme="preferred_color_scheme"
-          data-lang="zh-CN"
-          crossorigin="anonymous"
-          async>
-        </script>
-      </div>
-    </div>
+    <!-- Giscus 评论系统（暂未配置，后续启用） -->
   </div>
 
   {% include footer.html %}
