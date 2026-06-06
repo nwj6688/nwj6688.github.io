@@ -6,6 +6,17 @@ author: 王一
 reviewer: 李轶珂
 approver: 牛温佳
 tags: [自动驾驶安全, LiDAR攻击, 语音注入攻击, 智能驾驶安全]
+featured_image: /images/blog/2026-06-06-autonomous-driving-featured.png
+reading_time: 15
+papers:
+  - title: "Adversarial Sensor Attack on LiDAR-based Perception in Autonomous Driving"
+    venue: "ACM CCS 2019"
+    doi: "10.1145/3319535.3339815"
+    authors: "Yulong Cao, et al."
+  - title: "Light Commands: Laser-Based Audio Injection Attacks on Voice-Controllable Systems"
+    venue: "29th USENIX Security Symposium, 2020"
+    doi: "10.5555/3489212.3489267"
+    authors: "Takeshi Sugawara, et al."
 excerpt: "本文对两篇安全顶会论文进行联合分析：CCS 2019 的 Adv-LiDAR（激光雷达感知欺骗攻击）与 USENIX Security 2020 的 Light Commands（激光语音注入攻击）。两篇论文均利用光学物理效应对 AI 感知系统发起攻击，分别针对自动驾驶环境感知和语音助手的认证链路，揭示从物理层到应用层的完整攻击面。"
 ---
 
@@ -19,6 +30,9 @@ excerpt: "本文对两篇安全顶会论文进行联合分析：CCS 2019 的 Adv
 2. **Light Commands: Laser-Based Audio Injection Attacks on Voice-Controllable Systems**（USENIX Security 2020）——利用调制激光向语音助手注入恶意语音命令
 
 两篇论文虽针对不同的 AI 应用场景，却在攻击范式上高度相似：**利用传感器物理特性的局限性，绕过 AI 系统的安全防护，实现远距离、无接触的注入攻击**。
+
+![Adv-LiDAR 方法论总览](/images/blog/2026-06-06-autonomous-driving-p1-overview.png)
+*图 1: Adv-LiDAR 方法论总览——从物理层 LiDAR spoofing 到感知模型对抗攻击的完整框架（Cao et al., CCS 2019 Fig. 2）*
 
 ---
 
@@ -39,11 +53,17 @@ excerpt: "本文对两篇安全顶会论文进行联合分析：CCS 2019 的 Adv
 
 这一管线意味着攻击者不能仅通过添加噪声点来欺骗系统，而需要让伪造点云通过整个 pipeline。
 
+![Apollo LiDAR 感知管线](/images/blog/2026-06-06-autonomous-driving-p1-pipeline.png)
+*图 2: Apollo 的 LiDAR 感知管线——从原始点云到障碍物检测的完整流程（Cao et al., CCS 2019 Fig. 1）*
+
 ### 威胁模型：物理层 LiDAR Spoofing
 
 攻击者通过监听目标 LiDAR 的激光脉冲，在特定延迟后发射攻击激光，让 LiDAR 误以为存在真实的反射信号。延迟控制测距（纳秒级延迟对应厘米级距离变化），结合扫描序列可影响伪造点的空间位置分布。
 
 实验表明，攻击设备的可靠可控点数约为 **60 个点**，远少于真实车辆反射的密集点云。
+
+![物理层 LiDAR spoofing 攻击设置](/images/blog/2026-06-06-autonomous-driving-p1-capability.png)
+*图 3: 攻击能力建模——距离、海拔高度、方位角三种可控扰动参数化（Cao et al., CCS 2019 Fig. 7）*
 
 ### Adv-LiDAR 算法
 
@@ -56,6 +76,9 @@ excerpt: "本文对两篇安全顶会论文进行联合分析：CCS 2019 的 Adv
    ```
    目标不是让模型任意出错，而是在攻击者指定的前方位置生成候选障碍物。Gaussian mask 将优化集中在目标位置附近。
 3. **粗搜+细调策略**：观察到 loss surface 存在局部噪声、全局平坦的特性后，先对旋转 θ 和平移 τx 进行全局采样，再用 Adam 优化器进行局部微调。
+
+![Adv-LiDAR 核心算法流程](/images/blog/2026-06-06-autonomous-driving-p1-algorithm.png)
+*图 4: Adv-LiDAR 算法流程——从原始点云到 spoofed point cloud 的粗搜+细调优化（Cao et al., CCS 2019 Fig. 8）*
 
 ### 实验结果
 
@@ -85,6 +108,9 @@ Adv-LiDAR 的核心贡献在于**把物理可实现的 LiDAR spoofing 与机器�
 
 **系统层**：语音助手在处理音频输入时缺少足够的认证机制，将注入的电信号视为真实的语音命令并执行。
 
+![激光语音注入攻击原理](/images/blog/2026-06-06-autonomous-driving-p2-principle.jpg)
+*图 5: Light Commands 攻击原理——将语音命令调制成激光信号，通过光电/光声效应注入麦克风（Sugawara et al., USENIX Security 2020）*
+
 ### 为什么麦克风会"听见"光？
 
 论文区分了两种物理效应：
@@ -99,6 +125,9 @@ Adv-LiDAR 的核心贡献在于**把物理可实现的 LiDAR spoofing 与机器�
 论文通过 1 kHz 正弦波验证了 AM 调制的可行性：激光电流正弦变化时，麦克风输出出现匹配的 1 kHz 信号。频率响应覆盖可听频段，意味着攻击者可以注入**完整的语音命令**，而非仅单音调。
 
 **设备测试**：覆盖 17 个主流语音控制设备（Alexa、Siri、Google Assistant 等），命令集包含查时间、音量归零、购物、IoT 控制等。
+
+![攻击实验设置](/images/blog/2026-06-06-autonomous-driving-p2-experiment.jpg)
+*图 6: 各设备攻击实验汇总——Google Home 和 Echo Plus 在 5 mW 低功率下可达 110+ 米（Sugawara et al., USENIX Security 2020）*
 
 **关键结果**：
 - Google Home 和 Echo Plus 在 **5 mW** 低功率下即可达到 **110+ 米**的攻击距离

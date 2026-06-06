@@ -65,48 +65,113 @@ document.addEventListener('DOMContentLoaded', function() {
     var videoPlayer = document.getElementById('videoPlayer');
     var videoTitle = document.getElementById('videoModalTitle');
     var videoDesc = document.getElementById('videoModalDesc');
+    var videoLoading = document.getElementById('videoLoading');
+    var videoError = document.getElementById('videoError');
+    var loadTimer;
 
-    // 点击视频卡片打开模态框（事件委托，兼容动态内容）
+    function resetVideoState() {
+      if (videoLoading) videoLoading.style.display = 'none';
+      if (videoError) videoError.style.display = 'none';
+      videoPlayer.poster = '';
+      videoPlayer.removeAttribute('poster');
+      videoPlayer.src = '';
+      clearTimeout(loadTimer);
+    }
+
+    videoPlayer.addEventListener('loadedmetadata', function() {
+      if (videoLoading) videoLoading.style.display = 'none';
+      clearTimeout(loadTimer);
+    });
+
+    videoPlayer.addEventListener('canplay', function() {
+      if (videoLoading) videoLoading.style.display = 'none';
+      clearTimeout(loadTimer);
+    });
+
+    videoPlayer.addEventListener('error', function() {
+      if (videoLoading) videoLoading.style.display = 'none';
+      if (videoError) videoError.style.display = 'block';
+      clearTimeout(loadTimer);
+    });
+
+    function startLoadTimer() {
+      clearTimeout(loadTimer);
+      loadTimer = setTimeout(function() {
+        if (videoLoading) videoLoading.style.display = 'none';
+      }, 15000);
+    }
+
+    // ----- 关闭 modal（不依赖 Bootstrap data-dismiss）-----
+    function hideModal() {
+      videoPlayer.pause();
+      videoPlayer.currentTime = 0;
+      resetVideoState();
+      // 移除 Bootstrap modal 相关类
+      videoModal.classList.remove('show');
+      videoModal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+      var backdrop = document.querySelector('.modal-backdrop');
+      if (backdrop) backdrop.remove();
+    }
+
+    // 关闭按钮直接绑定（不依赖 Bootstrap 的 data-dismiss）
+    var closeBtn = videoModal.querySelector('.close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', hideModal);
+    }
+
+    // 点击 modal 外部（灰色背景）关闭
+    videoModal.addEventListener('click', function(e) {
+      if (e.target === videoModal) hideModal();
+    });
+
+    // ESC 键关闭
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && videoModal.classList.contains('show')) {
+        hideModal();
+      }
+    });
+
+    // ----- 打开 modal -----
+    function showModal() {
+      // 先用 Bootstrap API（干净，有过渡效果）
+      try {
+        $(videoModal).modal('show');
+      } catch (e) {
+        // Bootstrap 不可用时手动显示
+        videoModal.classList.add('show');
+        videoModal.style.display = 'block';
+        document.body.classList.add('modal-open');
+        var backdrop = document.createElement('div');
+        backdrop.className = 'modal-backdrop fade show';
+        backdrop.addEventListener('click', hideModal);
+        document.body.appendChild(backdrop);
+      }
+    }
+
+    // 点击视频卡片打开模态框
     document.addEventListener('click', function(e) {
       var card = e.target.closest('.video-card');
       if (!card) return;
       var src = card.dataset.videoSrc;
+      var poster = card.dataset.videoPoster || '';
       var title = card.dataset.videoTitle;
       var desc = card.dataset.videoDesc || '';
       if (src) {
+        resetVideoState();
+        if (videoLoading) videoLoading.style.display = 'flex';
+        if (videoError) videoError.style.display = 'none';
+        videoPlayer.poster = poster;
         videoPlayer.src = src;
         videoPlayer.load();
+        startLoadTimer();
         videoTitle.textContent = title;
         if (videoDesc) {
           videoDesc.textContent = desc;
         }
-        // 使用 Bootstrap 4 modal API
-        try {
-          $(videoModal).modal('show');
-        } catch (e) {
-          // fallback: 直接显示
-          videoModal.classList.add('show');
-          videoModal.style.display = 'block';
-          document.body.classList.add('modal-open');
-        }
+        showModal();
       }
     });
-
-    // 模态框关闭时暂停并卸载视频
-    try {
-      $(videoModal).on('hidden.bs.modal', function() {
-        videoPlayer.pause();
-        videoPlayer.currentTime = 0;
-        videoPlayer.src = '';
-      });
-    } catch (e) {
-      // fallback: 监听原生事件
-      videoModal.addEventListener('hidden.bs.modal', function() {
-        videoPlayer.pause();
-        videoPlayer.currentTime = 0;
-        videoPlayer.src = '';
-      });
-    }
   }
 
   // 回到顶部按钮

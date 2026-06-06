@@ -2,6 +2,13 @@
 <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- DNS Prefetch & Preconnect for faster CDN loading -->
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="//code.jquery.com">
+<link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://code.jquery.com" crossorigin>
+
 <!-- RSS feed -->
 <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml">
 
@@ -11,8 +18,8 @@
 <!-- baguetteBox lightbox CSS -->
 <link href="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.css" rel="stylesheet">
 
-  <!-- 自定义样式表 -->
-  <link href="/css/style.css?v=2.0" rel="stylesheet" media="screen">
+<!-- 自定义样式表 -->
+<link href="/css/style.css?v=2.0" rel="stylesheet" media="screen">
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="/images/logo.png" type="image/png"/>
@@ -20,5 +27,5 @@
 <!-- jQuery (CDN) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<!-- Bootstrap JS -->
-<script src="/js/bootstrap.min.js"></script>
+<!-- Bootstrap JS (本地完整版，含 Modal/Collapse/Tab 等全部组件) -->
+<script src="/js/bootstrap.bundle.min.js"></script>
