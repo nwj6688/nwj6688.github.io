@@ -10,13 +10,6 @@
     <div class="row">
       <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12">
         <article class="post-single" itemscope itemtype="http://schema.org/BlogPosting">
-          <!-- 封面特色图 -->
-          {% if page.featured_image %}
-          <div class="post-featured-image">
-            <img src="{{ page.featured_image }}" alt="{{ page.title }}" loading="lazy">
-          </div>
-          {% endif %}
-
           <header class="post-header">
             <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
             <p class="post-meta">
@@ -32,7 +25,6 @@
               {% if page.approver %}
               <span class="post-approver"> · 批准: {{ page.approver }}</span>
               {% endif %}
-              <!-- 阅读时间 -->
               {% if page.reading_time %}
               <span class="post-reading-time"> · 📖 预计阅读: {{ page.reading_time }} 分钟</span>
               {% endif %}
@@ -46,7 +38,12 @@
             </p>
           </header>
 
-          <!-- 论文元数据卡片 -->
+          {% if page.featured_image %}
+          <div class="post-featured-image">
+            <img src="{{ page.featured_image }}" alt="{{ page.title }}" loading="lazy">
+          </div>
+          {% endif %}
+
           {% if page.papers %}
           <div class="post-paper-meta">
             <div class="paper-meta-title">📄 本文涉及的论文</div>
@@ -63,74 +60,14 @@
           </div>
           {% endif %}
 
-          <!-- 目录 (TOC) —— 由 JS 动态生成 -->
-          <nav class="post-toc" id="postToc" style="display:none;">
-            <div class="toc-title">📑 目录</div>
-            <ul class="toc-list" id="tocList"></ul>
-          </nav>
-
           <div class="post-content" itemprop="articleBody">
             {{ content }}
           </div>
         </article>
       </div>
     </div>
-
-    <!-- Giscus 评论系统（暂未配置，后续启用） -->
   </div>
 
   {% include footer.html %}
-
-  <script>
-    $(function () {
-      $('[data-toggle="tooltip"]').tooltip();
-
-      // ----- 目录生成 -----
-      var content = document.querySelector('.post-content');
-      if (content) {
-        var headings = content.querySelectorAll('h2');
-        var tocNav = document.getElementById('postToc');
-        var tocList = document.getElementById('tocList');
-
-        if (headings.length >= 3 && tocNav && tocList) {
-          headings.forEach(function(h, i) {
-            // 给每个 h2 加 id（如果没有的话）
-            if (!h.id) {
-              h.id = 'toc-' + i;
-            }
-            var li = document.createElement('li');
-            var a = document.createElement('a');
-            a.href = '#' + h.id;
-            a.textContent = h.textContent;
-            a.addEventListener('click', function(e) {
-              e.preventDefault();
-              var target = document.getElementById(this.getAttribute('href').slice(1));
-              if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }
-            });
-            li.appendChild(a);
-            tocList.appendChild(li);
-          });
-          tocNav.style.display = '';
-        }
-      }
-
-      // ----- 阅读时间（无 front matter 时按字数估算）-----
-      var readingTimeEl = document.querySelector('.post-reading-time');
-      if (!readingTimeEl && content) {
-        var text = content.textContent || '';
-        var wordCount = text.replace(/\s/g, '').length;
-        var minutes = Math.max(1, Math.round(wordCount / 500));  // 中文约 500 字/分钟
-        var meta = document.querySelector('.post-meta');
-        if (meta) {
-          var span = document.createElement('span');
-          span.className = 'post-reading-time';
-          span.textContent = ' · 📖 预计阅读: ' + minutes + ' 分钟';
-          meta.appendChild(span);
-        }
-      }
-    });
-  </script>
 </body>
 </html>
