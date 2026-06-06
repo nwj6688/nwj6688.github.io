@@ -1,3 +1,11 @@
+- title: "牛温佳教授在海南卫视的新闻"
+  description: "牛温佳教授接受海南卫视采访，探讨人工智能安全前沿技术与实验室最新研究进展。"
+  file: "/assets/videos/niuwj-hntv-news.mp4"
+  thumbnail: "/images/video-thumbnails/niuwj-hntv-news.jpg"
+  duration: "02:29"
+  date: 2026-06-06
+  featured: true
+
 - title: "牛温佳教授在浙江电视台的新闻"
   description: "牛温佳教授接受浙江电视台采访，介绍人工智能安全领域的研究成果与应用前景。"
   file: "/assets/videos/niuwj-zj-tv-news.mp4"
