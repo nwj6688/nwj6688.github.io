@@ -128,14 +128,14 @@ title: 首页
 
 <!-- ========== 科研成果 ========== -->
 <h2 class="section-title">📝 科研成果</h2>
-<p><strong>近年代表性论文如下：</strong></p>
+<p><strong>近年代表性论文如下：</strong>
+  <button class="btn-copy-papers">📋 复制全部</button>
+</p>
 
 <ol class="papers-list">
   <li><img src="https://img.shields.io/badge/ASE-26-blue?style=flat-square"> Jiayin Song, Yike Li, Yunzhe Tian, Haoxuan Ma, Honglei Li, Jie Zuo, Jiqiang Liu, Wenjia Niu. Investigating the bugs in reinforcement learning programs: Insights from Stack Overflow and GitHub. Automated Software Engineering, 33(1): 9, 2026. <b><font color="#003399">(CCF-B期刊)</font></b></li>
   <li><img src="https://img.shields.io/badge/FGCS-26-blue?style=flat-square"> Xiangyu Shi, Yunzhe Tian, Yike Li, Weiwei Jiang, Leyu Fu, Xingyu Wu, Xiaoshu Cui, Wenjia Niu. Enhancing adversarial robustness of neural networks via quantum computing. Future Generation Computer Systems, 183: 108542, 2026. <b><font color="#003399">(SCI中科院2区)</font></b></li>
   <li><img src="https://img.shields.io/badge/DSN-25-blue?style=flat-square"> Xiaoyan Zhou, Ying Zhang, Wenjia Niu, Jiqiang Liu, Haining Wang, Qiang Li. An Analysis of Malicious Packages in Open-Source Software in the Wild. DSN 2025, pp. 371-385. <b><font color="#003399">(CCF-B会议)</font></b></li>
-  <li><img src="https://img.shields.io/badge/TCSVT-25-blue?style=flat-square"> Zhifeng Wang, Qixuan Zhang, Peter Zhang, Wenjia Niu, Kaihao Zhang, Ramesh S. Sankaranarayana, Sabrina B. Caldwell, Tom Gedeon. Visual and Textual Prompts in VLLMs for Enhancing Emotion Recognition. IEEE Transactions on Circuits and Systems for Video Technology, 35(4): 12355-12368, 2025. <b><font color="#003399">(SCI中科院1区, IEEE Trans)</font></b></li>
-  <li><img src="https://img.shields.io/badge/EMNLP-24-blue?style=flat-square"> Qixuan Zhang, Zhifeng Wang, Dylan Zhang, Wenjia Niu, Sabrina B. Caldwell, Tom Gedeon, Yang Liu, Zhenyue Qin. Visual Prompting in LLMs for Enhancing Emotion Recognition. EMNLP 2024, pp. 4484-4499. <b><font color="#003399">(CCF-B会议)</font></b></li>
   <li><img src="https://img.shields.io/badge/IJCAI-23-blue?style=flat-square"> Yike Li, Yunzhe Tian, Endong Tong, Wenjia Niu, and Jiqiang Liu. Robust Reinforcement Learning via Progressive Task Sequence. International Joint Conference on Artificial Intelligence (IJCAI-23). <b><font color="#003399">(CCF-A会议)</font></b></li>
   <li><img src="https://img.shields.io/badge/计算机研究与发展-25-blue?style=flat-square"> 徐冬月;田蕴哲;陈康;李轶珂;吴亚伦;童恩栋;牛温佳;刘吉强;史忠植. 面向信号调制识别的对抗攻击与防御综述. 计算机研究与发展, 2025. <b><font color="#003399">(CCF-A中文期刊)</font></b></li>
   <li><img src="https://img.shields.io/badge/计算机学报-21-blue?style=flat-square"> 王硕汝, 牛温佳, 童恩栋, 陈彤, 李赫, 田蕴哲, 刘吉强, 韩臻, 李浥东. 强化学习离线策略评估研究综述. 计算机学报, 2021. <b><font color="#003399">(CCF-A中文期刊)</font></b></li>
@@ -495,6 +495,27 @@ $(function() {
       $('.news-card').hide();
       $('.news-card[data-year="' + year + '"]').show();
     }
+  });
+});
+
+// 一键复制论文列表
+$('.btn-copy-papers').on('click', function() {
+  var $ol = $(this).closest('p').next('ol.papers-list');
+  if (!$ol.length) return;
+  var items = $ol.find('li');
+  var lines = [];
+  items.each(function(i) {
+    var $clone = $(this).clone();
+    $clone.find('img').remove();
+    var text = $clone.text().replace(/\s+/g, ' ').trim();
+    lines.push((i + 1) + '. ' + text);
+  });
+  navigator.clipboard.writeText(lines.join('\n')).then(function() {
+    var $toast = $('<div class="copy-toast">✅ 已复制 ' + items.length + ' 篇论文到剪贴板</div>');
+    $('body').append($toast);
+    setTimeout(function() { $toast.fadeOut(300, function() { $toast.remove(); }); }, 2000);
+  }).catch(function() {
+    alert('❌ 复制失败，请手动选择复制');
   });
 });
 </script>

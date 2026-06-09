@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<dblpperson name="Wenjia Niu" pid="13/4012" n="124">
+<dblpperson name="Wenjia Niu" pid="13/4012" n="119">
 <person key="homepages/13/4012" mdate="2009-06-10">
 <author pid="13/4012">Wenjia Niu</author>
 </person>
@@ -81,27 +81,6 @@
 <ee type="oa">https://doi.org/10.1155/int/9253392</ee>
 <url>db/journals/ijis/ijis2025.html#ZhaoRYWHMNW25</url>
 <stream>streams/journals/ijis</stream>
-</article>
-</r>
-<r><article key="journals/tcsv/WangZZNZSCG25" mdate="2026-02-01">
-<author orcid="0000-0003-0392-5757" pid="55/497-4">Zhifeng Wang 0004</author>
-<author pid="229/0579">Qixuan Zhang</author>
-<author pid="79/5808">Peter Zhang</author>
-<author orcid="0000-0003-1506-830X" pid="13/4012">Wenjia Niu</author>
-<author orcid="0000-0002-4317-660X" pid="179/6089">Kaihao Zhang</author>
-<author orcid="0000-0002-7001-5369" pid="36/2992">Ramesh S. Sankaranarayana</author>
-<author pid="133/1205">Sabrina B. Caldwell</author>
-<author orcid="0000-0001-8356-4909" pid="g/TamasDGedeon">Tom Gedeon</author>
-<title>Visual and Textual Prompts in VLLMs for Enhancing Emotion Recognition.</title>
-<pages>12355-12368</pages>
-<year>2025</year>
-<month>December</month>
-<volume>35</volume>
-<journal>IEEE Trans. Circuits Syst. Video Technol.</journal>
-<number>12</number>
-<ee>https://doi.org/10.1109/TCSVT.2025.3588892</ee>
-<url>db/journals/tcsv/tcsv35.html#WangZZNZSCG25</url>
-<stream>streams/journals/tcsv</stream>
 </article>
 </r>
 <r><article key="journals/tetc/TianLCZTLQZN25" mdate="2025-08-05">
@@ -190,25 +169,6 @@
 <journal>CoRR</journal>
 <ee type="oa">https://doi.org/10.48550/arXiv.2504.17198</ee>
 <url>db/journals/corr/corr2504.html#abs-2504-17198</url>
-<stream>streams/journals/corr</stream>
-</article>
-</r>
-<r><article publtype="informal" key="journals/corr/abs-2504-17224" mdate="2025-05-23">
-<author pid="55/497-4">Zhifeng Wang 0004</author>
-<author pid="229/0579">Qixuan Zhang</author>
-<author pid="79/5808">Peter Zhang</author>
-<author pid="13/4012">Wenjia Niu</author>
-<author pid="179/6089">Kaihao Zhang</author>
-<author pid="36/2992">Ramesh S. Sankaranarayana</author>
-<author pid="133/1205">Sabrina B. Caldwell</author>
-<author pid="g/TamasDGedeon">Tom Gedeon</author>
-<title>Visual and textual prompts for enhancing emotion recognition in video.</title>
-<year>2025</year>
-<month>April</month>
-<volume>abs/2504.17224</volume>
-<journal>CoRR</journal>
-<ee type="oa">https://doi.org/10.48550/arXiv.2504.17224</ee>
-<url>db/journals/corr/corr2504.html#abs-2504-17224</url>
 <stream>streams/journals/corr</stream>
 </article>
 </r>
@@ -331,25 +291,6 @@
 <stream>streams/conf/adma</stream>
 </inproceedings>
 </r>
-<r><inproceedings key="conf/emnlp/ZhangWZNCG0Q24" mdate="2025-07-04">
-<author pid="229/0579">Qixuan Zhang</author>
-<author orcid="0000-0003-0392-5757" pid="55/497-4">Zhifeng Wang 0004</author>
-<author pid="356/7242">Dylan Zhang</author>
-<author pid="13/4012">Wenjia Niu</author>
-<author orcid="0000-0003-0605-3149" pid="133/1205">Sabrina B. Caldwell</author>
-<author pid="g/TamasDGedeon">Tom Gedeon</author>
-<author pid="51/3710-3">Yang Liu 0003</author>
-<author pid="222/6232">Zhenyue Qin</author>
-<title>Visual Prompting in LLMs for Enhancing Emotion Recognition.</title>
-<pages>4484-4499</pages>
-<year>2024</year>
-<booktitle>EMNLP</booktitle>
-<ee type="oa">https://doi.org/10.18653/v1/2024.emnlp-main.257</ee>
-<ee type="oa">https://aclanthology.org/2024.emnlp-main.257</ee>
-<crossref>conf/emnlp/2024</crossref>
-<url>db/conf/emnlp/emnlp2024.html#ZhangWZNCG0Q24</url>
-</inproceedings>
-</r>
 <r><inproceedings key="conf/iip/ChengWXCLTNWZ24" mdate="2025-04-28">
 <author pid="372/7874">Dianjing Cheng</author>
 <author pid="143/0523">Xingyu Wu</author>
@@ -469,24 +410,6 @@
 <journal>CoRR</journal>
 <ee type="oa">https://doi.org/10.48550/arXiv.2407.08532</ee>
 <url>db/journals/corr/corr2407.html#abs-2407-08532</url>
-<stream>streams/journals/corr</stream>
-</article>
-</r>
-<r><article publtype="informal" key="journals/corr/abs-2410-02244" mdate="2025-10-14">
-<author pid="229/0579">Qixuan Zhang</author>
-<author pid="55/497-4">Zhifeng Wang 0004</author>
-<author pid="356/7242">Dylan Zhang</author>
-<author orcid="0000-0003-1506-830X" pid="13/4012">Wenjia Niu</author>
-<author pid="133/1205">Sabrina B. Caldwell</author>
-<author pid="g/TamasDGedeon">Tom Gedeon</author>
-<author pid="51/3710-3">Yang Liu 0003</author>
-<author pid="222/6232">Zhenyue Qin</author>
-<title>Visual Prompting in LLMs for Enhancing Emotion Recognition.</title>
-<year>2024</year>
-<volume>abs/2410.02244</volume>
-<journal>CoRR</journal>
-<ee type="oa">https://doi.org/10.48550/arXiv.2410.02244</ee>
-<url>db/journals/corr/corr2410.html#abs-2410-02244</url>
 <stream>streams/journals/corr</stream>
 </article>
 </r>
