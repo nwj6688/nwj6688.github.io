@@ -1200,6 +1200,39 @@ p { margin: 0 0 var(--spacing-md) 0; }
   text-align: center;
 }
 
+/* --- 相关链接 --- */
+.links-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.link-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  margin: 6px 8px;
+  background: var(--bg-body);
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  color: var(--text-primary);
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.link-badge:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
 /* --- 年份筛选 --- */
 .year-filter {
   margin-bottom: var(--spacing-lg);

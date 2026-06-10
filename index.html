@@ -408,6 +408,15 @@ title: 首页
 </ul>
 
 
+<!-- ========== 相关链接 ========== -->
+<h2 class="section-title">🔗 相关链接</h2>
+
+<div class="links-section">
+  {% for link in site.data.links %}
+  <a href="{{ link.url }}" class="link-badge" target="_blank" rel="noopener">{{ link.name }}</a>
+  {% endfor %}
+</div>
+
 <!-- ========== 联系我们 ========== -->
 <h2 class="section-title">📮 联系我们</h2>
 
