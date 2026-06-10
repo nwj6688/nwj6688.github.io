@@ -1202,20 +1202,24 @@ p { margin: 0 0 var(--spacing-md) 0; }
 
 /* --- 相关链接 --- */
 .links-section {
-  margin-top: var(--spacing-md);
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: var(--spacing-lg);
 }
 
 .link-badge {
-  display: inline-block;
-  padding: 8px 20px;
-  margin: 6px 8px;
-  background: var(--bg-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 12px;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: 50px;
+  border-radius: var(--radius-md);
   color: var(--text-primary);
   font-size: 14px;
   text-decoration: none;
+  text-align: center;
   transition: all 0.3s ease;
 }
 
