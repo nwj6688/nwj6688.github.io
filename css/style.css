@@ -1163,6 +1163,43 @@ p { margin: 0 0 var(--spacing-md) 0; }
   font-weight: 600;
 }
 
+/* --- 公众号二维码 --- */
+.footer-qr-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.footer-qr-img:hover {
+  opacity: 1;
+}
+
+.contact-qr-img {
+  width: 180px;
+  height: 180px;
+  border: 3px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 8px;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-qr-img:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+.wechat-qr-card {
+  display: inline-block;
+  text-align: center;
+}
+
 /* --- 年份筛选 --- */
 .year-filter {
   margin-bottom: var(--spacing-lg);
