@@ -1202,12 +1202,7 @@ p { margin: 0 0 var(--spacing-md) 0; }
 
 /* --- 相关链接 --- */
 .links-section {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-lg);
-  margin-top: var(--spacing-lg);
-  box-shadow: var(--shadow-sm);
+  margin-top: var(--spacing-md);
   text-align: center;
 }
 
