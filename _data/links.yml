@@ -6,3 +6,7 @@
   url: "https://www.ccf.org.cn/Chapters/TC/TC_Listing/NSS/"
 - name: "CAAI 心智计算专委会"
   url: "https://en.caai.cn/site/content/2287.html"
+- name: "arXiv"
+  url: "https://arxiv.org/"
+- name: "ORCID"
+  url: "https://orcid.org/"
