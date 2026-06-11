@@ -456,6 +456,11 @@ p { margin: 0 0 var(--spacing-md) 0; }
   margin-left: auto;
 }
 
+.recruit-quota strong {
+  color: var(--accent);
+  font-size: 16px;
+}
+
 .recruit-table {
   width: 100%;
   border-collapse: collapse;

@@ -11,7 +11,7 @@ title: 研究生招生
     <div class="recruit-header">
       <span class="recruit-badge">硕士</span>
       <span class="recruit-title">2027年硕士生招生</span>
-      <span class="recruit-quota">名额 {{ site.data.recruitment_2027.master.quota }} 名</span>
+      <span class="recruit-quota">名额 <strong>{{ site.data.recruitment_2027.master.quota }}</strong> 名</span>
     </div>
     {% assign master_applicants = site.data.recruitment_2027.master.applicants %}
     {% if master_applicants.size > 0 %}
@@ -21,7 +21,7 @@ title: 研究生招生
           <th class="col-rank">#</th>
           <th class="col-name">姓名</th>
           <th class="col-school">学校</th>
-          <th class="col-level">层次</th>
+          <th class="col-level">备注</th>
           <th class="col-gender">性别</th>
         </tr>
       </thead>
@@ -58,7 +58,7 @@ title: 研究生招生
     <div class="recruit-header">
       <span class="recruit-badge">博士</span>
       <span class="recruit-title">2027年博士生招生</span>
-      <span class="recruit-quota">名额 {{ site.data.recruitment_2027.phd.quota }} 名</span>
+      <span class="recruit-quota">名额 <strong>{{ site.data.recruitment_2027.phd.quota }}</strong> 名</span>
     </div>
     {% assign phd_applicants = site.data.recruitment_2027.phd.applicants %}
     {% if phd_applicants.size > 0 %}
@@ -68,7 +68,7 @@ title: 研究生招生
           <th class="col-rank">#</th>
           <th class="col-name">姓名</th>
           <th class="col-school">学校</th>
-          <th class="col-level">层次</th>
+          <th class="col-level">备注</th>
           <th class="col-gender">性别</th>
         </tr>
       </thead>
