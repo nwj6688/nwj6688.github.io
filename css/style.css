@@ -457,8 +457,12 @@ p { margin: 0 0 var(--spacing-md) 0; }
 }
 
 .recruit-quota strong {
-  color: var(--accent);
-  font-size: 16px;
+  color: #e74c3c;
+  font-size: 18px;
+  font-weight: 700;
+  background: #fde8e8;
+  padding: 1px 10px;
+  border-radius: 4px;
 }
 
 .recruit-table {
