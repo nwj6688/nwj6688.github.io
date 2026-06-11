@@ -398,6 +398,131 @@ p { margin: 0 0 var(--spacing-md) 0; }
   margin: 0 auto;
 }
 
+/* --- 研究生招生 --- */
+.recruitment-section {
+  margin-top: var(--spacing-lg);
+}
+
+.recruit-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  border-left: 5px solid var(--primary-light);
+  transition: box-shadow 0.3s;
+}
+
+.recruit-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.recruit-phd {
+  border-left-color: #e67e22;
+}
+
+.recruit-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.recruit-badge {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--primary-light);
+}
+
+.recruit-phd .recruit-badge {
+  background: #e67e22;
+}
+
+.recruit-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.recruit-quota {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.recruit-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.recruit-table thead th {
+  background: var(--bg-body);
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.recruit-table tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+.recruit-table tbody tr:hover {
+  background: var(--bg-card-hover);
+}
+
+.col-rank {
+  width: 40px;
+}
+
+.col-name {
+  width: 100px;
+}
+
+.col-gender {
+  width: 60px;
+}
+
+.recruit-footer {
+  margin-top: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
+  text-align: right;
+  font-size: 13px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-light);
+}
+
+.recruit-empty {
+  padding: 20px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* --- 研究⽣招⽣ 响应式 --- */
+@media (max-width: 576px) {
+  .recruit-table {
+    font-size: 12px;
+  }
+  .recruit-table thead th,
+  .recruit-table tbody td {
+    padding: 6px 8px;
+  }
+  .recruit-header {
+    gap: 8px;
+  }
+}
+
 /* --- 卡片 --- */
 .card {
   background: var(--bg-card);
