@@ -39,6 +39,7 @@ title: 首页
           <th class="col-rank">#</th>
           <th class="col-name">姓名</th>
           <th class="col-school">学校</th>
+          <th class="col-level">层次</th>
           <th class="col-gender">性别</th>
         </tr>
       </thead>
@@ -48,6 +49,15 @@ title: 首页
           <td>{{ forloop.index }}</td>
           <td>{{ applicant.display }}</td>
           <td>{{ applicant.school }}</td>
+          <td class="level-cell">
+            {% if applicant.tags.size > 0 %}
+              {% for tag in applicant.tags %}
+              <span class="level-tag level-{{ tag }}">{{ tag }}</span>
+              {% endfor %}
+            {% else %}
+            <span class="level-none">—</span>
+            {% endif %}
+          </td>
           <td>{{ applicant.gender }}</td>
         </tr>
         {% endfor %}
@@ -76,6 +86,7 @@ title: 首页
           <th class="col-rank">#</th>
           <th class="col-name">姓名</th>
           <th class="col-school">学校</th>
+          <th class="col-level">层次</th>
           <th class="col-gender">性别</th>
         </tr>
       </thead>
@@ -85,6 +96,15 @@ title: 首页
           <td>{{ forloop.index }}</td>
           <td>{{ applicant.display }}</td>
           <td>{{ applicant.school }}</td>
+          <td class="level-cell">
+            {% if applicant.tags.size > 0 %}
+              {% for tag in applicant.tags %}
+              <span class="level-tag level-{{ tag }}">{{ tag }}</span>
+              {% endfor %}
+            {% else %}
+            <span class="level-none">—</span>
+            {% endif %}
+          </td>
           <td>{{ applicant.gender }}</td>
         </tr>
         {% endfor %}
