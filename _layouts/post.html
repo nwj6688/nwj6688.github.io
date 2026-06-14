@@ -22,6 +22,13 @@
               {% if page.reviewer %}
               <span class="post-reviewer"> · 审核: {{ page.reviewer }}</span>
               {% endif %}
+              {% if page.approver %}
+              <span class="post-approver"> · 批准: {{ page.approver }}</span>
+              {% endif %}
+              {% if page.reading_time %}
+              <span class="post-reading-time"> · 📖 预计阅读: {{ page.reading_time }} 分钟</span>
+              {% endif %}
+              <span class="post-pageview"> · 👁️ 阅读 <span id="busuanzi_value_page_pv">--</span> 次</span>
               {% if page.tags %}
               <span class="post-tags">
                 {% for tag in page.tags %}
@@ -31,42 +38,37 @@
               {% endif %}
             </p>
           </header>
+
+          {% if page.featured_image %}
+          <div class="post-featured-image">
+            <img src="{{ page.featured_image }}" alt="{{ page.title }}" loading="lazy">
+          </div>
+          {% endif %}
+
+          {% if page.papers %}
+          <div class="post-paper-meta">
+            <div class="paper-meta-title">📄 本文涉及的论文</div>
+            {% for paper in page.papers %}
+            <div class="paper-meta-item">
+              <div class="paper-meta-name">{{ paper.title }}</div>
+              <div class="paper-meta-details">
+                {% if paper.authors %}<span>👥 {{ paper.authors }}</span>{% endif %}
+                {% if paper.venue %}<span>🏛 {{ paper.venue }}</span>{% endif %}
+                {% if paper.doi %}<span>🔗 <a href="https://doi.org/{{ paper.doi }}" target="_blank" rel="noopener">{{ paper.doi }}</a></span>{% endif %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+
           <div class="post-content" itemprop="articleBody">
             {{ content }}
           </div>
         </article>
       </div>
     </div>
-
-    <!-- Giscus 评论系统 -->
-    <div class="row">
-      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12">
-        <div class="giscus mt-5"></div>
-        <script src="https://giscus.app/client.js"
-          data-repo="nwj6688/THETA-Lab-Website"
-          data-repo-id=""
-          data-category=""
-          data-category-id=""
-          data-mapping="pathname"
-          data-strict="0"
-          data-reactions-enabled="1"
-          data-emit-metadata="0"
-          data-input-position="bottom"
-          data-theme="preferred_color_scheme"
-          data-lang="zh-CN"
-          crossorigin="anonymous"
-          async>
-        </script>
-      </div>
-    </div>
   </div>
 
   {% include footer.html %}
-
-  <script>
-    $(function () {
-      $('[data-toggle="tooltip"]').tooltip();
-    });
-  </script>
 </body>
 </html>

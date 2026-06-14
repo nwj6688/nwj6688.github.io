@@ -59,6 +59,127 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // 视频画廊 - 模态框控制
+  var videoModal = document.getElementById('videoModal');
+  if (videoModal) {
+    var videoPlayer = document.getElementById('videoPlayer');
+    var videoTitle = document.getElementById('videoModalTitle');
+    var videoDesc = document.getElementById('videoModalDesc');
+    var videoLoading = document.getElementById('videoLoading');
+    var videoError = document.getElementById('videoError');
+    var loadTimer;
+
+    function resetVideoState() {
+      if (videoLoading) videoLoading.style.display = 'none';
+      if (videoError) videoError.style.display = 'none';
+      videoPlayer.poster = '';
+      videoPlayer.removeAttribute('poster');
+      // 注意：不在此处清空 src，清空 src 会触发异步 error 事件
+      // 导致正在加载新视频时错误提示被错误显示。src 清理移到 hideModal 中
+      clearTimeout(loadTimer);
+    }
+
+    videoPlayer.addEventListener('loadedmetadata', function() {
+      if (videoLoading) videoLoading.style.display = 'none';
+      if (videoError) videoError.style.display = 'none';
+      clearTimeout(loadTimer);
+    });
+
+    videoPlayer.addEventListener('canplay', function() {
+      if (videoLoading) videoLoading.style.display = 'none';
+      if (videoError) videoError.style.display = 'none';
+      clearTimeout(loadTimer);
+    });
+
+    videoPlayer.addEventListener('error', function() {
+      // 过滤空 src 触发的假错误（src 清空后浏览器会异步抛 error）
+      if (videoPlayer.src === '' || !videoPlayer.src) return;
+      if (videoLoading) videoLoading.style.display = 'none';
+      if (videoError) videoError.style.display = 'block';
+      clearTimeout(loadTimer);
+    });
+
+    function startLoadTimer() {
+      clearTimeout(loadTimer);
+      loadTimer = setTimeout(function() {
+        if (videoLoading) videoLoading.style.display = 'none';
+      }, 15000);
+    }
+
+    // ----- 关闭 modal（不依赖 Bootstrap data-dismiss）-----
+    function hideModal() {
+      videoPlayer.pause();
+      videoPlayer.currentTime = 0;
+      videoPlayer.src = '';  // 仅在关闭 modal 时清理 src
+      resetVideoState();
+      // 移除 Bootstrap modal 相关类
+      videoModal.classList.remove('show');
+      videoModal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+      var backdrop = document.querySelector('.modal-backdrop');
+      if (backdrop) backdrop.remove();
+    }
+
+    // 关闭按钮直接绑定（不依赖 Bootstrap 的 data-dismiss）
+    var closeBtn = videoModal.querySelector('.close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', hideModal);
+    }
+
+    // 点击 modal 外部（灰色背景）关闭
+    videoModal.addEventListener('click', function(e) {
+      if (e.target === videoModal) hideModal();
+    });
+
+    // ESC 键关闭
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && videoModal.classList.contains('show')) {
+        hideModal();
+      }
+    });
+
+    // ----- 打开 modal -----
+    function showModal() {
+      // 先用 Bootstrap API（干净，有过渡效果）
+      try {
+        $(videoModal).modal('show');
+      } catch (e) {
+        // Bootstrap 不可用时手动显示
+        videoModal.classList.add('show');
+        videoModal.style.display = 'block';
+        document.body.classList.add('modal-open');
+        var backdrop = document.createElement('div');
+        backdrop.className = 'modal-backdrop fade show';
+        backdrop.addEventListener('click', hideModal);
+        document.body.appendChild(backdrop);
+      }
+    }
+
+    // 点击视频卡片打开模态框
+    document.addEventListener('click', function(e) {
+      var card = e.target.closest('.video-card');
+      if (!card) return;
+      var src = card.dataset.videoSrc;
+      var poster = card.dataset.videoPoster || '';
+      var title = card.dataset.videoTitle;
+      var desc = card.dataset.videoDesc || '';
+      if (src) {
+        resetVideoState();
+        if (videoLoading) videoLoading.style.display = 'flex';
+        if (videoError) videoError.style.display = 'none';
+        videoPlayer.poster = poster;
+        videoPlayer.src = src;
+        videoPlayer.load();
+        startLoadTimer();
+        videoTitle.textContent = title;
+        if (videoDesc) {
+          videoDesc.textContent = desc;
+        }
+        showModal();
+      }
+    });
+  }
+
   // 回到顶部按钮
   var backToTop = document.querySelector('.back-to-top');
   if (backToTop) {

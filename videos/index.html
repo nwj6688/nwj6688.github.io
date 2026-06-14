@@ -1,0 +1,77 @@
+---
+layout: page
+title: 视频
+---
+
+<div class="alert alert-info" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: var(--spacing-md); margin-bottom: var(--spacing-lg); color: var(--text-secondary); font-size: 14px;">
+  📹 实验室相关视频展示，点击卡片即可放大播放。
+</div>
+
+{% assign videos = site.data.videos | sort: "date" | reverse %}
+
+{% if videos.size == 0 %}
+<div class="text-center py-5" style="color: var(--text-muted);">
+  <p style="font-size: 2.5rem; margin-bottom: var(--spacing-md);">🎬</p>
+  <p style="font-size: 1rem;">暂无视频内容，敬请期待。</p>
+</div>
+{% else %}
+<div class="video-grid">
+  {% for video in videos %}
+  <div class="video-card"
+       data-video-src="{{ video.file }}"
+       data-video-poster="{{ video.thumbnail }}"
+       data-video-title="{{ video.title }}"
+       data-video-desc="{{ video.description | default: '' }}">
+    <div class="video-card-thumb">
+      {% if video.thumbnail %}
+      <img src="{{ video.thumbnail }}" alt="{{ video.title }}" loading="lazy">
+      {% else %}
+      <div class="video-card-thumb-placeholder">🎬</div>
+      {% endif %}
+      <div class="video-card-play-icon">&#9654;</div>
+      {% if video.duration %}
+      <span class="video-card-duration">{{ video.duration }}</span>
+      {% endif %}
+    </div>
+    <div class="video-card-body">
+      <div class="video-card-title">{{ video.title }}</div>
+      {% if video.description %}
+      <div class="video-card-desc">{{ video.description }}</div>
+      {% endif %}
+      {% if video.date %}
+      <div class="video-card-date">{{ video.date | date: "%Y-%m-%d" }}</div>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<!-- 视频 Lightbox 模态框（独立页面专用） -->
+<div class="modal fade video-modal" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModalTitle">播放视频</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="video-loading-overlay" id="videoLoading">
+          <div class="video-spinner"></div>
+          <span>视频加载中...</span>
+        </div>
+        <div class="video-error-msg" id="videoError">
+          ⚠️ 视频加载失败，请检查网络后重试。
+        </div>
+        <video id="videoPlayer" controls preload="metadata" playsinline>
+          您的浏览器不支持视频播放，请升级浏览器或使用现代浏览器访问。
+        </video>
+      </div>
+      <div class="modal-footer">
+        <span id="videoModalDesc"></span>
+      </div>
+    </div>
+  </div>
+</div>

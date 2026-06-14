@@ -1,13 +1,111 @@
 ---
 layout: page
-title: 加入我们
+title: 研究生招生
 ---
+
+<h2 class="section-title" style="color: var(--accent);">📋 2027年研究生招生</h2>
+
+<div class="recruitment-section">
+  <!-- 硕士生 -->
+  <div class="recruit-card recruit-master">
+    <div class="recruit-header">
+      <span class="recruit-badge">硕士</span>
+      <span class="recruit-title">2027年硕士生招生</span>
+      <span class="recruit-quota">名额 <strong>{{ site.data.recruitment_2027.master.quota }}</strong> 名</span>
+    </div>
+    {% assign master_applicants = site.data.recruitment_2027.master.applicants %}
+    {% if master_applicants.size > 0 %}
+    <table class="recruit-table">
+      <thead>
+        <tr>
+          <th class="col-rank">#</th>
+          <th class="col-name">姓名</th>
+          <th class="col-school">学校</th>
+          <th class="col-level">备注</th>
+          <th class="col-gender">性别</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for applicant in master_applicants %}
+        <tr>
+          <td>{{ forloop.index }}</td>
+          <td>{{ applicant.display }}</td>
+          <td>{{ applicant.school }}</td>
+          <td class="level-cell">
+            {% if applicant.tags.size > 0 %}
+              {% for tag in applicant.tags %}
+              <span class="level-tag level-{{ tag }}">{{ tag }}</span>
+              {% endfor %}
+            {% else %}
+            <span class="level-none">—</span>
+            {% endif %}
+          </td>
+          <td>{{ applicant.gender }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="recruit-footer">
+      已报名 {{ master_applicants.size }} 人（均为报名意向）
+    </div>
+    {% else %}
+    <div class="recruit-empty">暂无报名信息</div>
+    {% endif %}
+  </div>
+
+  <!-- 博士生 -->
+  <div class="recruit-card recruit-phd">
+    <div class="recruit-header">
+      <span class="recruit-badge">博士</span>
+      <span class="recruit-title">2027年博士生招生</span>
+      <span class="recruit-quota">名额 <strong>{{ site.data.recruitment_2027.phd.quota }}</strong> 名</span>
+    </div>
+    {% assign phd_applicants = site.data.recruitment_2027.phd.applicants %}
+    {% if phd_applicants.size > 0 %}
+    <table class="recruit-table">
+      <thead>
+        <tr>
+          <th class="col-rank">#</th>
+          <th class="col-name">姓名</th>
+          <th class="col-school">学校</th>
+          <th class="col-level">备注</th>
+          <th class="col-gender">性别</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for applicant in phd_applicants %}
+        <tr>
+          <td>{{ forloop.index }}</td>
+          <td>{{ applicant.display }}</td>
+          <td>{{ applicant.school }}</td>
+          <td class="level-cell">
+            {% if applicant.tags.size > 0 %}
+              {% for tag in applicant.tags %}
+              <span class="level-tag level-{{ tag }}">{{ tag }}</span>
+              {% endfor %}
+            {% else %}
+            <span class="level-none">—</span>
+            {% endif %}
+          </td>
+          <td>{{ applicant.gender }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="recruit-footer">
+      已报名 {{ phd_applicants.size }} 人（均为报名意向）
+    </div>
+    {% else %}
+    <div class="recruit-empty">暂无报名信息</div>
+    {% endif %}
+  </div>
+</div>
 
 <div class="card">
   <h3 class="card-title">招生招聘信息</h3>
   <div class="card-text">
     <p>人工智能安全实验室(THETA Lab@BJTU)长期招聘：本科生(实习、信安/大创/CTF竞赛)、硕士生(保研/考研)、博士生(学术博士/工程博士/在职博士)和科研助理，欢迎同学们与我们联系，实验室期待你的加入！</p>
-    <p>2026年人工智能安全实验室(THETA Lab@BJTU)招生启事：欢迎对人工智能安全、大模型安全等方向感兴趣的同学(26年秋入学的统考硕士/博士生、27年秋入学的推免硕士/统考硕士/博士生)报考人工智能安全实验室！实验室期待更多优秀同学的加入！</p>
+    <p>2027年人工智能安全实验室(THETA Lab@BJTU)招生启事：欢迎对人工智能安全、大模型安全等方向感兴趣的同学报考人工智能安全实验室！实验室期待更多优秀同学的加入！</p>
   </div>
 </div>
 
@@ -16,9 +114,9 @@ title: 加入我们
 
   <p><strong>地址：</strong>北京市海淀区上园村3号北京交通大学机械工程楼</p>
 
-  <p><strong>申请方式：</strong>请准备个人简历[pdf格式]+自荐信[若有其他获奖材料可附件]，发送至实验室负责人邮箱：</p>
+  <p><strong>申请方式：</strong>请准备个人简历[pdf格式]+实验过程/效果视频，发送至实验室负责人邮箱：</p>
   <p class="contact-email">niuwj@bjtu.edu.cn [牛老师]</p>
-  <p>实验室会尽快组织安排面试。实验室期待你的加入！</p>
+  <p>实验室期待同学们的加入！有能力就勇敢展现出来，是金子总会发光。</p>
 
   <h4 class="subsection-title">交通方式</h4>
   <ul>

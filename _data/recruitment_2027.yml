@@ -1,0 +1,19 @@
+master:
+  quota: "5-6"
+  applicants:
+    - display: "**婷"
+      school: "广西大学"
+      gender: "女"
+      tags: ["211", "双一流高校"]
+    - display: "**钰"
+      school: "北京科技大学"
+      gender: "女"
+      tags: ["211", "双一流高校"]
+    - display: "**旭"
+      school: "河北农业大学"
+      gender: "男"
+      tags: []
+
+phd:
+  quota: "2-3"
+  applicants: []

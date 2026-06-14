@@ -128,14 +128,14 @@ title: 首页
 
 <!-- ========== 科研成果 ========== -->
 <h2 class="section-title">📝 科研成果</h2>
-<p><strong>近年代表性论文如下：</strong></p>
+<p><strong>近年代表性论文如下：</strong>
+  <button class="btn-copy-papers">📋 复制全部</button>
+</p>
 
 <ol class="papers-list">
   <li><img src="https://img.shields.io/badge/ASE-26-blue?style=flat-square"> Jiayin Song, Yike Li, Yunzhe Tian, Haoxuan Ma, Honglei Li, Jie Zuo, Jiqiang Liu, Wenjia Niu. Investigating the bugs in reinforcement learning programs: Insights from Stack Overflow and GitHub. Automated Software Engineering, 33(1): 9, 2026. <b><font color="#003399">(CCF-B期刊)</font></b></li>
   <li><img src="https://img.shields.io/badge/FGCS-26-blue?style=flat-square"> Xiangyu Shi, Yunzhe Tian, Yike Li, Weiwei Jiang, Leyu Fu, Xingyu Wu, Xiaoshu Cui, Wenjia Niu. Enhancing adversarial robustness of neural networks via quantum computing. Future Generation Computer Systems, 183: 108542, 2026. <b><font color="#003399">(SCI中科院2区)</font></b></li>
   <li><img src="https://img.shields.io/badge/DSN-25-blue?style=flat-square"> Xiaoyan Zhou, Ying Zhang, Wenjia Niu, Jiqiang Liu, Haining Wang, Qiang Li. An Analysis of Malicious Packages in Open-Source Software in the Wild. DSN 2025, pp. 371-385. <b><font color="#003399">(CCF-B会议)</font></b></li>
-  <li><img src="https://img.shields.io/badge/TCSVT-25-blue?style=flat-square"> Zhifeng Wang, Qixuan Zhang, Peter Zhang, Wenjia Niu, Kaihao Zhang, Ramesh S. Sankaranarayana, Sabrina B. Caldwell, Tom Gedeon. Visual and Textual Prompts in VLLMs for Enhancing Emotion Recognition. IEEE Transactions on Circuits and Systems for Video Technology, 35(4): 12355-12368, 2025. <b><font color="#003399">(SCI中科院1区, IEEE Trans)</font></b></li>
-  <li><img src="https://img.shields.io/badge/EMNLP-24-blue?style=flat-square"> Qixuan Zhang, Zhifeng Wang, Dylan Zhang, Wenjia Niu, Sabrina B. Caldwell, Tom Gedeon, Yang Liu, Zhenyue Qin. Visual Prompting in LLMs for Enhancing Emotion Recognition. EMNLP 2024, pp. 4484-4499. <b><font color="#003399">(CCF-B会议)</font></b></li>
   <li><img src="https://img.shields.io/badge/IJCAI-23-blue?style=flat-square"> Yike Li, Yunzhe Tian, Endong Tong, Wenjia Niu, and Jiqiang Liu. Robust Reinforcement Learning via Progressive Task Sequence. International Joint Conference on Artificial Intelligence (IJCAI-23). <b><font color="#003399">(CCF-A会议)</font></b></li>
   <li><img src="https://img.shields.io/badge/计算机研究与发展-25-blue?style=flat-square"> 徐冬月;田蕴哲;陈康;李轶珂;吴亚伦;童恩栋;牛温佳;刘吉强;史忠植. 面向信号调制识别的对抗攻击与防御综述. 计算机研究与发展, 2025. <b><font color="#003399">(CCF-A中文期刊)</font></b></li>
   <li><img src="https://img.shields.io/badge/计算机学报-21-blue?style=flat-square"> 王硕汝, 牛温佳, 童恩栋, 陈彤, 李赫, 田蕴哲, 刘吉强, 韩臻, 李浥东. 强化学习离线策略评估研究综述. 计算机学报, 2021. <b><font color="#003399">(CCF-A中文期刊)</font></b></li>
@@ -162,6 +162,80 @@ title: 首页
 </ol>
 <div class="text-center mt-3">
   <a href="/papers/" class="card-link">查看全部论文 →</a>
+</div>
+
+<!-- ========== 视频展示 ========== -->
+<h2 class="section-title">🎬 视频展示</h2>
+
+{% assign all_videos = site.data.videos | sort: "date" | reverse %}
+{% assign featured_videos = all_videos | where: "featured", true %}
+{% if featured_videos.size > 0 %}
+  {% assign display_videos = featured_videos %}
+{% else %}
+  {% assign display_videos = all_videos %}
+{% endif %}
+
+{% if display_videos.size > 0 %}
+<div class="video-grid">
+  {% for video in display_videos limit: 3 %}
+  <div class="video-card"
+       data-video-src="{{ video.file }}"
+       data-video-poster="{{ video.thumbnail }}"
+       data-video-title="{{ video.title }}"
+       data-video-desc="{{ video.description | default: '' }}">
+    <div class="video-card-thumb">
+      {% if video.thumbnail %}
+      <img src="{{ video.thumbnail }}" alt="{{ video.title }}" loading="lazy">
+      {% else %}
+      <div class="video-card-thumb-placeholder">🎬</div>
+      {% endif %}
+      <div class="video-card-play-icon">&#9654;</div>
+      {% if video.duration %}
+      <span class="video-card-duration">{{ video.duration }}</span>
+      {% endif %}
+    </div>
+    <div class="video-card-body">
+      <div class="video-card-title">{{ video.title }}</div>
+      {% if video.description %}
+      <div class="video-card-desc">{{ video.description }}</div>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="text-center mt-3">
+  <a href="/videos/" class="card-link">📺 查看全部视频 →</a>
+</div>
+{% endif %}
+
+<!-- 视频 Lightbox 模态框 -->
+<div class="modal fade video-modal" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModalTitle">播放视频</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="video-loading-overlay" id="videoLoading">
+          <div class="video-spinner"></div>
+          <span>视频加载中...</span>
+        </div>
+        <div class="video-error-msg" id="videoError">
+          ⚠️ 视频加载失败，请检查网络后重试。
+        </div>
+        <video id="videoPlayer" controls preload="metadata" playsinline>
+          您的浏览器不支持视频播放。
+        </video>
+      </div>
+      <div class="modal-footer">
+        <span id="videoModalDesc"></span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ========== 团队成员 ========== -->
@@ -231,21 +305,30 @@ title: 首页
   </div>
 </div>
 
-<h3 class="subsection-title">在读博士生</h3>
+<h3 class="subsection-title">在读博士生（共10人）</h3>
 <ul class="team-bullet-list">
-  <li><strong>2026级：</strong>余东起、崔晓澍</li>
+  <li><strong>2026级：</strong>余东起、崔晓澍、张潇果</li>
   <li><strong>2025级：</strong>赵鑫怡（詹天佑学院3+5本博一体化培养）、程殿景</li>
   <li><strong>2024级：</strong>齐胜（与国铁信息中心联合培养）、史翔宇</li>
   <li><strong>2023级：</strong>武兴宇、陈渊婉（与国铁集团联合培养）、李琼</li>
 </ul>
 
-<h3 class="subsection-title">在读硕士生</h3>
+<h3 class="subsection-title">在读硕士生（共26人）</h3>
 <ul class="team-bullet-list">
-  <li><strong>2026级：</strong>陈周涵、王佳琪、王一、蒋智恒、王嘉豪、赵凯</li>
-  <li><strong>2025级：</strong>孙佳露、李林哲、马博昌、郭企伦、滕文静、付乐宇</li>
+  <li><strong>2026级：</strong>陈周涵、王佳琪、王一、蒋智恒、王嘉豪、赵凯、王忆嘉、陈尚鑫、柴志超、张欣怡、吴子岳</li>
+  <li><strong>2025级：</strong>孙佳露、李林哲、马博昌、郭企伦、滕文静、付乐宇、肖逸杰、李一非、付英武、武素阳、郑美仑</li>
+  <li><strong>2024级：</strong>刘元铭</li>
+  <li><strong>2023级：</strong>杨宁、孙元林、金帆</li>
 </ul>
 
-<h3 class="subsection-title">博士毕业生</h3>
+<h3 class="subsection-title">在读本科生（创新培养）（共8人）</h3>
+<ul class="team-bullet-list">
+  <li><strong>25级：</strong>乔升华（土木建筑工程学院）、李芷妍（土木建筑工程学院）、毕博乐（网络空间安全学院）</li>
+  <li><strong>24级：</strong>胡泰华（土木建筑工程学院）、朱程元（计算机科学与技术学院）、丁浩锦（计算机科学与技术学院）、范艺霖（计算机科学与技术学院）</li>
+  <li><strong>23级：</strong>王屹涵（网络空间安全学院）</li>
+</ul>
+
+<h3 class="subsection-title">博士毕业生（共6人）</h3>
 <ul class="team-bullet-list">
   <li><strong>2026届：</strong>田蕴哲，加拿大尼皮新大学博士后，加拿大</li>
   <li><strong>2026届：</strong>姚洪磊，铁科院电子所测评中心副总经理，北京</li>
@@ -255,7 +338,7 @@ title: 首页
   <li><strong>2022届：</strong>陈彤，国家互联网应急中心，北京</li>
 </ul>
 
-<h3 class="subsection-title">硕士毕业生</h3>
+<h3 class="subsection-title">硕士毕业生（共40人）</h3>
 <ul class="team-bullet-list">
   <li><strong>2026届：</strong>宋佳茵，字节跳动，北京</li>
   <li><strong>2026届：</strong>贾敬淇，度小满，北京</li>
@@ -299,7 +382,7 @@ title: 首页
   <li><strong>2018届：</strong>陈彤，北京交通大学读博，北京</li>
 </ul>
 
-<h3 class="subsection-title">本科毕业生</h3>
+<h3 class="subsection-title">本科毕业生（共20人）</h3>
 <p class="text-secondary mb-4">含原CTF战队、大创项目、信安竞赛、本科毕设等成员</p>
 <ul class="team-bullet-list">
   <li><strong>2026届：</strong>陈周涵，北京交通大学读研，北京</li>
@@ -325,12 +408,33 @@ title: 首页
 </ul>
 
 
+<!-- ========== 相关链接 ========== -->
+<h2 class="section-title">🔗 相关链接</h2>
+
+<div class="links-section">
+  {% for link in site.data.links %}
+  <a href="{{ link.url }}" class="link-badge" target="_blank" rel="noopener">{{ link.name }}</a>
+  {% endfor %}
+</div>
+
 <!-- ========== 联系我们 ========== -->
 <h2 class="section-title">📮 联系我们</h2>
 
 <div class="contact-section">
-  <p><strong>地址：</strong>北京市海淀区上园村3号北京交通大学机械工程楼</p>
-  <p><strong>联系方式：</strong>请准备<strong>个人简历</strong>[pdf格式]+<strong>自荐信</strong>[若有其他获奖材料可附件]，发送至实验室负责人邮箱：<a href="mailto:niuwj@bjtu.edu.cn" class="contact-email">niuwj@bjtu.edu.cn</a> [牛老师]，实验室会尽快组织安排面试。实验室期待你的加入！</p>
+  <div class="row">
+    <div class="col-md-7">
+      <p><strong>地址：</strong>北京市海淀区上园村3号北京交通大学机械工程楼</p>
+      <p><strong>申请方式：</strong>请准备个人简历[pdf格式]+实验过程/效果视频，发送至实验室负责人邮箱：</p>
+      <p class="contact-email">niuwj@bjtu.edu.cn [牛老师]</p>
+      <p>实验室期待同学们的加入！有能力就勇敢展现出来，是金子总会发光。</p>
+    </div>
+    <div class="col-md-5 text-center">
+      <div class="wechat-qr-card">
+        <img src="/images/qrcode_for_gh_311fc195e6e1_430.jpg" alt="微信公众号" class="contact-qr-img">
+        <p class="mt-2 mb-0 text-muted">扫码关注实验室公众号</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.js"></script>
@@ -412,6 +516,27 @@ $(function() {
       $('.news-card').hide();
       $('.news-card[data-year="' + year + '"]').show();
     }
+  });
+});
+
+// 一键复制论文列表
+$('.btn-copy-papers').on('click', function() {
+  var $ol = $(this).closest('p').next('ol.papers-list');
+  if (!$ol.length) return;
+  var items = $ol.find('li');
+  var lines = [];
+  items.each(function(i) {
+    var $clone = $(this).clone();
+    $clone.find('img').remove();
+    var text = $clone.text().replace(/\s+/g, ' ').trim();
+    lines.push((i + 1) + '. ' + text);
+  });
+  navigator.clipboard.writeText(lines.join('\n')).then(function() {
+    var $toast = $('<div class="copy-toast">✅ 已复制 ' + items.length + ' 篇论文到剪贴板</div>');
+    $('body').append($toast);
+    setTimeout(function() { $toast.fadeOut(300, function() { $toast.remove(); }); }, 2000);
+  }).catch(function() {
+    alert('❌ 复制失败，请手动选择复制');
   });
 });
 </script>
