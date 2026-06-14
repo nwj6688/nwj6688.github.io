@@ -16,4 +16,8 @@ master:
 
 phd:
   quota: "2-3"
-  applicants: []
+  applicants:
+    - display: "**起"
+      school: "北京交通大学"
+      gender: "男"
+      tags: ["211", "双一流高校"]
