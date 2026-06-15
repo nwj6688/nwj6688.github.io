@@ -6,6 +6,7 @@ author: 陈周涵
 reviewer: 李轶珂
 approver: 牛温佳
 tags: [强化学习, 模仿学习, 自动驾驶, PE-RLHF, CoFe-DIRL, 安全约束]
+featured_image: /images/blog/2026-06-15-autonomous-driving-rl-strategies-featured.png
 reading_time: 45
 papers:
   - title: "PE-RLHF: A Physics-Enhanced Human Feedback Framework for Safe Autonomous Driving"
