@@ -3,7 +3,8 @@ layout: post
 title: "基于 RL 的自动驾驶策略——PE-RLHF 与 CoFe-DIRL 联合分析"
 date: 2026-06-15 10:00:00 +0800
 author: 陈周涵
-reviewer: 牛温佳
+reviewer: 李轶珂
+approver: 牛温佳
 tags: [强化学习, 模仿学习, 自动驾驶, PE-RLHF, CoFe-DIRL, 安全约束]
 reading_time: 45
 papers:
