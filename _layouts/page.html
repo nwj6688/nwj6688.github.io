@@ -4,9 +4,10 @@
   {% include head.html %}
 </head>
 <body>
+  <a href="#main-content" class="skip-link">跳转到主要内容</a>
   {% include header.html %}
 
-  <div class="container main-content">
+  <div id="main-content" class="container main-content" role="main">
     <div class="row">
       <div class="col-12">
         <h1 class="page-title">{{ page.title }}</h1>

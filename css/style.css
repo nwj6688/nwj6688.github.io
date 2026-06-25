@@ -101,6 +101,44 @@ a:hover {
   text-decoration: underline;
 }
 
+/* --- 可访问性: Skip-to-content --- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 10000;
+  padding: 8px 16px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+}
+.skip-link:focus {
+  top: 0;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* --- 可访问性: Focus 指示器 --- */
+:focus-visible {
+  outline: 2px solid var(--primary-light);
+  outline-offset: 2px;
+}
+
+/* --- 可访问性: 减少动画偏好 --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .gallery-scroll {
+    scroll-behavior: auto !important;
+  }
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -786,7 +824,7 @@ p { margin: 0 0 var(--spacing-md) 0; }
   border-radius: 20px;
   letter-spacing: 0.3px;
   white-space: nowrap;
-  color: #ff0000;
+  color: #c0392b;
 }
 
 /* 阅读全文链接 */
@@ -869,6 +907,19 @@ p { margin: 0 0 var(--spacing-md) 0; }
   color: var(--primary-light);
   margin-left: 4px;
 }
+
+/* --- 论文等级标签 --- */
+.ccf-rank {
+  font-weight: 600;
+  font-size: 12px;
+  margin-left: 4px;
+}
+.ccf-rank-a { color: #c0392b; }
+.ccf-rank-b { color: #2980b9; }
+.ccf-rank-c { color: #27ae60; }
+.ccf-rank-1 { color: #8e44ad; }
+.ccf-rank-2 { color: #d35400; }
+.ccf-rank-ieee { color: #1a5276; }
 
 /* --- 一键复制按钮 --- */
 .btn-copy-papers {
