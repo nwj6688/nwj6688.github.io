@@ -13,6 +13,10 @@ master:
       school: "河北农业大学"
       gender: "男"
       tags: []
+    - display: "古**"
+      school: "南昌航空大学"
+      gender: "男"
+      tags: ["航空特色"]
 
 phd:
   quota: "2-3"
