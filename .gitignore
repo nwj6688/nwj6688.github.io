@@ -1,9 +1,20 @@
+# 缓存文件
+page*.html
+page.html
+dblp_page.html
+dblp_pubs.xml
+article_info*.json
+
+# Jekyll
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+vendor/bundle/
 Gemfile.lock
+
+# IDE
 .vscode/
+.idea/
 *.swp
 *.swo
-.DS_Store
