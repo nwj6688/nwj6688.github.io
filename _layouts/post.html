@@ -29,7 +29,7 @@
               {% if page.reading_time %}
               <span class="post-reading-time"> · 📖 预计阅读: {{ page.reading_time }} 分钟</span>
               {% endif %}
-              <span class="post-pageview"> · 👁️ 阅读 <span id="busuanzi_value_page_pv">--</span> 次</span>
+              <span class="post-pageview"> · 👁️ 阅读 <span class="page-pv" data-pagekey="{{ page.url | slugify }}">--</span> 次</span>
               {% if page.tags %}
               <span class="post-tags">
                 {% for tag in page.tags %}

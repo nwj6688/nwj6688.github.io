@@ -7,7 +7,7 @@
             <a class="mx-1" href="/">© 2026 THETA@BJTU</a>
           </li>
           <li class="nav-link">
-            <span class="mx-1 visitor-count">总访问量 <span id="busuanzi_value_site_pv">--</span> 次</span>
+            <span class="mx-1 visitor-count">总访问量 <span id="site_pv">加载中...</span> 次</span>
           </li>
           <li class="nav-link">
             <a class="wechat-qr-trigger" href="#" data-toggle="tooltip" data-placement="top" title="扫码关注公众号">
@@ -19,5 +19,57 @@
     </div>
   </nav>
 </div>
-<script async defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" integrity="sha384-oaKlriFiEaHzTKw66TKlzwgjYHPT5tvx+uf4JRnAGvP7HCHj5NPqEoAkyyOAPxZN" crossorigin="anonymous"></script>
+<script>
+(function() {
+  var ns = 'nwj6688_github_io';
+
+  // Site-wide total visits
+  var totalKey = 'total_visits';
+  var totalEl = document.getElementById('site_pv');
+  if (totalEl) {
+    try {
+      var cached = localStorage.getItem('countapi_' + totalKey);
+      if (cached) { totalEl.textContent = cached; }
+      fetch('https://api.countapi.xyz/hit/' + ns + '/' + totalKey)
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          if (d && d.value) {
+            totalEl.textContent = d.value;
+            try { localStorage.setItem('countapi_' + totalKey, d.value); } catch(e) {}
+          }
+        })
+        .catch(function() {
+          if (!totalEl.textContent || totalEl.textContent === '加载中...') { totalEl.textContent = '--'; }
+        });
+    } catch(e) {
+      totalEl.textContent = '--';
+    }
+  }
+
+  // Per-page read counts
+  var pageEls = document.querySelectorAll('.page-pv');
+  for (var i = 0; i < pageEls.length; i++) {
+    (function(el) {
+      var pageKey = 'page_' + (el.getAttribute('data-pagekey') || ('p' + i));
+      try {
+        var cached = localStorage.getItem('countapi_' + pageKey);
+        if (cached) { el.textContent = cached; }
+        fetch('https://api.countapi.xyz/hit/' + ns + '/' + pageKey)
+          .then(function(r) { return r.json(); })
+          .then(function(d) {
+            if (d && d.value) {
+              el.textContent = d.value;
+              try { localStorage.setItem('countapi_' + pageKey, d.value); } catch(e) {}
+            }
+          })
+          .catch(function() {
+            if (!el.textContent || el.textContent === '--') { el.textContent = '--'; }
+          });
+      } catch(e) {
+        el.textContent = '--';
+      }
+    })(pageEls[i]);
+  }
+})();
+</script>
 <script src="/js/main.js"></script>
