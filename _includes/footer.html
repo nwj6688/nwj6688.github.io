@@ -21,53 +21,31 @@
 </div>
 <script>
 (function() {
-  var ns = 'nwj6688_github_io';
+  var API = 'https://quantum-auto-safety.top/api/';
 
-  // Site-wide total visits
-  var totalKey = 'total_visits';
+  // Site-wide total visits for nwj6688.github.io
   var totalEl = document.getElementById('site_pv');
   if (totalEl) {
-    try {
-      var cached = localStorage.getItem('countapi_' + totalKey);
-      if (cached) { totalEl.textContent = cached; }
-      fetch('https://api.countapi.xyz/hit/' + ns + '/' + totalKey)
-        .then(function(r) { return r.json(); })
-        .then(function(d) {
-          if (d && d.value) {
-            totalEl.textContent = d.value;
-            try { localStorage.setItem('countapi_' + totalKey, d.value); } catch(e) {}
-          }
-        })
-        .catch(function() {
-          if (!totalEl.textContent || totalEl.textContent === '加载中...') { totalEl.textContent = '--'; }
-        });
-    } catch(e) {
-      totalEl.textContent = '--';
-    }
+    fetch(API + '?id=nwj6688:pv', {method:'POST'})
+      .then(function(r) { return r.json(); })
+      .then(function(d) {
+        if (d && d.count !== undefined) { totalEl.textContent = d.count; }
+      })
+      .catch(function() { totalEl.textContent = '--'; });
   }
 
-  // Per-page read counts
+  // Per-page read counts for blog posts
   var pageEls = document.querySelectorAll('.page-pv');
   for (var i = 0; i < pageEls.length; i++) {
     (function(el) {
-      var pageKey = 'page_' + (el.getAttribute('data-pagekey') || ('p' + i));
-      try {
-        var cached = localStorage.getItem('countapi_' + pageKey);
-        if (cached) { el.textContent = cached; }
-        fetch('https://api.countapi.xyz/hit/' + ns + '/' + pageKey)
-          .then(function(r) { return r.json(); })
-          .then(function(d) {
-            if (d && d.value) {
-              el.textContent = d.value;
-              try { localStorage.setItem('countapi_' + pageKey, d.value); } catch(e) {}
-            }
-          })
-          .catch(function() {
-            if (!el.textContent || el.textContent === '--') { el.textContent = '--'; }
-          });
-      } catch(e) {
-        el.textContent = '--';
-      }
+      var slug = el.getAttribute('data-pagekey');
+      if (!slug) return;
+      fetch(API + '?id=nwj6688:post:' + slug, {method:'POST'})
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          if (d && d.count !== undefined) { el.textContent = d.count; }
+        })
+        .catch(function() {});
     })(pageEls[i]);
   }
 })();
