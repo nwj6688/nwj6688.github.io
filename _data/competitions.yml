@@ -1,0 +1,33 @@
+
+- title: 第6届"创安杯"智能汽车信息安全公开赛
+  organizer: 中国汽车工程研究院 / 国家智能网联汽车创新中心
+  description: >-
+    面向全国高校的智能汽车信息安全竞赛，涵盖汽车CAN总线逆向、车载固件分析、车联网漏洞挖掘等方向，
+    获奖团队将获得奖金和荣誉证书，优秀选手可获推荐至头部车企实习。
+  status: 报名中
+  deadline: 2026-08-15
+  image:
+  url: https://www.auto-security.cn/
+  contact: true
+
+- title: 第31届DEF CON自动驾驶CTF全球挑战赛
+  organizer: DEF CON / 百度安全
+  description: >-
+    全球最具影响力的自动驾驶CTF赛事，比赛涵盖自动驾驶感知系统攻击、决策规划系统攻击、
+    V2X通信安全等方向。THETA Lab曾获第29届亚军（满分）、第30届解题榜第二名。
+  status: 即将开始
+  deadline: 2026-09-01
+  image:
+  url: https://baidu.com/defcon-ctf
+  contact: true
+
+- title: 全国大学生信息安全竞赛（作品赛）
+  organizer: 教育部高等学校网络空间安全专业教学指导委员会
+  description: >-
+    国内最具影响力的信息安全学科竞赛，参赛作品类型包括但不限于：密码算法、安全协议、
+    系统安全、网络安全、数据安全、人工智能安全等方向。设有一、二、三等奖。
+  status: 即将开始
+  deadline: 2026-07-15
+  image:
+  url: https://www.ciscn.cn/
+  contact: true

@@ -869,6 +869,206 @@ p { margin: 0 0 var(--spacing-md) 0; }
   user-select: none;
 }
 
+
+/* --- 竞赛招募 - 卡片网格 --- */
+.comp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 0 0 30px;
+}
+
+@media (max-width: 768px) {
+  .comp-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.comp-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.comp-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.comp-image-wrap {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: var(--bg-muted);
+}
+
+.comp-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.comp-body {
+  padding: 18px 20px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.comp-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.comp-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.comp-badge-open {
+  background: #d4edda;
+  color: #155724;
+}
+
+.comp-badge-upcoming {
+  background: #cce5ff;
+  color: #004085;
+}
+
+.comp-badge-closed {
+  background: #e2e3e5;
+  color: #383d41;
+}
+
+.comp-deadline {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.comp-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.comp-organizer {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+}
+
+.comp-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0 0 16px;
+  flex: 1;
+}
+
+.comp-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.comp-btn {
+  display: inline-block;
+  padding: 7px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.comp-btn:hover {
+  text-decoration: none;
+}
+
+.comp-btn-outline {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.comp-btn-outline:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.comp-btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(26, 82, 118, 0.2);
+}
+
+.comp-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(26, 82, 118, 0.3);
+  color: #fff;
+}
+
+/* 竞赛页底部咨询区 */
+.comp-footer {
+  margin-top: 40px;
+}
+
+.comp-footer-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.comp-footer-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+  color: var(--text-primary);
+}
+
+.comp-contact {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.comp-contact-label {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.comp-contact-email {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.comp-contact-note {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
 /* --- 论文列表 --- */
 .papers-list {
   list-style: none;

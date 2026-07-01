@@ -1,0 +1,89 @@
+---
+layout: page
+title: 🏆 竞赛招募
+description: THETA Lab 竞赛招募 — 自动驾驶CTF、智能汽车安全、信息安全等竞赛信息，欢迎同学们联系牛老师报名参加
+---
+
+<p class="text-secondary mb-4">实验室鼓励和支持同学们参加各类高水平竞赛，在实战中提升能力。以下为近期可报名的比赛信息，欢迎联系牛老师报名参加！</p>
+
+<div class="toolbar">
+  <label>📋 筛选：</label>
+  <a href="#all" class="btn-status active" data-status="all">全部</a>
+  <a href="#open" class="btn-status" data-status="报名中">🟢 报名中</a>
+  <a href="#upcoming" class="btn-status" data-status="即将开始">🔵 即将开始</a>
+  <a href="#closed" class="btn-status" data-status="已截止">⚪ 已截止</a>
+</div>
+
+<div class="comp-grid">
+  {% assign competitions = site.data.competitions %}
+  {% for comp in competitions %}
+  <div class="comp-card" data-status="{{ comp.status }}">
+    {% if comp.image %}
+    <div class="comp-image-wrap">
+      <img src="{{ comp.image }}" alt="{{ comp.title }}" class="comp-image" loading="lazy">
+    </div>
+    {% endif %}
+    <div class="comp-body">
+      <div class="comp-header">
+        {% if comp.status == "报名中" %}
+        <span class="comp-badge comp-badge-open">🟢 报名中</span>
+        {% elsif comp.status == "即将开始" %}
+        <span class="comp-badge comp-badge-upcoming">🔵 即将开始</span>
+        {% elsif comp.status == "已截止" %}
+        <span class="comp-badge comp-badge-closed">⚪ 已截止</span>
+        {% endif %}
+        {% if comp.deadline %}
+        <span class="comp-deadline">📅 截止：{{ comp.deadline }}</span>
+        {% endif %}
+      </div>
+      <h3 class="comp-title">{{ comp.title }}</h3>
+      <p class="comp-organizer">🏛️ {{ comp.organizer }}</p>
+      <p class="comp-desc">{{ comp.description }}</p>
+      <div class="comp-actions">
+        {% if comp.url %}
+        <a href="{{ comp.url }}" target="_blank" rel="noopener noreferrer" class="comp-btn comp-btn-outline">🔗 官网链接</a>
+        {% endif %}
+        {% if comp.contact %}
+        <a href="mailto:niuwj@bjtu.edu.cn" class="comp-btn comp-btn-primary">✉️ 联系牛老师报名</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% assign open_count = site.data.competitions | where: "status", "报名中" | size %}
+{% assign upcoming_count = site.data.competitions | where: "status", "即将开始" | size %}
+
+<div class="comp-footer">
+  <div class="comp-footer-card">
+    <h3>📬 报名咨询</h3>
+    <p>对以上比赛感兴趣的同学，请通过以下方式联系牛老师报名：</p>
+    <div class="comp-contact">
+      <span class="comp-contact-label">📧 邮箱：</span>
+      <a href="mailto:niuwj@bjtu.edu.cn" class="comp-contact-email">niuwj@bjtu.edu.cn</a>
+    </div>
+    <div class="comp-contact">
+      <span class="comp-contact-label">🏫 地址：</span>
+      <span>北京市海淀区上园村3号北京交通大学机械工程楼</span>
+    </div>
+    <p class="comp-contact-note">欢迎各年级本科生、研究生积极报名！在竞赛中锻炼能力、积累经验、为简历增色！</p>
+  </div>
+</div>
+
+<script>
+$(function() {
+  $('.btn-status').click(function(e) {
+    e.preventDefault();
+    var status = $(this).data('status');
+    $('.btn-status').removeClass('active');
+    $(this).addClass('active');
+    if (status === 'all') {
+      $('.comp-card').show();
+    } else {
+      $('.comp-card').hide();
+      $('.comp-card[data-status="' + status + '"]').show();
+    }
+  });
+});
+</script>
