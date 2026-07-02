@@ -1,4 +1,20 @@
 
+- title: 第28届中国机器人及人工智能大赛 — 百度Apollo星火自动驾驶大赛
+  organizer: 中国人工智能学会 / 百度Apollo
+  description: >-
+    教育部白名单赛事（全国普通高校学科竞赛排行榜第51项），面向本科生、研究生。
+    每队1-3人，需1名指导教师。不限专业，可跨年级跨专业组队。
+
+    省赛（线上仿真赛）→ 国赛初评（线上）→ 国赛决赛（仿真+实车体验）。
+
+    技术平台：Apollo 8.0 + ApolloStudio 线上评测，城市道路自动驾驶场景。
+    每人最多提交50次代码，取最优成绩。国赛2026年7月举办。
+  status: 已截止
+  deadline: 2026-05-31
+  image:
+  url: https://apollo.baidu.com/community/competition/71
+  contact: true
+
 - title: 2026第二届大学生人工智能安全大赛
   organizer: 中国信息协会
   description: >-
