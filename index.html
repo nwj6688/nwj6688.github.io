@@ -56,7 +56,7 @@ description: 北京交通大学人工智能安全实验室（THETA Lab）— 智
 <div class="gallery-wrap">
   <button class="gallery-btn gallery-prev">‹</button>
   <div class="gallery-scroll" id="galleryScroll">
-    {% for item in site.data.gallery reversed %}
+    {% for item in site.data.gallery %}
     <a href="{{ item.image }}" class="gallery-item" title="{{ item.caption }}">
       <img src="{{ item.image }}" alt="{{ item.caption }}" class="gallery-img" loading="lazy">
     </a>
