@@ -64,11 +64,7 @@ description: 北京交通大学人工智能安全实验室（THETA Lab）— 智
   </div>
   <button class="gallery-btn gallery-next">›</button>
 </div>
-<div class="gallery-counter" id="galleryCounter">
-  <span id="galleryCurrent">1</span> / <span id="galleryTotal">{{ site.data.gallery | size }}</span>
-  <input type="number" id="galleryJump" min="1" max="{{ site.data.gallery | size }}" placeholder="跳转" style="width:50px;height:22px;font-size:12px;text-align:center;border:1px solid #ddd;border-radius:3px;margin-left:6px;vertical-align:middle;">
-  <button onclick="galleryGoTo()" style="height:22px;font-size:11px;padding:0 6px;border:1px solid #ddd;border-radius:3px;background:#f5f5f5;cursor:pointer;vertical-align:middle;">GO</button>
-</div>
+<div class="gallery-counter" id="galleryCounter">1 / {{ site.data.gallery | size }}</div>
 
 <!-- ========== 新闻动态 ========== -->
 <h2 class="section-title">🔥 新闻动态</h2>
@@ -421,25 +417,7 @@ description: 北京交通大学人工智能安全实验室（THETA Lab）— 智
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.js" integrity="sha384-5Rxw0VVOccxzu1mBmZTQXywjtMZJqLT4ZBjHLD8bP8sBLNFdfQ8XJPnqHKDSOcQ/" crossorigin="anonymous">
-function galleryGoTo() {
-  var input = document.getElementById("galleryJump");
-  var num = parseInt(input.value);
-  if (isNaN(num) || num < 1) num = 1;
-  var total = parseInt(document.getElementById("galleryTotal").textContent);
-  if (num > total) num = total;
-  var scrollTo = (num - 1) * 228;
-  var scroll = document.getElementById("galleryScroll");
-  var maxScroll = scroll.scrollWidth - scroll.offsetWidth;
-  if (scrollTo > maxScroll) scrollTo = maxScroll;
-  scroll.scrollTo({left: scrollTo, behavior: "smooth"});
-  document.getElementById("galleryCurrent").textContent = num;
-  input.value = "";
-}
-document.getElementById("galleryJump").addEventListener("keydown", function(e) {
-  if (e.key === "Enter") galleryGoTo();
-});
-</script>
+<script src="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.js" integrity="sha384-5Rxw0VVOccxzu1mBmZTQXywjtMZJqLT4ZBjHLD8bP8sBLNFdfQ8XJPnqHKDSOcQ/" crossorigin="anonymous"></script>
 <script>
 $(function() {
   // baguetteBox 灯箱
@@ -460,7 +438,6 @@ $(function() {
     if (idx < 1) idx = 1;
     if (idx > total) idx = total;
     $counter.text(idx + ' / ' + total);
-    $('#galleryCurrent').text(idx);
   }
 
   function doAutoScroll() {
