@@ -18,6 +18,11 @@ master:
       gender: "男"
       tags: ["航空特色"]
 
+    - display: "黄**"
+      school: "大连外国语大学"
+      gender: "女"
+      tags: []
+
 phd:
   quota: "2-3"
   applicants:
