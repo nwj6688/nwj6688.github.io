@@ -18,3 +18,11 @@ Gemfile.lock
 .idea/
 *.swp
 *.swo
+
+# 安全
+*.bak
+.env*
+*.pem
+*.key
+credentials*
+secrets*

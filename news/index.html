@@ -58,25 +58,5 @@ description: THETA Lab 最新动态 — 学术交流、竞赛获奖、项目进�
   {% endfor %}
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.js"></script>
-<script>
-$(function() {
-  baguetteBox.run('.news-images', { captions: false });
-  // 默认只显示 2026 年新闻
-  $('.news-card').hide();
-  $('.news-card[data-year="2026"]').show();
-
-  $('.btn-year').click(function(e) {
-    e.preventDefault();
-    var year = $(this).data('year');
-    $('.btn-year').removeClass('active');
-    $(this).addClass('active');
-    if (year === 'all') {
-      $('.news-card').show();
-    } else {
-      $('.news-card').hide();
-      $('.news-card[data-year="' + year + '"]').show();
-    }
-  });
-});
-</script>
+<script src="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.js" integrity="sha384-5Rxw0VVOccxzu1mBmZTQXywjtMZJqLT4ZBjHLD8bP8sBLNFdfQ8XJPnqHKDSOcQ/" crossorigin="anonymous"></script>
+<script src="/js/news-page.js"></script>
