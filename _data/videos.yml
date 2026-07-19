@@ -23,8 +23,7 @@
   featured: true
 
 - title: "什么是后门攻击？"
-  description: "后门攻击是AI安全中最隐蔽的攻击方式。攻击者在模型中植入隐藏后门，通过特定触发器控制模型行为。THETA Lab 科普系列。"
-  file: "/assets/videos/backdoor-attack.mp4"
+  description: "后门攻击是AI安全中最隐蔽的攻击方式。攻击者在模型中植入隐藏后门，通过特定触发器控制模型行为。THETA Lab 科普系列。（视频待生成）"
   thumbnail: "/images/video-thumbnails/backdoor-thumb.jpg"
   duration: "00:43"
   date: 2026-07-03

@@ -71,5 +71,10 @@
   </div>
 
   {% include footer.html %}
+
+  <!-- 核心 JS（从 head 移到底部以优化渲染） -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/site.js"></script>
 </body>
 </html>
