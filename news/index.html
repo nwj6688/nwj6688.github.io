@@ -25,7 +25,7 @@ description: THETA Lab 最新动态 — 学术交流、竞赛获奖、项目进�
       {% for img in item.images limit:4 %}
       <div class="news-image-wrap">
         <a href="{{ img }}" class="news-lightbox">
-          <img src="{{ img }}" alt="" class="news-thumb" loading="lazy">
+          <img src="{{ img }}" alt="{{ item.title }}" class="news-thumb" loading="lazy">
         </a>
       </div>
       {% endfor %}
