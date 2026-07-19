@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a148c"/>
+      <stop offset="100%" style="stop-color:#6a1b9a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg3)" rx="12"/>
+  <text x="200" y="55" text-anchor="middle" fill="#ce93d8" font-size="18" font-weight="bold">2026第二届</text>
+  <text x="200" y="90" text-anchor="middle" fill="#fff" font-size="24" font-weight="bold">大学生人工智能安全大赛</text>
+  <line x1="60" y1="115" x2="340" y2="115" stroke="#ce93d8" stroke-width="2"/>
+  <text x="200" y="145" text-anchor="middle" fill="#e0e0e0" font-size="13">主办：中国信息协会</text>
+  <text x="200" y="165" text-anchor="middle" fill="#e0e0e0" font-size="13">承办：上海交通大学 / 百度</text>
+  <text x="200" y="185" text-anchor="middle" fill="#ce93d8" font-size="12">大模型安全 · 数据防泄露 · 越狱攻击</text>
+  <rect x="130" y="205" width="140" height="30" rx="15" fill="#ce93d8"/>
+  <text x="200" y="225" text-anchor="middle" fill="#4a148c" font-size="14" font-weight="bold">报名中 · 8/15截止</text>
+</svg>

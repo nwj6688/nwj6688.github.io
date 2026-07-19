@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#bf360c"/>
+      <stop offset="100%" style="stop-color:#d84315"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg4)" rx="12"/>
+  <text x="200" y="55" text-anchor="middle" fill="#ffab91" font-size="16">智信</text>
+  <text x="200" y="90" text-anchor="middle" fill="#fff" font-size="28" font-weight="bold">2026无人智能挑战赛</text>
+  <line x1="60" y1="115" x2="340" y2="115" stroke="#ffab91" stroke-width="2"/>
+  <text x="200" y="145" text-anchor="middle" fill="#e0e0e0" font-size="13">主办：中国指挥与控制学会</text>
+  <text x="200" y="165" text-anchor="middle" fill="#e0e0e0" font-size="13">2026年7月-10月</text>
+  <text x="200" y="185" text-anchor="middle" fill="#ffab91" font-size="12">无人集群管控 · AI智能安全</text>
+  <rect x="130" y="205" width="140" height="30" rx="15" fill="#ffab91"/>
+  <text x="200" y="225" text-anchor="middle" fill="#bf360c" font-size="14" font-weight="bold">报名中 · 8/31截止</text>
+</svg>

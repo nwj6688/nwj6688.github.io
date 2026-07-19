@@ -17,7 +17,7 @@
     全国总决赛设一等奖10%（3000元）、二等奖20%（2000元）、潜力奖30%。
   status: 报名中
   deadline: 2026-08-31
-  image:
+  image: /images/competition/ccf-ivc-2026.svg
   url: https://ccf.org.cn/ccfivc2026
   contact: true
 
@@ -33,7 +33,7 @@
     每人最多提交50次代码，取最优成绩。国赛2026年7月举办。
   status: 已截止
   deadline: 2026-05-31
-  image:
+  image: /images/competition/apollo-2026.svg
   url: https://apollo.baidu.com/community/competition/71
   contact: true
 
@@ -45,7 +45,7 @@
     参赛团队通过官网注册并提交作品。获奖团队颁发证书。
   status: 报名中
   deadline: 2026-08-15
-  image:
+  image: /images/competition/ai-security-2026.svg
   url: https://ai-contest.sjtu.edu.cn
   contact: true
 
@@ -62,6 +62,6 @@
     提交方案/论文/视频参赛。报名截至8月15日，8月下旬预赛→9月下旬决赛→10月下旬展示。
   status: 报名中
   deadline: 2026-08-31
-  image:
+  image: /images/competition/zhiren-2026.svg
   url: http://www.osredm.com/competition/ZX2026
   contact: true

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1b5e20"/>
+      <stop offset="100%" style="stop-color:#2e7d32"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg2)" rx="12"/>
+  <text x="200" y="50" text-anchor="middle" fill="#a5d6a7" font-size="16">第28届中国机器人及人工智能大赛</text>
+  <text x="200" y="85" text-anchor="middle" fill="#fff" font-size="24" font-weight="bold">百度Apollo</text>
+  <text x="200" y="115" text-anchor="middle" fill="#81c784" font-size="18">星火自动驾驶大赛</text>
+  <line x1="80" y1="135" x2="320" y2="135" stroke="#a5d6a7" stroke-width="2"/>
+  <text x="200" y="160" text-anchor="middle" fill="#e0e0e0" font-size="13">主办：中国人工智能学会</text>
+  <text x="200" y="180" text-anchor="middle" fill="#e0e0e0" font-size="13">平台：Apollo 8.0</text>
+  <rect x="130" y="200" width="140" height="30" rx="15" fill="#a5d6a7"/>
+  <text x="200" y="220" text-anchor="middle" fill="#1b5e20" font-size="14" font-weight="bold">已截止</text>
+</svg>
