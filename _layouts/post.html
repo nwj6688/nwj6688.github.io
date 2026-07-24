@@ -7,6 +7,11 @@
   <a href="#main-content" class="skip-link">跳转到主要内容</a>
   {% include header.html %}
 
+  <!-- 核心 JS 先加载（确保依赖 jQuery 的页面脚本可用） -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/site.js"></script>
+
   <div id="main-content" class="container main-content" role="main">
     <div class="row">
       <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12">
@@ -71,10 +76,5 @@
   </div>
 
   {% include footer.html %}
-
-  <!-- 核心 JS（从 head 移到底部以优化渲染） -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
-  <script src="/js/bootstrap.bundle.min.js"></script>
-  <script src="/js/site.js"></script>
 </body>
 </html>
