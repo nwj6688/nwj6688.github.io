@@ -23,6 +23,11 @@ master:
       gender: "女"
       tags: []
 
+    - display: "朱**"
+      school: "山东师范大学"
+      gender: "男"
+      tags: ["国家级特色专业"]
+
 phd:
   quota: "2-3"
   applicants:
