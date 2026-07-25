@@ -13,12 +13,12 @@ master:
       school: "河北农业大学"
       gender: "男"
       tags: []
-    - display: "古**"
+    - display: "古烁锽"
       school: "南昌航空大学"
       gender: "男"
       tags: ["航空特色"]
 
-    - display: "黄**"
+    - display: "黄涵钰"
       school: "大连外国语大学"
       gender: "女"
       tags: []
@@ -31,7 +31,7 @@ master:
 phd:
   quota: "2-3"
   applicants:
-    - display: "**起"
+    - display: "余东起"
       school: "北京交通大学"
       gender: "男"
       tags: ["211", "双一流高校"]
