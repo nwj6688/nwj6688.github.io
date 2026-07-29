@@ -28,6 +28,16 @@ master:
       gender: "男"
       tags: ["国家级特色专业"]
 
+    - display: "楚天野"
+      school: "北京交通大学"
+      gender: "男"
+      tags: ["211", "双一流高校"]
+
+    - display: "彭小乔"
+      school: "广东财经大学"
+      gender: "女"
+      tags: []
+
 phd:
   quota: "2-3"
   applicants:
