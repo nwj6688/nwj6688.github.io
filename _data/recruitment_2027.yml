@@ -48,6 +48,21 @@ master:
       gender: "男"
       tags: []
 
+    - display: "胡漠杨"
+      school: "首都经济贸易大学"
+      gender: "男"
+      tags: []
+
+    - display: "张维"
+      school: "青岛理工大学"
+      gender: "男"
+      tags: []
+
+    - display: "李懿倬"
+      school: "天津师范大学"
+      gender: "女"
+      tags: []
+
 phd:
   quota: "2-3"
   applicants:
