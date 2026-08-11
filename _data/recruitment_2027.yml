@@ -23,11 +23,6 @@ master:
       gender: "女"
       tags: []
 
-    - display: "朱会琛"
-      school: "山东师范大学"
-      gender: "男"
-      tags: ["国家级特色专业"]
-
     - display: "楚天野"
       school: "北京交通大学"
       gender: "男"
