@@ -33,11 +33,6 @@ master:
       gender: "女"
       tags: []
 
-    - display: "胡弘"
-      school: "北京交通大学"
-      gender: "男"
-      tags: ["211", "双一流高校"]
-
     - display: "庞博铭"
       school: "首都经济贸易大学"
       gender: "男"
@@ -57,6 +52,11 @@ master:
       school: "天津师范大学"
       gender: "女"
       tags: []
+
+    - display: "马寅钊"
+      school: "燕山大学"
+      gender: "男"
+      tags: ["推免"]
 
 phd:
   quota: "2-3"
