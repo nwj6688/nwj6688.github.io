@@ -1,4 +1,16 @@
 
+- date: 2026-08-13
+  title: 喜报！北京交通大学THETA实验室联合百度Apollo提出基于离线量子教师的LiDAR候选框精化方案
+  images:
+    - /images/news/bjt-apollo-quantum-lidar-01.jpg
+  summary: >-
+    北京交通大学THETA实验室与百度Apollo基于Apollo 11.0开展合作，
+    提出"离线量子教师、在线经典学生"的混合技术路线，
+    通过知识蒸馏将量子教师学到的LiDAR候选框精化知识传递给轻量经典学生，
+    在不修改Apollo公共感知接口和Cyber RT通道的前提下接入感知链路，
+    支持按需启用、随时关闭与完整复查。
+  external_url: https://mp.weixin.qq.com/s/Ua3ZwwLJCAu1iAegS_hqtA
+
 - date: 2026-07-23
   title: 喜报！牛温佳教授受聘担任科普中国专家
   images:
