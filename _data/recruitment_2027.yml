@@ -58,6 +58,11 @@ master:
       gender: "男"
       tags: ["推免"]
 
+    - display: "王晓飒"
+      school: "燕山大学"
+      gender: "女"
+      tags: ["推免"]
+
 phd:
   quota: "2-3"
   applicants:
