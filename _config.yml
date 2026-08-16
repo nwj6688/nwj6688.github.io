@@ -32,6 +32,11 @@ exclude:
   - README.md
   - vendor
   - .gitignore
+  - page*.html
+  - page.html
+  - dblp_page.html
+  - dblp_pubs.xml
+  - article_info*.json
 
 # 集合
 collections:
@@ -63,10 +68,3 @@ kramdown:
 # 分页
 paginate: 10
 paginate_path: "/blog/page:num/"
-
-# Giscus 评论配置（占位符）
-giscus:
-  repo: "username/repo"
-  repo_id: ""
-  category: "Announcements"
-  category_id: ""
