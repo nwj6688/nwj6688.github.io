@@ -43,7 +43,7 @@
     由上海交通大学、百度科技承办，北京邮电大学等协办。设开放式创新作品和开放式专业命题两种参赛形式。
     专业命题聚焦5个方向：大模型安全、数据防泄露、越狱攻击、Web安全、异常行为识别与DNS攻击检测。
     参赛团队通过官网注册并提交作品。获奖团队颁发证书。
-  status: 报名中
+  status: 已截止
   deadline: 2026-08-15
   image: /images/competition/ai-security-2026.svg
   url: https://ai-contest.sjtu.edu.cn
@@ -63,5 +63,5 @@
   status: 报名中
   deadline: 2026-08-31
   image: /images/competition/zhiren-2026.svg
-  url: http://www.osredm.com/competition/ZX2026
+  url: https://www.osredm.com/competition/ZX2026
   contact: true

@@ -71,19 +71,4 @@ description: THETA Lab 竞赛招募 — 人工智能安全大赛、无人智能�
   </div>
 </div>
 
-<script>
-$(function() {
-  $('.btn-status').click(function(e) {
-    e.preventDefault();
-    var status = $(this).data('status');
-    $('.btn-status').removeClass('active');
-    $(this).addClass('active');
-    if (status === 'all') {
-      $('.comp-card').show();
-    } else {
-      $('.comp-card').hide();
-      $('.comp-card[data-status="' + status + '"]').show();
-    }
-  });
-});
-</script>
+<script src="/js/competition-page.js"></script>
