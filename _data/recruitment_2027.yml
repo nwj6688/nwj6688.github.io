@@ -63,6 +63,11 @@ master:
       gender: "女"
       tags: ["推免"]
 
+    - display: "王怡蕊"
+      school: "北京建筑大学"
+      gender: "女"
+      tags: []
+
 phd:
   quota: "2-3"
   applicants:
