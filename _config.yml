@@ -32,11 +32,6 @@ exclude:
   - README.md
   - vendor
   - .gitignore
-  - page*.html
-  - page.html
-  - dblp_page.html
-  - dblp_pubs.xml
-  - article_info*.json
 
 # 集合
 collections:
