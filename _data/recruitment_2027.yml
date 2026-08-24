@@ -68,6 +68,16 @@ master:
       gender: "女"
       tags: []
 
+    - display: "李堃芃"
+      school: "首都经济贸易大学"
+      gender: "男"
+      tags: []
+
+    - display: "尤传萍"
+      school: "江西师范大学"
+      gender: "女"
+      tags: ["推免"]
+
 phd:
   quota: "2-3"
   applicants:
