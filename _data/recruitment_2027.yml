@@ -78,6 +78,16 @@ master:
       gender: "女"
       tags: ["推免"]
 
+    - display: "王佳丽"
+      school: "山东理工大学"
+      gender: "女"
+      tags: []
+
+    - display: "王京"
+      school: "青岛理工大学"
+      gender: "男"
+      tags: []
+
 phd:
   quota: "2-3"
   applicants:
