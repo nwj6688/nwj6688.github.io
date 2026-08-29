@@ -88,6 +88,16 @@ master:
       gender: "男"
       tags: []
 
+    - display: "刘少帅"
+      school: "天津理工大学"
+      gender: "男"
+      tags: []
+
+    - display: "刘士壮"
+      school: "山东科技大学"
+      gender: "男"
+      tags: ["推免"]
+
 phd:
   quota: "2-3"
   applicants:
