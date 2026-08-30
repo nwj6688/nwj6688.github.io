@@ -98,6 +98,11 @@ master:
       gender: "男"
       tags: ["推免"]
 
+    - display: "蔡久安"
+      school: "江西财经大学"
+      gender: "男"
+      tags: ["推免"]
+
 phd:
   quota: "2-3"
   applicants:
