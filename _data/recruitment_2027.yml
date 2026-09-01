@@ -103,6 +103,11 @@ master:
       gender: "男"
       tags: ["推免"]
 
+    - display: "王含"
+      school: "山西农业大学"
+      gender: "女"
+      tags: ["推免"]
+
 phd:
   quota: "2-3"
   applicants:
