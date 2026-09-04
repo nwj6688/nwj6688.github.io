@@ -108,6 +108,11 @@ master:
       gender: "女"
       tags: ["推免"]
 
+    - display: "闵正坤"
+      school: "华东交通大学"
+      gender: "男"
+      tags: ["推免"]
+
 phd:
   quota: "2-3"
   applicants:
