@@ -113,6 +113,11 @@ master:
       gender: "男"
       tags: ["推免"]
 
+    - display: "严凯嘉"
+      school: "南京邮电大学"
+      gender: "女"
+      tags: ["推免"]
+
 phd:
   quota: "2-3"
   applicants:
