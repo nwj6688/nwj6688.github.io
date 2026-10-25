@@ -1070,6 +1070,81 @@ p { margin: 0 0 var(--spacing-md) 0; }
   font-style: italic;
 }
 
+/* --- 竞赛招募 - 车联网安全动态 --- */
+.dyn-section {
+  margin-top: 48px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border-color);
+}
+
+.dyn-title {
+  margin: 0 0 6px;
+  font-size: 1.3rem;
+  color: var(--text-primary);
+}
+
+.dyn-intro {
+  margin: 0 0 18px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.dyn-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border-light);
+}
+
+.dyn-item {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  padding: 13px 4px;
+  border-bottom: 1px solid var(--border-light);
+  transition: background 0.15s ease;
+}
+
+.dyn-item:hover {
+  background: var(--bg-card-hover);
+}
+
+.dyn-date {
+  flex: 0 0 92px;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.dyn-link {
+  flex: 1;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.dyn-link::after {
+  content: " ↗";
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.dyn-link:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+@media (max-width: 560px) {
+  .dyn-item {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .dyn-date {
+    flex: none;
+  }
+}
+
 /* --- 论文列表 --- */
 .papers-list {
   list-style: none;

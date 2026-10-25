@@ -71,4 +71,17 @@ description: THETA Lab 竞赛招募 — 人工智能安全大赛、无人智能�
   </div>
 </div>
 
+<div class="dyn-section">
+  <h2 class="dyn-title">📡 车联网安全动态</h2>
+  <p class="dyn-intro">来自「太初众测」公众号的车联网安全赛事与活动资讯，推送直达微信原文。</p>
+  <ul class="dyn-list">
+    {% for item in site.data.taichu_articles %}
+    <li class="dyn-item">
+      <span class="dyn-date">{{ item.date }}</span>
+      <a href="{{ item.url }}" class="dyn-link" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
 <script src="/js/competition-page.js"></script>
