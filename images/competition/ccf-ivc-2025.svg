@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250">
+  <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#1a237e"/><stop offset="100%" style="stop-color:#303f9f"/>
+  </linearGradient></defs>
+  <rect width="400" height="250" fill="url(#g)" rx="12"/>
+  <text x="200" y="94" text-anchor="middle" fill="#ffffff" font-size="21" font-weight="bold" font-family="Microsoft YaHei,PingFang SC,sans-serif">首届CCF智能汽车大赛</text>
+  <text x="200" y="118" text-anchor="middle" fill="#ffffff" font-size="21" font-weight="bold" font-family="Microsoft YaHei,PingFang SC,sans-serif">（CCF IVC 2025）</text>
+  <text x="200" y="145" text-anchor="middle" fill="#e8e8e8" font-size="11.5" font-family="Microsoft YaHei,PingFang SC,sans-serif">中国计算机学会（CCF）/ CCF智能汽车分会</text>
+  <text x="200" y="165" text-anchor="middle" fill="#e8e8e8" font-size="11.5" font-family="Microsoft YaHei,PingFang SC,sans-serif">2025.07.01 – 08.16</text>
+  <text x="200" y="181" text-anchor="middle" fill="#9fa8da" font-size="11" font-family="Microsoft YaHei,PingFang SC,sans-serif">初赛 CTF + 决赛实车</text>
+</svg>

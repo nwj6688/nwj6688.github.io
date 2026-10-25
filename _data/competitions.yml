@@ -1,3 +1,4 @@
+# THETA Lab 竞赛数据
 
 - title: 中国电科“网信杯”人工智能创新大赛（B04赛题：目标本体表征与多源数据融合）
   organizer: 中国电子科技集团有限公司 / 中国电科29所（B04赛题承办）
@@ -17,20 +18,60 @@
   url: https://wangxinbei.taiji.com.cn/
   contact: true
 
+- title: 第十届“强网杯”全国网络安全挑战赛（设车联网安全赛道）
+  organizer: 河南省委网信办、河南省教育厅、郑州市人民政府、信息工程大学、郑州大学
+  description: >-
+    为深入贯彻国家网络安全战略，推动网络安全前沿技术创新与落地应用，本次竞赛紧扣国家战略需求与地方产业发展布局，立足行业网络安全现实风险场景，<strong>设立车联网安全赛道</strong>，综合检验参赛团队在前沿场景风险识别、安全防护体系构建、关键技术验证转化、应急处置协同响应等方面的能力。
+
+    赛程：报名10月23日—11月5日；线上初赛11月8日 09:30—12:00；线上复赛11月9日—15日；线下决赛11月28日—29日；11月30日前公布结果。
+
+    报名入口：http://www.qiangwangbei.com （太初封神台同步开放报名）
+  status: 报名中
+  deadline: 2026-11-05
+  image: /images/competition/qiangwangbei-2026.svg
+  url: http://www.qiangwangbei.com
+  contact: true
+
+- title: 吉利全球汽车网络安全挑战赛（2026 极氪全球汽车网络安全挑战赛）
+  organizer: 吉利（宁波）研究院 2030数字安全实验室
+  description: >-
+    智能网联汽车领域面向全球安全社区的创新众测实践。广泛汇聚全球白帽研究者，依托真实整车开展攻防对抗，系统性挖掘整车网络安全隐患，落地完整漏洞闭环处置流程，将实战竞赛能力融入整车全生命周期安全建设，前置化解智能汽车新型安全风险。
+
+    赛制：线上仿真赛 + 线下实战赛，创新落地宁波、新加坡双地同步办赛，联动新加坡国际网络安全周，打通中外车联网安全行业交流协作通道。
+
+    赛程：报名9月14日—17日；线上赛9月19日 09:30—12:00；线下赛（中国·宁波）9月22日—24日；线下赛（新加坡·滨海湾）9月29日—30日。
+  status: 已截止
+  deadline: 2026-09-17
+  image: /images/competition/geely-2026.svg
+  url: https://www.taichu.net/competitionDetail?id=66
+  contact: true
+
+- title: “之江铸网2026”线下实车及具身智能攻防演练
+  organizer: 浙江省通信管理局 / 浙江省经济和信息化厅
+  description: >-
+    2026年车联网网络安全攻防演练赛道。在浙江省内“铸网”系列活动中引入实车、具身智能、无人车、无人机等无人装备，由中汽研汽车科技（上海）有限公司、中汽研汽车检验中心（宁波）有限公司、山东泽鹿安全技术有限公司协同提供比赛环境。
+
+    赛制：采用“线上发布、定向邀请”模式，针对省内重点车企多款主流网联汽车品牌开展实车攻防测试。
+
+    赛程：报名9月1日—6日；线下实车演练9月14日—18日。
+  status: 已截止
+  deadline: 2026-09-06
+  image: /images/competition/zhijiang-2026.svg
+  url: https://www.taichu.net/competitionDetail?id=65
+  contact: true
+
 - title: 第二届CCF智能汽车竞赛（CCF IVC 2026）
   organizer: 中国计算机学会（CCF）/ CCF智能汽车分会
   description: >-
-    CCF主办的高水平全国学科竞赛，牛温佳教授担任CCF智能汽车分会执行委员、组织主席。
-    设三大赛道：
+    CCF主办的高水平全国学科竞赛，牛温佳教授担任CCF智能汽车分会执行委员、组织主席。设三大赛道：
 
-    一、实车安全挑战赛
-    聚焦真实车辆环境下的网络安全攻防实战。联系人：陈老师 18803030514
+    一、实车安全挑战赛 —— 聚焦真实车辆环境下的网络安全攻防实战。联系人：陈老师 18803030514
 
-    二、自动驾驶仿真赛
-    基于仿真平台的自动驾驶算法竞技。联系人：陈老师 18518415551
+    二、自动驾驶仿真赛 —— 基于仿真平台的自动驾驶算法竞技。联系人：陈老师 18518415551
 
-    三、智能网联汽车安全识别挑战赛
-    智能网联汽车场景下的安全识别与检测。联系人：刘老师 18661071388
+    三、智能网联汽车安全识别挑战赛 —— 智能网联汽车场景下的安全识别与检测。联系人：刘老师 18661071388
+
+    赛程：报名3月13日—8月1日；初赛8月5日 09:30—11:30；决赛8月19日—20日（上海）。
 
     全国总决赛设一等奖10%（3000元）、二等奖20%（2000元）、潜力奖30%。
   status: 已截止
@@ -39,35 +80,35 @@
   url: https://ccf.org.cn/ccfivc2026
   contact: true
 
-- title: 第28届中国机器人及人工智能大赛 — 百度Apollo星火自动驾驶大赛
-  organizer: 中国人工智能学会 / 百度Apollo
+- title: “渝安智行2026”重庆市车联网安全攻防比赛
+  organizer: 重庆信息通信研究院
   description: >-
-    教育部白名单赛事（全国普通高校学科竞赛排行榜第51项），面向本科生、研究生。
-    每队1-3人，需1名指导教师。不限专业，可跨年级跨专业组队。
+    立足重庆市车联网安全和发展实际，系统构建车联网领域网络和数据安全治理体系，着力营造规范有序、风险可控的车联网安全生态，护航新型工业化高质量发展。
 
-    省赛（线上仿真赛）→ 国赛初评（线上）→ 国赛决赛（仿真+实车体验）。
+    赛制：预选赛（线上CTF）→ 决赛（线上实车）→ 决赛（线下实车）。
 
-    技术平台：Apollo 8.0 + ApolloStudio 线上评测，城市道路自动驾驶场景。
-    每人最多提交50次代码，取最优成绩。国赛2026年7月举办。
+    赛程：报名8月12日—25日；预选赛8月26日 09:30—11:30；决赛（线上实车）8月27日—31日 09:00—18:00；决赛（线下实车）9月1日—3日。
   status: 已截止
-  deadline: 2026-05-31
-  image: /images/competition/apollo-2026.svg
-  url: https://apollo.baidu.com/community/competition/71
+  deadline: 2026-08-25
+  image: /images/competition/yuanzhixing-2026.svg
+  url: https://www.taichu.net/competitionDetail?id=62
   contact: true
 
-- title: 2026第二届大学生人工智能安全大赛
-  organizer: 中国信息协会
+- title: “龙磐铸网2026”网络安全现场演练 —— 车联网安全赛道
+  organizer: 江苏省通信管理局
   description: >-
-    由上海交通大学、百度科技承办，北京邮电大学等协办。设开放式创新作品和开放式专业命题两种参赛形式。
-    专业命题聚焦5个方向：大模型安全、数据防泄露、越狱攻击、Web安全、异常行为识别与DNS攻击检测。
-    参赛团队通过官网注册并提交作品。获奖团队颁发证书。
+    根据工业和信息化部“铸网2026”等专项行动工作部署，为有效提升行业网络和数据安全防护水平，组织“龙磐铸网2026”网络安全现场演练，对车联网领域重要系统开展现场隐患排查和漏洞挖掘。
+
+    赛道：车联网安全赛道（线下现场演练）。
+
+    赛程：报名8月17日—24日；现场演练8月24日—27日。
   status: 已截止
-  deadline: 2026-08-15
-  image: /images/competition/ai-security-2026.svg
-  url: https://ai-contest.sjtu.edu.cn
+  deadline: 2026-08-24
+  image: /images/competition/longpan-2026.svg
+  url: https://www.taichu.net/competitionDetail?id=64
   contact: true
 
-- title: '智信—2026无人智能挑战赛'
+- title: 智信—2026无人智能挑战赛
   organizer: 中国指挥与控制学会
   description: >-
     2026年7月-10月举办。设两大竞赛项目。
@@ -76,10 +117,193 @@
     聚焦无人集群智能管控和网络安全，需携带设备到指定地点参赛。报名截至8月31日，10月下旬决赛。
 
     二、创新创意类（7个科目）
-    无人集群管控、道路巡检维护、AI仿真平台数据、AI智能开源情报、AI指挥控制、AI智能安全、新域反制。
-    提交方案/论文/视频参赛。报名截至8月15日，8月下旬预赛→9月下旬决赛→10月下旬展示。
+    无人集群管控、道路巡检维护、AI仿真平台数据、AI智能开源情报、AI指挥控制、AI智能安全、新域反制。提交方案/论文/视频参赛。报名截至8月15日，8月下旬预赛→9月下旬决赛→10月下旬展示。
   status: 已截止
   deadline: 2026-08-31
   image: /images/competition/zhiren-2026.svg
   url: https://www.osredm.com/competition/ZX2026
+  contact: true
+
+- title: 2026第二届大学生人工智能安全大赛
+  organizer: 中国信息协会
+  description: >-
+    由上海交通大学、百度科技承办，北京邮电大学等协办。设开放式创新作品和开放式专业命题两种参赛形式。专业命题聚焦5个方向：大模型安全、数据防泄露、越狱攻击、Web安全、异常行为识别与DNS攻击检测。参赛团队通过官网注册并提交作品。获奖团队颁发证书。
+  status: 已截止
+  deadline: 2026-08-15
+  image: /images/competition/ai-security-2026.svg
+  url: https://ai-contest.sjtu.edu.cn
+  contact: true
+
+- title: “铸盾2026”实车赛道网络安全和数据安全攻防演练
+  organizer: 上海市通信管理局 / 上海市车联网协会
+  description: >-
+    为贯彻落实《网络安全法》《数据安全法》《个人信息保护法》《网络数据安全管理条例》《工业和信息化领域数据安全管理办法（试行）》《汽车数据安全管理若干规定（试行）》等要求，受上海市通信管理局委托，结合“铸盾车联”2026年车联网网络和数据安全专项行动部署，由上海市车联网协会组织开展车联网网络安全实战攻防活动，系统构建车联网领域网络和数据安全治理体系。
+
+    赛道：实车赛道（网络安全 + 数据安全）。
+
+    赛程：报名5月13日—6月15日；线下实车攻防演练6月22日—26日。
+  status: 已截止
+  deadline: 2026-06-15
+  image: /images/competition/zhudun-2026.svg
+  url: https://www.taichu.net/competitionDetail?id=55
+  contact: true
+
+- title: TC-AUTO-ZC-2026-10002期汽车测试项目
+  organizer: 太初众测平台
+  description: >-
+    线下实车测试众测项目，测试地点覆盖上海、北京、济南、郑州四地。
+
+    赛程：报名4月15日—6月14日；项目测试4月15日—6月25日。
+  status: 已截止
+  deadline: 2026-06-14
+  image: /images/competition/tcauto-2026.svg
+  url: https://www.taichu.net/competitionDetail?id=54
+  contact: true
+
+- title: 第28届中国机器人及人工智能大赛 — 百度Apollo星火自动驾驶大赛
+  organizer: 中国人工智能学会 / 百度Apollo
+  description: >-
+    教育部白名单赛事（全国普通高校学科竞赛排行榜第51项），面向本科生、研究生。每队1-3人，需1名指导教师。不限专业，可跨年级跨专业组队。
+
+    省赛（线上仿真赛）→ 国赛初评（线上）→ 国赛决赛（仿真+实车体验）。
+
+    技术平台：Apollo 8.0 + ApolloStudio 线上评测，城市道路自动驾驶场景。每人最多提交50次代码，取最优成绩。国赛2026年7月举办。
+  status: 已截止
+  deadline: 2026-05-31
+  image: /images/competition/apollo-2026.svg
+  url: https://apollo.baidu.com/community/competition/71
+  contact: true
+
+- title: 第九届“强网杯”全国网络安全挑战赛（车联网安全赛道）
+  organizer: 强网杯全国网络安全挑战赛组委会
+  description: >-
+    聚焦国家战略需求和地方产业布局，围绕行业领域网络安全中的现实问题设计。赛事设置“车联网安全”行业领域赛道，评估检验国内优势团队在车联网安全测试等方面的能力。
+
+    赛程：报名2025年9月29日—10月15日；初赛11月2日；复赛11月9日 09:30—12:30；决赛11月21日—22日 09:00—18:00。
+  status: 已截止
+  deadline: 2025-10-15
+  image: /images/competition/qiangwangbei-2025.svg
+  url: https://taichu.net/2025qwb
+  contact: true
+
+- title: “铸盾2025”实车赛道网络安全和数据安全攻防演练
+  organizer: 上海市通信管理局 / 上海市车联网协会
+  description: >-
+    结合“铸盾车联”2025年车联网网络和数据安全专项行动任务，受上海市通信管理局委托，由上海市车联网协会组织开展上海市车联网网络安全实战攻防活动，科学统筹车联网行业发展与安全，系统构建车联网领域网络和数据安全治理体系。
+
+    赛道：实车赛道（红方队伍）。
+
+    赛程：报名9月23日—30日；线下实车攻防演练10月13日—17日。
+  status: 已截止
+  deadline: 2025-09-30
+  image: /images/competition/zhudun-2025.svg
+  url: https://www.taichu.net/competitionDetail?id=44
+  contact: true
+
+- title: 2025年上海市职工职业技能系列竞赛 —— 智能网联新能源汽车技能竞赛
+  organizer: 上海市总工会 / 上海市经济和信息化委员会
+  description: >-
+    以“智能网联新能源汽车”为主题举办市级职工职业技能竞赛。本次竞赛聚焦数据标注和网络攻防，搭建交流与竞技平台，选拔和培养掌握智能网联新能源汽车核心技术的技能人才。
+
+    赛程：报名9月5日—27日；初赛9月28日 15:00—20:30；决赛（线下）10月15日。
+  status: 已截止
+  deadline: 2025-09-27
+  image: /images/competition/shanghai-skill-2025.svg
+  url: https://www.taichu.net/competitionDetail?id=50
+  contact: true
+
+- title: 2025年安徽省网络和数据安全职业技能暨“安网杯”网络安全比武大赛
+  organizer: 安徽省通信管理局 / 省总工会 / 省人社厅 / 团省委 / 省公安厅 / 省网信办 / 省教育厅 / 省经信厅
+  description: >-
+    根据安徽省八部门关于举办安徽省职业技能竞赛——2025年全省网络和数据安全职业技能大赛的通知要求，举办全省网络和数据安全职业技能暨“安网杯”网络攻防比武大赛。
+
+    赛程：9月22日—26日；线上实车环节9月23日—25日。
+  status: 已截止
+  deadline: 2025-09-22
+  image: /images/competition/anwangbei-2025.svg
+  url: https://www.taichu.net/competitionDetail?id=51
+  contact: true
+
+- title: 2025汽车黑客挑战嘉年华
+  organizer: 泽鹿安全
+  description: >-
+    面向汽车零部件与整车的实战攻防活动。设零部件实测阶段、远程实车阶段两个环节。
+
+    赛程：报名8月24日—9月9日；比赛9月10日 13:30—16:30。
+  status: 已截止
+  deadline: 2025-09-09
+  image: /images/competition/autohack-2025.svg
+  url: https://www.taichu.net/competitionDetail?id=48
+  contact: true
+
+- title: 北京“铸网2025”车联网网络安全演练
+  organizer: 北京市通信管理局
+  description: >-
+    车联网网络安全实战演练，采用线下实车演练形式，对车联网重要系统开展隐患排查与漏洞挖掘。
+
+    赛程：9月8日—22日。
+  status: 已截止
+  deadline: 2025-09-08
+  image: /images/competition/zhunwang-2025.svg
+  url: https://www.taichu.net/competitionDetail?id=49
+  contact: true
+
+- title: 卫星通信网络关键设备系统攻防演练
+  organizer: 卫星通信网络关键设备系统攻防演练组委会
+  description: >-
+    针对卫星通信网络关键设备系统开展线上攻防演练，验证设备侧安全防护能力。
+
+    赛程：报名8月20日；线上攻防演练8月22日—9月24日。
+  status: 已截止
+  deadline: 2025-08-20
+  image: /images/competition/satellite-2025.svg
+  url: https://www.taichu.net/competitionDetail?id=47
+  contact: true
+
+- title: 2025“招商铸盾”智能网联汽车攻防演练赛
+  organizer: 招商局检测车辆技术研究院有限公司
+  description: >-
+    按照“实车环境、真攻真测”的原则，在真实环境中对智能网联汽车进行渗透测试，检验智能网联汽车企业产品网络和数据安全能力，帮助企业消除和缓解一批安全漏洞隐患。比赛成果在2025世界智能产业博览会—智能网联新能源汽车产业集群发展大会开幕式上发布。
+
+    赛程：报名8月11日—18日；预选赛8月20日 09:30—12:30；决赛8月24日—9月6日。
+  status: 已截止
+  deadline: 2025-08-18
+  image: /images/competition/zhaoshang-2025.svg
+  url: https://www.taichu.net/competitionDetail?id=42
+  contact: true
+
+- title: 首届CCF智能汽车大赛（CCF IVC 2025）
+  organizer: 中国计算机学会（CCF）/ CCF智能汽车分会
+  description: >-
+    首届CCF智能汽车大赛，设汽车安全攻防赛等赛道，初赛为线上CTF，决赛为实车攻防。
+
+    赛程：报名7月1日—31日；初赛8月2日 09:00—12:00；决赛8月14日—15日。
+  status: 已截止
+  deadline: 2025-07-31
+  image: /images/competition/ccf-ivc-2025.svg
+  url: https://www.taichu.net/competitionDetail?id=32
+  contact: true
+
+- title: “之江铸网-2025”线上实车攻防演练
+  organizer: 浙江省通信管理局
+  description: >-
+    浙江省“铸网”系列车联网安全活动，采用线上实车攻防演练形式，针对省内主流网联汽车品牌开展安全测试。
+
+    赛程：报名7月24日—25日；线上实车赛7月28日—31日。
+  status: 已截止
+  deadline: 2025-07-25
+  image: /images/competition/zhijiang-2025.svg
+  url: https://www.taichu.net/competitionDetail?id=33
+  contact: true
+
+- title: 2025第一届LAESec低空网络安全有效性验证专项活动
+  organizer: 上海市车联网协会 / 网络安全威胁和漏洞信息共享平台
+  description: >-
+    为强化低空经济领域的安全防护能力，完善低空经济安全应急响应机制，发现低空智联网系统安全漏洞和防护短板，在上海市通信管理局指导下，联合网络安全威胁和漏洞信息共享平台开展低空网络安全有效性验证。
+
+    赛程：报名7月16日—22日；低空网络安全验证7月23日—31日。
+  status: 已截止
+  deadline: 2025-07-22
+  image: /images/competition/laesec-2025.svg
+  url: https://www.taichu.net/competitionDetail?id=31
   contact: true

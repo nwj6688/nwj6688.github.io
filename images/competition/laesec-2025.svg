@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250">
+  <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#4a148c"/><stop offset="100%" style="stop-color:#6a1b9a"/>
+  </linearGradient></defs>
+  <rect width="400" height="250" fill="url(#g)" rx="12"/>
+  <text x="200" y="94" text-anchor="middle" fill="#ffffff" font-size="21" font-weight="bold" font-family="Microsoft YaHei,PingFang SC,sans-serif">2025第一届LAESec低空</text>
+  <text x="200" y="118" text-anchor="middle" fill="#ffffff" font-size="21" font-weight="bold" font-family="Microsoft YaHei,PingFang SC,sans-serif">网络安全有效性验证</text>
+  <text x="200" y="145" text-anchor="middle" fill="#e8e8e8" font-size="11.5" font-family="Microsoft YaHei,PingFang SC,sans-serif">上海市车联网协会 / 网络安全威胁和漏洞信息共享平台</text>
+  <text x="200" y="165" text-anchor="middle" fill="#e8e8e8" font-size="11.5" font-family="Microsoft YaHei,PingFang SC,sans-serif">2025.07.16 – 07.31</text>
+  <text x="200" y="181" text-anchor="middle" fill="#ce93d8" font-size="11" font-family="Microsoft YaHei,PingFang SC,sans-serif">低空经济 · 安全验证</text>
+</svg>
